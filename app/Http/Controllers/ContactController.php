@@ -21,10 +21,7 @@ class ContactController extends Controller
             'message' => 'required|string',
         ]);
 
-        // Burada email gönderme işlemleri yapılabilir
-        // Mail::to('info@sirket.com')->send(new ContactMail($request->all()));
-
-        // Başarılı mesajı ile geri yönlendir (veritabanına kayıt YOK)
+        // Sadece başarılı mesajı göster (veritabanına kayıt yok)
         return redirect()->back()->with('success', 'Mesajınız başarıyla gönderildi! En kısa sürede size dönüş yapacağız.');
     }
 }
