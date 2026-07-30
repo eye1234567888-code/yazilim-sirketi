@@ -1,0 +1,990 @@
+@extends('layouts.app')
+
+@section('title', 'Ana Sayfa')
+
+@section('content')
+<!-- ===== HERO ===== -->
+<section class="hero" id="home">
+    <div class="particles">
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+    </div>
+    <div class="floating-shapes">
+        <div class="shape"></div>
+        <div class="shape"></div>
+        <div class="shape"></div>
+        <div class="shape"></div>
+        <div class="shape"></div>
+    </div>
+    <div class="container">
+        <div class="hero-content">
+            <div class="badge"><i class="fas fa-bolt"></i> 2024'ün En İnovatif Yazılım Şirketi</div>
+            <h1>Geleceği <span>Birlikte</span> Kodlayalım</h1>
+            <p>Yenilikçi teknolojilerle işinizi dijital dünyaya taşıyor, sürdürülebilir ve ölçeklenebilir çözümler üretiyoruz. 8 yıllık deneyimimizle yanınızdayız.</p>
+            <div class="hero-buttons">
+                <a href="{{ route('contact') }}" class="btn-primary"><i class="fas fa-paper-plane"></i> Hemen İletişim</a>
+                <a href="{{ route('about') }}" class="btn-secondary"><i class="fas fa-play-circle"></i> Keşfet</a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat"><h3 class="counter-number" data-target="250">0</h3><p>Tamamlanan Proje</p></div>
+                <div class="stat"><h3 class="counter-number" data-target="120">0</h3><p>Mutlu Müşteri</p></div>
+                <div class="stat"><h3 class="counter-number" data-target="8">0</h3><p>Yıl Deneyim</p></div>
+                <div class="stat"><h3 class="counter-number" data-target="15">0</h3><p>Ödül & Başarı</p></div>
+            </div>
+        </div>
+        <div class="hero-image">
+            <div class="hero-rotator">
+                <div class="center-icon"><i class="fas fa-cubes"></i></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== HİZMETLER - UZMANLIK ALANLARI ===== -->
+<section class="section-padding" id="services">
+    <div class="container">
+        <div class="section-header" data-aos="fade-up">
+            <span class="section-tag"><i class="fas fa-bolt"></i> Hizmetlerimiz</span>
+            <h2>Uzmanlık <span>Alanlarımız</span></h2>
+            <p>İhtiyaçlarınıza özel, yenilikçi ve kaliteli çözümler sunuyoruz</p>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:30px;">
+            @php
+                $servicesList = [
+                    [
+                        'title' => 'CRM Çözümleri',
+                        'desc' => 'Müşteri ilişkileri yönetimini optimize eden, satış ve pazarlama süreçlerini otomatikleştiren kapsamlı CRM çözümleri.',
+                        'icon' => 'fa-users',
+                        'color' => '#ff6b6b',
+                        'bg' => 'rgba(255,107,107,0.05)',
+                        'border' => 'rgba(255,107,107,0.15)',
+                        'route' => 'crm'
+                    ],
+                    [
+                        'title' => 'Sektörel Çözümler',
+                        'desc' => 'Farklı sektörlerin dinamik ihtiyaçlarına yönelik yenilikçi yazılım çözümleri ve özel stratejiler.',
+                        'icon' => 'fa-industry',
+                        'color' => '#ffd93d',
+                        'bg' => 'rgba(255,217,61,0.05)',
+                        'border' => 'rgba(255,217,61,0.15)',
+                        'route' => 'sektorel'
+                    ],
+                    [
+                        'title' => 'E-Ticaret',
+                        'desc' => 'Dijital dünyada e-ticaret işletmeleri için müşteri deneyimini iyileştiren ve satışları artıran özel çözümler.',
+                        'icon' => 'fa-shopping-cart',
+                        'color' => '#6bcb77',
+                        'bg' => 'rgba(107,203,119,0.05)',
+                        'border' => 'rgba(107,203,119,0.15)',
+                        'route' => 'eticaret'
+                    ],
+                    [
+                        'title' => 'E-Dönüşüm',
+                        'desc' => 'Dijital çağda iş süreçlerini daha verimli, hızlı ve güvenli hale getiren e-Dönüşüm çözümleri.',
+                        'icon' => 'fa-sync-alt',
+                        'color' => '#4d96ff',
+                        'bg' => 'rgba(77,150,255,0.05)',
+                        'border' => 'rgba(77,150,255,0.15)',
+                        'route' => 'edonusum'
+                    ],
+                    [
+                        'title' => 'ERP Çözümleri',
+                        'desc' => 'Her işletmenin ihtiyacına göre uyarlanabilen modüler yapıda, tüm iş süreçlerini tek platformda yönetin.',
+                        'icon' => 'fa-cubes',
+                        'color' => '#ff6b6b',
+                        'bg' => 'rgba(255,107,107,0.05)',
+                        'border' => 'rgba(255,107,107,0.15)',
+                        'route' => 'erp'
+                    ],
+                    [
+                        'title' => 'Mobil Çözümler',
+                        'desc' => 'Mobil dünyada etkin olmanın önemini biliyoruz. İşletmenizi mobil cihazlarla buluşturan özel çözümler.',
+                        'icon' => 'fa-mobile-alt',
+                        'color' => '#ffd93d',
+                        'bg' => 'rgba(255,217,61,0.05)',
+                        'border' => 'rgba(255,217,61,0.15)',
+                        'route' => 'mobil'
+                    ]
+                ];
+            @endphp
+            @foreach($servicesList as $index => $service)
+                <div class="glass tilt"
+                     data-aos="flip-up"
+                     data-aos-delay="{{ $loop->iteration * 60 }}"
+                     style="
+                        border-color:{{ $service['border'] }};
+                        background:{{ $service['bg'] }};
+                        padding:35px 30px;
+                        text-align:center;
+                        position:relative;
+                        overflow:hidden;
+                        animation: serviceFloat {{ 3 + ($index % 3) }}s ease-in-out infinite;
+                        animation-delay: {{ $index * 0.15 }}s;
+                        transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+                        cursor:pointer;
+                        border-width:2px;
+                        transform-style:preserve-3d;
+                        perspective:800px;
+                     "
+                     onmouseover="
+                        this.style.transform='scale(1.08) translateY(-15px) rotateX(5deg) rotateY(5deg)';
+                        this.style.borderColor='{{ $service['color'] }}';
+                        this.style.boxShadow='0 25px 70px {{ $service['color'] }}44';
+                        this.style.background='{{ $service['color'] }}15';
+                        this.querySelector('.service-icon').style.transform='scale(1.4) rotate(25deg) translateY(-10px)';
+                        this.querySelector('.service-glow').style.opacity='1';
+                        this.style.animation='none';
+                     "
+                     onmouseout="
+                        this.style.transform='scale(1) translateY(0) rotateX(0) rotateY(0)';
+                        this.style.borderColor='{{ $service['border'] }}';
+                        this.style.boxShadow='none';
+                        this.style.background='{{ $service['bg'] }}';
+                        this.querySelector('.service-icon').style.transform='scale(1) rotate(0deg) translateY(0)';
+                        this.querySelector('.service-glow').style.opacity='0';
+                        this.style.animation='serviceFloat {{ 3 + ($index % 3) }}s ease-in-out infinite';
+                        this.style.animationDelay='{{ $index * 0.15 }}s';
+                     "
+                >
+                    <div class="service-glow" style="
+                        position:absolute;
+                        top:-50%;
+                        left:-50%;
+                        width:200%;
+                        height:200%;
+                        background:radial-gradient(circle, {{ $service['color'] }}30, transparent 60%);
+                        opacity:0;
+                        transition: all 0.8s ease;
+                        pointer-events:none;
+                        z-index:0;
+                    "></div>
+                    <div style="position:absolute;top:-50px;right:-50px;width:120px;height:120px;background:radial-gradient(circle,{{ $service['color'] }}15,transparent 70%);border-radius:50%;pointer-events:none;"></div>
+                    <div style="position:absolute;bottom:-40px;left:-40px;width:100px;height:100px;background:radial-gradient(circle,{{ $service['color'] }}10,transparent 70%);border-radius:50%;pointer-events:none;animation: pulseGlow 3s ease-in-out infinite;"></div>
+
+                    <div class="service-icon" style="
+                        font-size:55px;
+                        color:{{ $service['color'] }};
+                        margin-bottom:15px;
+                        display:block;
+                        transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+                        position:relative;
+                        z-index:1;
+                    ">
+                        <i class="fas {{ $service['icon'] }}"></i>
+                    </div>
+
+                    <h3 style="font-size:20px;font-weight:700;margin-bottom:8px;position:relative;z-index:1;transition:0.3s;" onmouseover="this.style.color='{{ $service['color'] }}';this.style.transform='scale(1.05)'" onmouseout="this.style.color='#fff';this.style.transform='scale(1)'">
+                        {{ $service['title'] }}
+                    </h3>
+
+                    <p style="color:#94a3b8;font-size:14px;line-height:1.7;margin-bottom:12px;position:relative;z-index:1;">
+                        {{ $service['desc'] }}
+                    </p>
+
+                    <div style="margin-top:12px;position:relative;z-index:1;">
+                        <a href="{{ route($service['route']) }}" style="
+                            color:{{ $service['color'] }};
+                            text-decoration:none;
+                            font-size:13px;
+                            font-weight:600;
+                            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+                            display:inline-flex;
+                            align-items:center;
+                            gap:6px;
+                            padding:6px 18px;
+                            border-radius:50px;
+                            border:1px solid {{ $service['border'] }};
+                            background:transparent;
+                            position:relative;
+                            z-index:1;
+                        "
+                        onmouseover="
+                            this.style.background='{{ $service['color'] }}';
+                            this.style.color='#fff';
+                            this.style.transform='translateX(8px) scale(1.08)';
+                            this.style.boxShadow='0 12px 40px {{ $service['color'] }}55';
+                            this.style.borderColor='{{ $service['color'] }}';
+                        "
+                        onmouseout="
+                            this.style.background='transparent';
+                            this.style.color='{{ $service['color'] }}';
+                            this.style.transform='translateX(0) scale(1)';
+                            this.style.boxShadow='none';
+                            this.style.borderColor='{{ $service['border'] }}';
+                        ">
+                            Detay <i class="fas fa-arrow-right" style="transition:0.4s;"></i>
+                        </a>
+                    </div>
+                </div>
+            @endforeach
+        </div>
+    </div>
+</section>
+
+<!-- ===== HAKKIMIZDA ===== -->
+<section class="section-padding" style="background:rgba(10,14,26,0.3);backdrop-filter:blur(5px);border-top:1px solid rgba(255,255,255,0.02);border-bottom:1px solid rgba(255,255,255,0.02);position:relative;overflow:hidden;">
+    <div style="position:absolute;top:-30%;right:-10%;width:500px;height:500px;background:radial-gradient(circle,rgba(255,107,107,0.03),transparent 70%);border-radius:50%;pointer-events:none;"></div>
+    <div style="position:absolute;bottom:-30%;left:-10%;width:400px;height:400px;background:radial-gradient(circle,rgba(77,150,255,0.03),transparent 70%);border-radius:50%;pointer-events:none;"></div>
+
+    <div class="container">
+        <div class="section-header" data-aos="fade-up">
+            <span class="section-tag"><i class="fas fa-info-circle"></i> Hakkımızda</span>
+            <h2>Dijital Dönüşümde <span>Yanınızdayız</span></h2>
+            <p>Yenilikçi yazılım çözümleriyle işletmenizi geleceğe taşıyoruz</p>
+        </div>
+
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center;">
+            <div data-aos="fade-right">
+                <div class="glass" style="padding:40px;border-color:rgba(255,255,255,0.05);">
+                    <div style="display:flex;gap:10px;margin-bottom:20px;flex-wrap:wrap;">
+                        <span style="background:rgba(255,107,107,0.08);color:#ff6b6b;padding:4px 16px;border-radius:50px;font-size:12px;border:1px solid rgba(255,107,107,0.06);">ERP</span>
+                        <span style="background:rgba(255,217,61,0.08);color:#ffd93d;padding:4px 16px;border-radius:50px;font-size:12px;border:1px solid rgba(255,217,61,0.06);">CRM</span>
+                        <span style="background:rgba(107,203,119,0.08);color:#6bcb77;padding:4px 16px;border-radius:50px;font-size:12px;border:1px solid rgba(107,203,119,0.06);">E-Ticaret</span>
+                        <span style="background:rgba(77,150,255,0.08);color:#4d96ff;padding:4px 16px;border-radius:50px;font-size:12px;border:1px solid rgba(77,150,255,0.06);">Web Çözümleri</span>
+                    </div>
+
+                    <p style="color:#e2e8f0;font-size:16px;line-height:2;margin-bottom:15px;">
+                        İşletmelere dijital dönüşüm yolculuklarında <span style="color:#ff6b6b;font-weight:600;">yenilikçi</span> ve <span style="color:#ffd93d;font-weight:600;">özelleştirilmiş</span> yazılım çözümleri sunan bir teknoloji firmasıdır.
+                    </p>
+
+                    <p style="color:#e2e8f0;font-size:16px;line-height:2;margin-bottom:15px;">
+                        ERP, CRM, e-ticaret entegrasyonları ve kurumsal web çözümleri konularında uzmanlaşarak, farklı sektörlerdeki işletmelerin
+                        iş süreçlerini <span style="color:#6bcb77;font-weight:600;">dijitalleştirip</span> operasyonel verimliliklerini artırmayı hedefliyoruz.
+                    </p>
+
+                    <p style="color:#e2e8f0;font-size:16px;line-height:2;margin-bottom:0;">
+                        Geniş teknik bilgi birikimimizle, her işletmenin özgün ihtiyaçlarına uygun stratejiler geliştiriyor;
+                        esnek, ölçeklenebilir ve sürdürülebilir yazılım altyapıları kuruyoruz.
+                    </p>
+                </div>
+            </div>
+
+            <div data-aos="fade-left">
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;">
+                    <div class="glass tilt" style="padding:25px;text-align:center;border-color:rgba(255,107,107,0.08);transition:all 0.5s cubic-bezier(0.175,0.885,0.32,1.275);" onmouseover="this.style.transform='translateY(-8px) scale(1.05)';this.style.borderColor='#ff6b6b';this.style.boxShadow='0 15px 40px rgba(255,107,107,0.2)'" onmouseout="this.style.transform='translateY(0) scale(1)';this.style.borderColor='rgba(255,107,107,0.08)';this.style.boxShadow='none'">
+                        <div style="font-size:40px;color:#ff6b6b;margin-bottom:10px;transition:0.5s;" onmouseover="this.style.transform='scale(1.2) rotate(10deg)'" onmouseout="this.style.transform='scale(1) rotate(0deg)'"><i class="fas fa-code"></i></div>
+                        <h3 style="font-size:32px;font-weight:800;background:linear-gradient(135deg,#ff6b6b,#ffd93d);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">250+</h3>
+                        <p style="color:#94a3b8;font-size:14px;">Tamamlanan Proje</p>
+                    </div>
+                    <div class="glass tilt" style="padding:25px;text-align:center;border-color:rgba(255,217,61,0.08);transition:all 0.5s cubic-bezier(0.175,0.885,0.32,1.275);" onmouseover="this.style.transform='translateY(-8px) scale(1.05)';this.style.borderColor='#ffd93d';this.style.boxShadow='0 15px 40px rgba(255,217,61,0.2)'" onmouseout="this.style.transform='translateY(0) scale(1)';this.style.borderColor='rgba(255,217,61,0.08)';this.style.boxShadow='none'">
+                        <div style="font-size:40px;color:#ffd93d;margin-bottom:10px;transition:0.5s;" onmouseover="this.style.transform='scale(1.2) rotate(-10deg)'" onmouseout="this.style.transform='scale(1) rotate(0deg)'"><i class="fas fa-users"></i></div>
+                        <h3 style="font-size:32px;font-weight:800;background:linear-gradient(135deg,#ffd93d,#f59e0b);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">120+</h3>
+                        <p style="color:#94a3b8;font-size:14px;">Mutlu Müşteri</p>
+                    </div>
+                    <div class="glass tilt" style="padding:25px;text-align:center;border-color:rgba(107,203,119,0.08);transition:all 0.5s cubic-bezier(0.175,0.885,0.32,1.275);" onmouseover="this.style.transform='translateY(-8px) scale(1.05)';this.style.borderColor='#6bcb77';this.style.boxShadow='0 15px 40px rgba(107,203,119,0.2)'" onmouseout="this.style.transform='translateY(0) scale(1)';this.style.borderColor='rgba(107,203,119,0.08)';this.style.boxShadow='none'">
+                        <div style="font-size:40px;color:#6bcb77;margin-bottom:10px;transition:0.5s;" onmouseover="this.style.transform='scale(1.2) rotate(15deg)'" onmouseout="this.style.transform='scale(1) rotate(0deg)'"><i class="fas fa-trophy"></i></div>
+                        <h3 style="font-size:32px;font-weight:800;background:linear-gradient(135deg,#6bcb77,#10b981);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">15+</h3>
+                        <p style="color:#94a3b8;font-size:14px;">Ödül & Başarı</p>
+                    </div>
+                    <div class="glass tilt" style="padding:25px;text-align:center;border-color:rgba(77,150,255,0.08);transition:all 0.5s cubic-bezier(0.175,0.885,0.32,1.275);" onmouseover="this.style.transform='translateY(-8px) scale(1.05)';this.style.borderColor='#4d96ff';this.style.boxShadow='0 15px 40px rgba(77,150,255,0.2)'" onmouseout="this.style.transform='translateY(0) scale(1)';this.style.borderColor='rgba(77,150,255,0.08)';this.style.boxShadow='none'">
+                        <div style="font-size:40px;color:#4d96ff;margin-bottom:10px;transition:0.5s;" onmouseover="this.style.transform='scale(1.2) rotate(-15deg)'" onmouseout="this.style.transform='scale(1) rotate(0deg)'"><i class="fas fa-calendar"></i></div>
+                        <h3 style="font-size:32px;font-weight:800;background:linear-gradient(135deg,#4d96ff,#2563eb);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">8+</h3>
+                        <p style="color:#94a3b8;font-size:14px;">Yıl Deneyim</p>
+                    </div>
+                </div>
+
+                <div style="margin-top:20px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;">
+                    <div style="text-align:center;padding:10px;background:rgba(255,255,255,0.02);border-radius:12px;border:1px solid rgba(255,255,255,0.02);transition:all 0.4s ease;" onmouseover="this.style.transform='translateY(-5px)';this.style.borderColor='#ff6b6b33';this.style.background='rgba(255,107,107,0.05)'" onmouseout="this.style.transform='translateY(0)';this.style.borderColor='rgba(255,255,255,0.02)';this.style.background='rgba(255,255,255,0.02)'">
+                        <div style="color:#ff6b6b;font-size:20px;margin-bottom:5px;"><i class="fas fa-handshake"></i></div>
+                        <p style="color:#94a3b8;font-size:12px;">Güvenilir</p>
+                    </div>
+                    <div style="text-align:center;padding:10px;background:rgba(255,255,255,0.02);border-radius:12px;border:1px solid rgba(255,255,255,0.02);transition:all 0.4s ease;" onmouseover="this.style.transform='translateY(-5px)';this.style.borderColor='#ffd93d33';this.style.background='rgba(255,217,61,0.05)'" onmouseout="this.style.transform='translateY(0)';this.style.borderColor='rgba(255,255,255,0.02)';this.style.background='rgba(255,255,255,0.02)'">
+                        <div style="color:#ffd93d;font-size:20px;margin-bottom:5px;"><i class="fas fa-rocket"></i></div>
+                        <p style="color:#94a3b8;font-size:12px;">Yenilikçi</p>
+                    </div>
+                    <div style="text-align:center;padding:10px;background:rgba(255,255,255,0.02);border-radius:12px;border:1px solid rgba(255,255,255,0.02);transition:all 0.4s ease;" onmouseover="this.style.transform='translateY(-5px)';this.style.borderColor='#6bcb7733';this.style.background='rgba(107,203,119,0.05)'" onmouseout="this.style.transform='translateY(0)';this.style.borderColor='rgba(255,255,255,0.02)';this.style.background='rgba(255,255,255,0.02)'">
+                        <div style="color:#6bcb77;font-size:20px;margin-bottom:5px;"><i class="fas fa-headset"></i></div>
+                        <p style="color:#94a3b8;font-size:12px;">7/24 Destek</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== PROJELERİMİZ ===== -->
+<section class="section-padding" id="projects" style="background:rgba(10,14,26,0.3);backdrop-filter:blur(5px);border-top:1px solid rgba(255,255,255,0.02);border-bottom:1px solid rgba(255,255,255,0.02);">
+    <div class="container">
+        <div class="section-header" data-aos="fade-up">
+            <span class="section-tag"><i class="fas fa-project-diagram"></i> Projelerimiz</span>
+            <h2>Projelerimiz</h2>
+            <p>Başarıyla tamamladığımız projeler</p>
+        </div>
+
+        <div style="display:flex;gap:15px;flex-wrap:wrap;justify-content:center;margin-bottom:40px;" data-aos="fade-up">
+            @php
+                $categories = ['MRP', 'Hızlı Satış', 'İnsan Kaynakları', 'Kurumsal Web Sitesi'];
+                $catColors = ['#ff6b6b', '#ffd93d', '#6bcb77', '#4d96ff'];
+            @endphp
+            @foreach($categories as $index => $cat)
+                <span style="
+                    background:{{ $catColors[$index] }}10;
+                    color:{{ $catColors[$index] }};
+                    padding:8px 24px;
+                    border-radius:50px;
+                    font-size:14px;
+                    font-weight:600;
+                    border:1px solid {{ $catColors[$index] }}15;
+                    cursor:pointer;
+                    transition:all 0.4s cubic-bezier(0.175,0.885,0.32,1.275);
+                "
+                onmouseover="this.style.background='{{ $catColors[$index] }}';this.style.color='#fff';this.style.transform='translateY(-5px) scale(1.08)';this.style.boxShadow='0 15px 45px {{ $catColors[$index] }}55'"
+                onmouseout="this.style.background='{{ $catColors[$index] }}10';this.style.color='{{ $catColors[$index] }}';this.style.transform='translateY(0) scale(1)';this.style.boxShadow='none'">
+                    {{ $cat }}
+                </span>
+            @endforeach
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:30px;">
+            @php
+                $projectsData = [
+                    [
+                        'title' => 'MRP',
+                        'desc' => 'MRP Sistemi Nedir? MRP, üretim odaklı işletmelerin hammaddeden yarım mamule, üretim planlamasından stok yönetimine kadar olan tüm kaynak ihtiyaçlarını zamanında ve doğru şekilde planlamasını sağlayan entegre bir planlama sistemidir.',
+                        'icon' => 'fa-industry',
+                        'color' => '#ff6b6b',
+                        'tags' => ['Üretim', 'Fiyat', 'Stok']
+                    ],
+                    [
+                        'title' => 'Hızlı Satış',
+                        'desc' => 'İşletmelerin satış süreçlerini hızlandırmak, stok takibini kolaylaştırmak ve operasyon verimliliğini artırmak için tasarlandı. Modern tasarım ve kolay kullanımıyla satışlarınızı saniyeler içinde yönetin, tüm işinizi tek ekrandan kontrol edin.',
+                        'icon' => 'fa-rocket',
+                        'color' => '#ffd93d',
+                        'tags' => ['Satış', 'Stok', 'Operasyon']
+                    ],
+                    [
+                        'title' => 'İnsan Kaynakları',
+                        'desc' => 'Günümüz iş dünyasında insan kaynağını doğru yönetmek, bir kurumun sürdürülebilir başarısının temel taşlarından biridir. İnsan Kaynakları Projesi, işletmelerin personel süreçlerini dijitalleştiren, verimliliği artıran ve şeffaflığı güçlendiren yenilikçi bir çözümdür.',
+                        'icon' => 'fa-users',
+                        'color' => '#6bcb77',
+                        'tags' => ['Personel', 'Dijital', 'Verimlilik']
+                    ],
+                    [
+                        'title' => 'Kurumsal Web Sitesi',
+                        'desc' => 'Günümüz dijital çağında bir web sitesine sahip olmak, bir işletmenin ya da kurumun dijital dünyadaki yüzüdür. Web siteleri, potansiyel müşterilere ulaşmanın, kurumsal kimliği pekiştirmenin ve rekabet avantajı sağlamanın en etkili yollarından biridir.',
+                        'icon' => 'fa-globe',
+                        'color' => '#4d96ff',
+                        'tags' => ['Dijital', 'Kurumsal', 'Rekabet']
+                    ]
+                ];
+            @endphp
+            @foreach($projectsData as $index => $project)
+                <div class="glass tilt"
+                     data-aos="flip-up"
+                     data-aos-delay="{{ $loop->iteration * 80 }}"
+                     style="
+                        border-color:{{ $project['color'] }}15;
+                        background:{{ $project['color'] }}05;
+                        padding:35px 30px;
+                        position:relative;
+                        overflow:hidden;
+                        animation: serviceFloat {{ 3 + ($index % 3) }}s ease-in-out infinite;
+                        animation-delay: {{ $index * 0.2 }}s;
+                        transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+                        cursor:pointer;
+                        border-width:2px;
+                        perspective:800px;
+                     "
+                     onmouseover="
+                        this.style.transform='scale(1.05) translateY(-12px) rotateX(3deg)';
+                        this.style.borderColor='{{ $project['color'] }}';
+                        this.style.boxShadow='0 25px 70px {{ $project['color'] }}44';
+                        this.style.background='{{ $project['color'] }}15';
+                        this.querySelector('.project-icon').style.transform='scale(1.3) rotate(15deg) translateY(-5px)';
+                        this.querySelector('.project-glow').style.opacity='1';
+                        this.style.animation='none';
+                     "
+                     onmouseout="
+                        this.style.transform='scale(1) translateY(0) rotateX(0)';
+                        this.style.borderColor='{{ $project['color'] }}15';
+                        this.style.boxShadow='none';
+                        this.style.background='{{ $project['color'] }}05';
+                        this.querySelector('.project-icon').style.transform='scale(1) rotate(0deg) translateY(0)';
+                        this.querySelector('.project-glow').style.opacity='0';
+                        this.style.animation='serviceFloat {{ 3 + ($index % 3) }}s ease-in-out infinite';
+                        this.style.animationDelay='{{ $index * 0.2 }}s';
+                     "
+                >
+                    <div class="project-glow" style="
+                        position:absolute;
+                        top:-50%;
+                        left:-50%;
+                        width:200%;
+                        height:200%;
+                        background:radial-gradient(circle, {{ $project['color'] }}30, transparent 60%);
+                        opacity:0;
+                        transition: all 0.8s ease;
+                        pointer-events:none;
+                        z-index:0;
+                    "></div>
+                    <div style="position:absolute;top:-50px;right:-50px;width:120px;height:120px;background:radial-gradient(circle,{{ $project['color'] }}15,transparent 70%);border-radius:50%;pointer-events:none;"></div>
+                    <div style="position:absolute;bottom:-40px;left:-40px;width:100px;height:100px;background:radial-gradient(circle,{{ $project['color'] }}10,transparent 70%);border-radius:50%;pointer-events:none;animation: pulseGlow 3s ease-in-out infinite;"></div>
+
+                    <div style="display:flex;align-items:center;gap:15px;margin-bottom:15px;position:relative;z-index:1;">
+                        <div class="project-icon" style="
+                            width:55px;
+                            height:55px;
+                            border-radius:50%;
+                            display:flex;
+                            align-items:center;
+                            justify-content:center;
+                            font-size:24px;
+                            color:{{ $project['color'] }};
+                            background:{{ $project['color'] }}10;
+                            border:2px solid {{ $project['color'] }}15;
+                            transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+                            flex-shrink:0;
+                        ">
+                            <i class="fas {{ $project['icon'] }}"></i>
+                        </div>
+                        <h3 style="font-size:22px;font-weight:700;margin:0;transition:0.3s;" onmouseover="this.style.color='{{ $project['color'] }}';this.style.transform='translateX(5px)'" onmouseout="this.style.color='#fff';this.style.transform='translateX(0)'">
+                            {{ $project['title'] }}
+                        </h3>
+                    </div>
+
+                    <p style="color:#e2e8f0;font-size:14px;line-height:1.8;margin-bottom:15px;position:relative;z-index:1;">
+                        {{ $project['desc'] }}
+                    </p>
+
+                    <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:5px;position:relative;z-index:1;">
+                        @foreach($project['tags'] as $tag)
+                            <span style="
+                                background:{{ $project['color'] }}10;
+                                color:{{ $project['color'] }};
+                                padding:4px 14px;
+                                border-radius:50px;
+                                font-size:12px;
+                                border:1px solid {{ $project['color'] }}10;
+                                transition:all 0.3s ease;
+                                cursor:default;
+                            " onmouseover="this.style.transform='scale(1.1)';this.style.background='{{ $project['color'] }}20'" onmouseout="this.style.transform='scale(1)';this.style.background='{{ $project['color'] }}10'">
+                                {{ $tag }}
+                            </span>
+                        @endforeach
+                    </div>
+                </div>
+            @endforeach
+        </div>
+    </div>
+</section>
+
+<!-- ===== REFERANSLAR (MÜŞTERİ LOGOLARI) ===== -->
+<section class="brand-logos" style="padding:60px 0;background:rgba(10,14,26,0.2);border-top:1px solid rgba(255,255,255,0.02);border-bottom:1px solid rgba(255,255,255,0.02);">
+    <div class="container">
+        <div style="text-align:center;margin-bottom:35px;" data-aos="fade-up">
+            <span class="section-tag"><i class="fas fa-handshake" style="color:#ff6b6b;"></i> Referanslar</span>
+            <h2 style="font-size:36px;font-weight:800;margin-top:10px;">Güvenen <span style="background:linear-gradient(135deg,#ff6b6b,#ffd93d,#6bcb77,#4d96ff);background-size:300% 300%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;animation:rainbowText 4s ease infinite;">Markalar</span></h2>
+        </div>
+        <div style="position:relative;display:flex;justify-content:space-around;align-items:center;flex-wrap:nowrap;gap:20px;padding:20px 0;" data-aos="fade-up">
+            @for($i=1; $i<=6; $i++)
+                @php
+                    $colors = ['#ff6b6b', '#ffd93d', '#6bcb77', '#4d96ff', '#ff6b6b', '#ffd93d'];
+                    $delay = $i * 0.5;
+                @endphp
+                <div style="display:flex;flex-direction:column;align-items:center;gap:10px;padding:20px 30px;border-radius:16px;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.03);transition:all 0.5s cubic-bezier(0.175,0.885,0.32,1.275);cursor:pointer;animation: orbitFloat {{ 4 + $i }}s ease-in-out infinite;animation-delay: {{ $delay }}s;min-width:120px;"
+                onmouseover="this.style.transform='scale(1.2) translateY(-12px) rotate(5deg)';this.style.background='{{ $colors[$i-1] }}15';this.style.borderColor='{{ $colors[$i-1] }}44';this.style.boxShadow='0 20px 60px {{ $colors[$i-1] }}33'"
+                onmouseout="this.style.transform='scale(1) translateY(0) rotate(0deg)';this.style.background='rgba(255,255,255,0.02)';this.style.borderColor='rgba(255,255,255,0.03)';this.style.boxShadow='none'">
+                    <i class="fas fa-building" style="font-size:48px;color:{{ $colors[$i-1] }};display:block;transition:0.6s;" onmouseover="this.style.transform='rotate(30deg) scale(1.3)';this.style.color='#fff'" onmouseout="this.style.transform='rotate(0deg) scale(1)';this.style.color='{{ $colors[$i-1] }}'"></i>
+                    <p style="font-size:13px;color:#94a3b8;font-weight:600;letter-spacing:1px;transition:0.3s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#94a3b8'">Marka {{ $i }}</p>
+                    <div style="width:40px;height:2px;background:linear-gradient(90deg,{{ $colors[$i-1] }},transparent);border-radius:2px;transition:0.5s;" onmouseover="this.style.width='60px';this.style.background='{{ $colors[$i-1] }}'" onmouseout="this.style.width='40px';this.style.background='linear-gradient(90deg,{{ $colors[$i-1] }},transparent)'"></div>
+                </div>
+            @endfor
+        </div>
+    </div>
+</section>
+
+<!-- ===== BLOG ===== -->
+<section class="section-padding" id="blog" style="background:rgba(10,14,26,0.3);backdrop-filter:blur(5px);border-top:1px solid rgba(255,255,255,0.02);border-bottom:1px solid rgba(255,255,255,0.02);position:relative;overflow:hidden;">
+    <div class="container">
+        <div class="section-header" data-aos="fade-up">
+            <span class="section-tag"><i class="fas fa-blog"></i> Blog</span>
+            <h2>Öne Çıkan <span>Bloglarımız</span></h2>
+            <p>Teknoloji, yazılım ve dijital dünya üzerine güncel yazılar</p>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:35px;">
+            @php
+                $blogPosts = [
+                    [
+                        'slug' => 'erp-uygulama-sureci',
+                        'date' => '02 Temmuz, 2025',
+                        'title' => 'Başarılı Bir ERP Uygulama Süreci Nasıl İlerler?',
+                        'excerpt' => 'ERP sistemlerinin başarılı bir şekilde uygulanması için izlenmesi gereken adımlar ve stratejiler.',
+                        'color' => '#ff6b6b',
+                        'icon' => 'fa-cubes',
+                        'tag' => 'ERP',
+                        'author' => 'Ahmet Yılmaz',
+                        'read_time' => '5 dk',
+                        'bg' => 'linear-gradient(135deg, #1a1a2e, #2d2d44)'
+                    ],
+                    [
+                        'slug' => 'efatura-earsiv',
+                        'date' => '27 Haziran, 2025',
+                        'title' => 'İşletmenizi Geleceğe Taşıyın: e-Fatura ve e-Arşiv Sistemlerinin',
+                        'excerpt' => 'e-Fatura ve e-Arşiv sistemleri ile işletmenizi dijital dönüşüme hazırlayın.',
+                        'color' => '#ffd93d',
+                        'icon' => 'fa-file-invoice',
+                        'tag' => 'Dijital Dönüşüm',
+                        'author' => 'Mehmet Demir',
+                        'read_time' => '7 dk',
+                        'bg' => 'linear-gradient(135deg, #1a1a2e, #2d2d44)'
+                    ],
+                    [
+                        'slug' => 'windows-12',
+                        'date' => '21 Ağustos, 2025',
+                        'title' => 'Windows 12 ile Gelen Yenilikler ve İşletmelere Etkileri',
+                        'excerpt' => 'Windows 12\'nin getirdiği yenilikler, performans iyileştirmeleri ve işletmelere sağlayacağı avantajlar.',
+                        'color' => '#4d96ff',
+                        'icon' => 'fa-windows',
+                        'tag' => 'Teknoloji',
+                        'author' => 'Can Öztürk',
+                        'read_time' => '4 dk',
+                        'bg' => 'linear-gradient(135deg, #1a1a2e, #2d2d44)'
+                    ]
+                ];
+            @endphp
+            @foreach($blogPosts as $index => $post)
+                <div class="glass tilt"
+                     data-aos="flip-up"
+                     data-aos-delay="{{ $loop->iteration * 80 }}"
+                     style="
+                        border-color:{{ $post['color'] }}25;
+                        background:{{ $post['bg'] }};
+                        padding:0;
+                        position:relative;
+                        overflow:hidden;
+                        transition: all 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+                        cursor:pointer;
+                        border-width:2px;
+                        border-radius:24px;
+                        perspective:1000px;
+                        transform-style:preserve-3d;
+                        box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+                     "
+                     onmouseover="
+                        this.style.transform='translateY(-20px) scale(1.04) rotateX(4deg) rotateY(6deg)';
+                        this.style.borderColor='{{ $post['color'] }}';
+                        this.style.boxShadow='0 40px 100px {{ $post['color'] }}55, 0 20px 60px {{ $post['color'] }}33';
+                        this.style.background='linear-gradient(135deg, {{ $post['color'] }}15, #1a1a2e)';
+                        this.querySelector('.blog-image').style.transform='scale(1.08)';
+                        this.querySelector('.blog-overlay').style.opacity='1';
+                        this.querySelector('.blog-icon').style.transform='scale(1.4) rotate(25deg)';
+                        this.querySelector('.blog-content').style.transform='translateY(-5px)';
+                        this.querySelector('.blog-read-btn').style.transform='translateX(10px) scale(1.05)';
+                        this.querySelector('.blog-read-btn').style.background='{{ $post['color'] }}';
+                        this.querySelector('.blog-read-btn').style.color='#fff';
+                        this.querySelector('.blog-read-btn i').style.transform='translateX(8px)';
+                     "
+                     onmouseout="
+                        this.style.transform='translateY(0) scale(1) rotateX(0) rotateY(0)';
+                        this.style.borderColor='{{ $post['color'] }}25';
+                        this.style.boxShadow='0 10px 40px rgba(0,0,0,0.3)';
+                        this.style.background='{{ $post['bg'] }}';
+                        this.querySelector('.blog-image').style.transform='scale(1)';
+                        this.querySelector('.blog-overlay').style.opacity='0';
+                        this.querySelector('.blog-icon').style.transform='scale(1) rotate(0deg)';
+                        this.querySelector('.blog-content').style.transform='translateY(0)';
+                        this.querySelector('.blog-read-btn').style.transform='translateX(0) scale(1)';
+                        this.querySelector('.blog-read-btn').style.background='transparent';
+                        this.querySelector('.blog-read-btn').style.color='{{ $post['color'] }}';
+                        this.querySelector('.blog-read-btn i').style.transform='translateX(0)';
+                     "
+                >
+                    <!-- Görsel Alanı -->
+                    <div class="blog-image" style="
+                        height:220px;
+                        background:{{ $post['bg'] }};
+                        display:flex;
+                        align-items:center;
+                        justify-content:center;
+                        position:relative;
+                        border-bottom:2px solid {{ $post['color'] }}20;
+                        overflow:hidden;
+                        transition: all 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+                    ">
+                        <div style="position:absolute;top:0;left:0;width:100%;height:100%;background-image:radial-gradient(circle at 20% 50%, {{ $post['color'] }}10 0%, transparent 50%), radial-gradient(circle at 80% 50%, {{ $post['color'] }}10 0%, transparent 50%);opacity:0.5;"></div>
+
+                        <div class="blog-icon" style="
+                            font-size:70px;
+                            color:{{ $post['color'] }};
+                            opacity:0.3;
+                            transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+                            position:relative;
+                            z-index:1;
+                            text-shadow: 0 0 40px {{ $post['color'] }}33;
+                        ">
+                            <i class="fas {{ $post['icon'] }}"></i>
+                        </div>
+
+                        <div class="blog-overlay" style="
+                            position:absolute;
+                            top:0;
+                            left:0;
+                            width:100%;
+                            height:100%;
+                            background:linear-gradient(135deg, {{ $post['color'] }}88, {{ $post['color'] }}bb);
+                            opacity:0;
+                            transition: all 0.7s ease;
+                            display:flex;
+                            align-items:center;
+                            justify-content:center;
+                            z-index:2;
+                            backdrop-filter:blur(4px);
+                        ">
+                            <span style="
+                                color:#fff;
+                                font-size:15px;
+                                font-weight:700;
+                                padding:14px 35px;
+                                border-radius:60px;
+                                border:2px solid rgba(255,255,255,0.5);
+                                background:rgba(255,255,255,0.1);
+                                backdrop-filter:blur(15px);
+                                transition:all 0.5s ease;
+                                letter-spacing:1px;
+                                box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+                            " onmouseover="this.style.transform='scale(1.12)';this.style.background='rgba(255,255,255,0.2)';this.style.borderColor='#fff'" onmouseout="this.style.transform='scale(1)';this.style.background='rgba(255,255,255,0.1)';this.style.borderColor='rgba(255,255,255,0.5)'">
+                                <i class="fas fa-book-open"></i> Okumaya Başla
+                            </span>
+                        </div>
+
+                        <div style="position:absolute;top:18px;left:18px;background:{{ $post['color'] }};color:#fff;padding:6px 18px;border-radius:50px;font-size:11px;font-weight:700;z-index:3;box-shadow:0 6px 25px {{ $post['color'] }}66;letter-spacing:0.5px;text-transform:uppercase;">
+                            {{ $post['tag'] }}
+                        </div>
+
+                        <div style="position:absolute;bottom:18px;right:18px;display:flex;gap:10px;z-index:3;">
+                            <span style="background:rgba(0,0,0,0.7);backdrop-filter:blur(15px);padding:5px 14px;border-radius:50px;font-size:11px;color:#fff;border:1px solid rgba(255,255,255,0.05);">
+                                <i class="far fa-calendar"></i> {{ $post['date'] }}
+                            </span>
+                            <span style="background:rgba(0,0,0,0.7);backdrop-filter:blur(15px);padding:5px 14px;border-radius:50px;font-size:11px;color:#fff;border:1px solid rgba(255,255,255,0.05);">
+                                <i class="far fa-clock"></i> {{ $post['read_time'] }}
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="blog-content" style="
+                        padding:25px 28px 28px;
+                        position:relative;
+                        z-index:1;
+                        transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+                    ">
+                        <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;">
+                            <div style="
+                                width:32px;
+                                height:32px;
+                                border-radius:50%;
+                                background:{{ $post['color'] }}20;
+                                border:2px solid {{ $post['color'] }}30;
+                                display:flex;
+                                align-items:center;
+                                justify-content:center;
+                                color:{{ $post['color'] }};
+                                font-size:13px;
+                                font-weight:700;
+                            ">
+                                {{ substr($post['author'], 0, 1) }}
+                            </div>
+                            <span style="color:#94a3b8;font-size:13px;font-weight:500;">
+                                <i class="fas fa-user" style="color:{{ $post['color'] }};margin-right:4px;"></i> {{ $post['author'] }}
+                            </span>
+                        </div>
+
+                        <h3 style="
+                            font-size:18px;
+                            font-weight:700;
+                            margin-bottom:12px;
+                            line-height:1.4;
+                            transition:all 0.4s ease;
+                            color:#fff;
+                        " onmouseover="this.style.color='{{ $post['color'] }}';this.style.transform='translateX(6px)'" onmouseout="this.style.color='#fff';this.style.transform='translateX(0)'">
+                            {{ $post['title'] }}
+                        </h3>
+
+                        <p style="color:#94a3b8;font-size:14px;line-height:1.8;margin-bottom:18px;opacity:0.9;">
+                            {{ $post['excerpt'] }}
+                        </p>
+
+                        <a href="{{ route('blog.show', $post['slug']) }}" class="blog-read-btn" style="
+                            color:{{ $post['color'] }};
+                            text-decoration:none;
+                            font-size:14px;
+                            font-weight:600;
+                            display:inline-flex;
+                            align-items:center;
+                            gap:8px;
+                            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+                            padding:10px 24px;
+                            border-radius:60px;
+                            border:2px solid {{ $post['color'] }}30;
+                            background:transparent;
+                            position:relative;
+                            overflow:hidden;
+                        ">
+                            <span style="position:relative;z-index:1;">Devamını Oku</span>
+                            <i class="fas fa-arrow-right" style="transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);position:relative;z-index:1;"></i>
+                            <div style="
+                                position:absolute;
+                                top:0;
+                                left:0;
+                                width:100%;
+                                height:100%;
+                                background:{{ $post['color'] }};
+                                transform:scaleX(0);
+                                transform-origin:right;
+                                transition:transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+                            "></div>
+                        </a>
+                    </div>
+                </div>
+            @endforeach
+        </div>
+    </div>
+</section>
+
+<!-- ===== HABERLER ===== -->
+<section class="section-padding" id="haberler" style="background:rgba(10,14,26,0.4);backdrop-filter:blur(5px);border-top:1px solid rgba(255,255,255,0.02);border-bottom:1px solid rgba(255,255,255,0.02);position:relative;overflow:hidden;">
+    <div class="container">
+        <div class="section-header" data-aos="fade-up">
+            <span class="section-tag"><i class="fas fa-newspaper"></i> Haberler</span>
+            <h2>Haberlerimiz</h2>
+            <p>Dünyadan ve Türkiye'den en güncel teknoloji haberleri</p>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:35px;">
+            @php
+                $newsItems = [
+                    [
+                        'slug' => 'kuantum-hesaplama',
+                        'date' => '07 Aralık, 2025',
+                        'title' => 'Google CEO\'su Sundar Pichai: "Kuantum Hesaplama ile 10 Yıl İçinde Devrim Yaşanacak"',
+                        'excerpt' => 'Google CEO\'su Sundar Pichai, kuantum hesaplama teknolojisinin önümüzdeki 10 yıl içinde bilgisayar dünyasında devrim yaratacağını açıkladı.',
+                        'category' => 'Kuantum Bilgisayar',
+                        'color' => '#ff6b6b',
+                        'icon' => 'fa-microchip',
+                        'source' => 'TechCrunch',
+                        'bg' => 'linear-gradient(135deg, #1a1a2e, #2d2d44)'
+                    ],
+                    [
+                        'slug' => 'ulusal-yapay-zeka',
+                        'date' => '01 Aralık, 2025',
+                        'title' => 'Trump, "Genesis Mission" ile Ulusal Yapay Zeka Stratejisini Duyurdu',
+                        'excerpt' => 'Eski ABD Başkanı Donald Trump, "Genesis Mission" adlı ulusal yapay zeka stratejisini duyurdu.',
+                        'category' => 'Yapay Zeka',
+                        'color' => '#ffd93d',
+                        'icon' => 'fa-brain',
+                        'source' => 'Bloomberg',
+                        'bg' => 'linear-gradient(135deg, #1a1a2e, #2d2d44)'
+                    ],
+                    [
+                        'slug' => 'fleet-space',
+                        'date' => '28 Kasım, 2025',
+                        'title' => 'Fleet Space, Yapay Zeka ve Uydu Teknolojisiyle Madencilikte Devrim Yaratıyor',
+                        'excerpt' => 'Fleet Space, yapay zeka ve uydu teknolojisini birleştirerek madencilik sektöründe devrim yaratıyor.',
+                        'category' => 'Uzay Teknolojisi',
+                        'color' => '#4d96ff',
+                        'icon' => 'fa-satellite',
+                        'source' => 'SpaceNews',
+                        'bg' => 'linear-gradient(135deg, #1a1a2e, #2d2d44)'
+                    ]
+                ];
+            @endphp
+            @foreach($newsItems as $index => $news)
+                <div class="glass tilt"
+                     data-aos="flip-up"
+                     data-aos-delay="{{ $loop->iteration * 80 }}"
+                     style="
+                        border-color:{{ $news['color'] }}25;
+                        background:{{ $news['bg'] }};
+                        padding:0;
+                        position:relative;
+                        overflow:hidden;
+                        transition: all 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+                        cursor:pointer;
+                        border-width:2px;
+                        border-radius:24px;
+                        perspective:1000px;
+                        transform-style:preserve-3d;
+                        box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+                     "
+                     onmouseover="
+                        this.style.transform='translateY(-20px) scale(1.04) rotateX(4deg) rotateY(-6deg)';
+                        this.style.borderColor='{{ $news['color'] }}';
+                        this.style.boxShadow='0 40px 100px {{ $news['color'] }}55, 0 20px 60px {{ $news['color'] }}33';
+                        this.style.background='linear-gradient(135deg, {{ $news['color'] }}15, #1a1a2e)';
+                        this.querySelector('.news-image').style.transform='scale(1.08)';
+                        this.querySelector('.news-overlay').style.opacity='1';
+                        this.querySelector('.news-icon').style.transform='scale(1.4) rotate(-25deg)';
+                        this.querySelector('.news-content').style.transform='translateY(-5px)';
+                        this.querySelector('.news-read-btn').style.transform='translateX(10px) scale(1.05)';
+                        this.querySelector('.news-read-btn').style.background='{{ $news['color'] }}';
+                        this.querySelector('.news-read-btn').style.color='#fff';
+                        this.querySelector('.news-read-btn i').style.transform='translateX(8px)';
+                     "
+                     onmouseout="
+                        this.style.transform='translateY(0) scale(1) rotateX(0) rotateY(0)';
+                        this.style.borderColor='{{ $news['color'] }}25';
+                        this.style.boxShadow='0 10px 40px rgba(0,0,0,0.3)';
+                        this.style.background='{{ $news['bg'] }}';
+                        this.querySelector('.news-image').style.transform='scale(1)';
+                        this.querySelector('.news-overlay').style.opacity='0';
+                        this.querySelector('.news-icon').style.transform='scale(1) rotate(0deg)';
+                        this.querySelector('.news-content').style.transform='translateY(0)';
+                        this.querySelector('.news-read-btn').style.transform='translateX(0) scale(1)';
+                        this.querySelector('.news-read-btn').style.background='transparent';
+                        this.querySelector('.news-read-btn').style.color='{{ $news['color'] }}';
+                        this.querySelector('.news-read-btn i').style.transform='translateX(0)';
+                     "
+                >
+                    <div class="news-image" style="
+                        height:180px;
+                        background:{{ $news['bg'] }};
+                        display:flex;
+                        align-items:center;
+                        justify-content:center;
+                        position:relative;
+                        border-bottom:2px solid {{ $news['color'] }}20;
+                        overflow:hidden;
+                        transition: all 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+                    ">
+                        <div style="position:absolute;top:0;left:0;width:100%;height:100%;background-image:radial-gradient(circle at 30% 40%, {{ $news['color'] }}10 0%, transparent 50%), radial-gradient(circle at 70% 60%, {{ $news['color'] }}10 0%, transparent 50%);opacity:0.5;"></div>
+
+                        <div class="news-icon" style="
+                            font-size:60px;
+                            color:{{ $news['color'] }};
+                            opacity:0.3;
+                            transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+                            position:relative;
+                            z-index:1;
+                            text-shadow: 0 0 40px {{ $news['color'] }}33;
+                        ">
+                            <i class="fas {{ $news['icon'] }}"></i>
+                        </div>
+
+                        <div class="news-overlay" style="
+                            position:absolute;
+                            top:0;
+                            left:0;
+                            width:100%;
+                            height:100%;
+                            background:linear-gradient(135deg, {{ $news['color'] }}88, {{ $news['color'] }}bb);
+                            opacity:0;
+                            transition: all 0.7s ease;
+                            display:flex;
+                            align-items:center;
+                            justify-content:center;
+                            z-index:2;
+                            backdrop-filter:blur(4px);
+                        ">
+                            <span style="
+                                color:#fff;
+                                font-size:14px;
+                                font-weight:700;
+                                padding:12px 30px;
+                                border-radius:60px;
+                                border:2px solid rgba(255,255,255,0.5);
+                                background:rgba(255,255,255,0.1);
+                                backdrop-filter:blur(15px);
+                                transition:all 0.5s ease;
+                                letter-spacing:1px;
+                                box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+                            " onmouseover="this.style.transform='scale(1.12)';this.style.background='rgba(255,255,255,0.2)';this.style.borderColor='#fff'" onmouseout="this.style.transform='scale(1)';this.style.background='rgba(255,255,255,0.1)';this.style.borderColor='rgba(255,255,255,0.5)'">
+                                <i class="fas fa-eye"></i> Haberi Oku
+                            </span>
+                        </div>
+
+                        <div style="position:absolute;top:16px;left:16px;background:{{ $news['color'] }};color:#fff;padding:5px 16px;border-radius:50px;font-size:10px;font-weight:700;z-index:3;box-shadow:0 6px 25px {{ $news['color'] }}66;letter-spacing:0.5px;text-transform:uppercase;">
+                            {{ $news['category'] }}
+                        </div>
+
+                        <div style="position:absolute;bottom:16px;right:16px;display:flex;gap:10px;z-index:3;">
+                            <span style="background:rgba(0,0,0,0.7);backdrop-filter:blur(15px);padding:4px 14px;border-radius:50px;font-size:10px;color:#fff;border:1px solid rgba(255,255,255,0.05);">
+                                <i class="fas fa-newspaper"></i> {{ $news['source'] }}
+                            </span>
+                            <span style="background:rgba(0,0,0,0.7);backdrop-filter:blur(15px);padding:4px 14px;border-radius:50px;font-size:10px;color:#fff;border:1px solid rgba(255,255,255,0.05);">
+                                <i class="far fa-calendar"></i> {{ $news['date'] }}
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="news-content" style="
+                        padding:22px 25px 25px;
+                        position:relative;
+                        z-index:1;
+                        transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+                    ">
+                        <h3 style="
+                            font-size:16px;
+                            font-weight:700;
+                            margin-bottom:15px;
+                            line-height:1.5;
+                            transition:all 0.4s ease;
+                            color:#fff;
+                        " onmouseover="this.style.color='{{ $news['color'] }}';this.style.transform='translateX(6px)'" onmouseout="this.style.color='#fff';this.style.transform='translateX(0)'">
+                            {{ $news['title'] }}
+                        </h3>
+
+                        <a href="{{ route('news.show', $news['slug']) }}" class="news-read-btn" style="
+                            color:{{ $news['color'] }};
+                            text-decoration:none;
+                            font-size:13px;
+                            font-weight:600;
+                            display:inline-flex;
+                            align-items:center;
+                            gap:8px;
+                            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+                            padding:8px 22px;
+                            border-radius:60px;
+                            border:2px solid {{ $news['color'] }}30;
+                            background:transparent;
+                            position:relative;
+                            overflow:hidden;
+                        ">
+                            <span style="position:relative;z-index:1;">Devamını Oku</span>
+                            <i class="fas fa-arrow-right" style="transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);position:relative;z-index:1;"></i>
+                            <div style="
+                                position:absolute;
+                                top:0;
+                                left:0;
+                                width:100%;
+                                height:100%;
+                                background:{{ $news['color'] }};
+                                transform:scaleX(0);
+                                transform-origin:right;
+                                transition:transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+                            "></div>
+                        </a>
+                    </div>
+                </div>
+            @endforeach
+        </div>
+    </div>
+</section>
+
+<style>
+@keyframes serviceFloat {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    25% { transform: translateY(-8px) rotate(0.5deg); }
+    75% { transform: translateY(8px) rotate(-0.5deg); }
+}
+@keyframes pulseGlow {
+    0%, 100% { opacity: 0.3; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.2); }
+}
+@keyframes floatY { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+@keyframes orbitFloat {
+    0% { transform: translateY(0px) rotate(0deg); }
+    25% { transform: translateY(-15px) rotate(2deg); }
+    50% { transform: translateY(0px) rotate(0deg); }
+    75% { transform: translateY(15px) rotate(-2deg); }
+    100% { transform: translateY(0px) rotate(0deg); }
+}
+@keyframes rainbowText {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+</style>
+@endsection
