@@ -292,6 +292,7 @@
         @media (max-width: 1200px) {
             .mega-menu-content { min-width: 180px; }
             .hero-content h1 { font-size: 52px; }
+            .section-padding { padding: 80px 0; }
         }
         @media (max-width: 992px) {
             .hero-content h1 { font-size: 42px; }
@@ -302,6 +303,10 @@
             .section-padding { padding: 70px 0; }
             .section-header h2 { font-size: 36px; }
             .hero-stats { gap: 30px; flex-wrap: wrap; }
+            /* Mobil grid düzenlemeleri */
+            .grid-3 { grid-template-columns: repeat(2, 1fr) !important; }
+            .grid-4 { grid-template-columns: repeat(2, 1fr) !important; }
+            .grid-2 { grid-template-columns: 1fr !important; }
         }
         @media (max-width: 768px) {
             .nav-toggle { display: flex; }
@@ -334,40 +339,96 @@
                 border: 1px solid rgba(255,255,255,0.02);
             }
             .nav-item:hover .mega-menu-content { display: block; }
-            .nav-item:hover .mega-menu-content { display: block; }
-            .hero { min-height: 90vh; }
+            .hero { min-height: 90vh; padding-top: 60px; }
             .hero-content h1 { font-size: 32px; }
             .hero-content p { font-size: 16px; }
-            .hero-stats { gap: 20px; flex-wrap: wrap; justify-content: center; }
-            .hero-stats .stat h3 { font-size: 28px; }
+            .hero-stats { gap: 15px; flex-wrap: wrap; justify-content: center; }
+            .hero-stats .stat h3 { font-size: 24px; }
             .footer-grid { grid-template-columns: 1fr; gap: 30px; }
             .footer-bottom { flex-direction: column; text-align: center; }
-            .cta-content h2 { font-size: 30px; }
+            .cta-content h2 { font-size: 28px; }
+            .cta-content p { font-size: 15px; }
+            .cta-content { padding: 40px 20px; }
             .hero-buttons { flex-direction: column; align-items: stretch; }
             .hero-buttons a { text-align: center; }
             .nav-logo { margin-right: 0; font-size: 22px; }
-            .nav-logo i { font-size: 26px; }
+            .nav-logo i { font-size: 24px; }
             .section-padding { padding: 50px 0; }
             .section-header h2 { font-size: 28px; }
-            .section-header p { font-size: 15px; }
-            .glass { padding: 25px; }
+            .section-header p { font-size: 14px; }
+            .section-header { margin-bottom: 35px; }
+            .glass { padding: 20px; }
             .container { padding: 0 15px; }
             .hero .floating-shapes .shape { display: none; }
+            /* Mobil kart düzenlemeleri */
+            .grid-3 { grid-template-columns: 1fr 1fr !important; gap: 15px !important; }
+            .grid-4 { grid-template-columns: 1fr 1fr !important; gap: 15px !important; }
+            .grid-2 { grid-template-columns: 1fr !important; }
+            .mobile-kare { aspect-ratio: 1/1; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 15px !important; }
+            .mobile-kare .icon { font-size: 30px !important; margin-bottom: 8px !important; }
+            .mobile-kare h3 { font-size: 14px !important; }
+            .mobile-kare p { font-size: 12px !important; }
+            .mobile-kare .tags { gap: 4px !important; }
+            .mobile-kare .tags span { font-size: 9px !important; padding: 2px 8px !important; }
+            .mobile-2col { grid-template-columns: 1fr 1fr !important; gap: 12px !important; }
         }
         @media (max-width: 480px) {
             .hero-content h1 { font-size: 26px; }
             .nav-logo { font-size: 18px; }
             .nav-logo i { font-size: 20px; }
-            .section-padding { padding: 40px 0; }
-            .section-header h2 { font-size: 24px; }
-            .section-header .section-tag { font-size: 10px; padding: 4px 14px; }
-            .hero-content .badge { font-size: 11px; padding: 6px 16px; }
-            .btn-primary, .btn-secondary, .btn-white { padding: 8px 18px; font-size: 12px; }
-            .cta-content h2 { font-size: 24px; }
-            .cta-content p { font-size: 14px; }
-            .cta-content { padding: 40px 20px; }
-            .footer { padding: 40px 0 15px; }
-            .footer-logo { font-size: 20px; }
+            .section-padding { padding: 35px 0; }
+            .section-header h2 { font-size: 22px; }
+            .section-header .section-tag { font-size: 10px; padding: 4px 12px; }
+            .hero-content .badge { font-size: 10px; padding: 5px 14px; }
+            .btn-primary, .btn-secondary, .btn-white { padding: 8px 16px; font-size: 12px; }
+            .cta-content h2 { font-size: 22px; }
+            .cta-content p { font-size: 13px; }
+            .footer { padding: 30px 0 15px; }
+            .footer-logo { font-size: 18px; }
+            .grid-3 { grid-template-columns: 1fr !important; }
+            .grid-4 { grid-template-columns: 1fr !important; }
+            .mobile-2col { grid-template-columns: 1fr !important; }
+            .glass { padding: 15px; border-radius: 14px; }
+        }
+
+        /* ===== MOBİL KART YARDIMCI SINIFLARI ===== */
+        .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+        .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 25px; }
+        .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px; }
+        .mobile-2col { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+
+        .kart-kare {
+            aspect-ratio: 1/1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 25px;
+            border-radius: 20px;
+            background: rgba(80, 85, 95, 0.06);
+            border: 1px solid rgba(200, 200, 200, 0.04);
+            transition: all 0.4s ease;
+            cursor: pointer;
+        }
+        .kart-kare:hover {
+            transform: translateY(-8px) scale(1.03);
+            border-color: rgba(200,200,200,0.12);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            background: rgba(80, 85, 95, 0.12);
+        }
+        .kart-kare .icon { font-size: 40px; margin-bottom: 12px; }
+        .kart-kare h3 { font-size: 16px; font-weight: 700; margin-bottom: 6px; color: #fff; }
+        .kart-kare p { font-size: 13px; color: #94a3b8; line-height: 1.6; }
+        .kart-kare .tags { display: flex; gap: 6px; flex-wrap: wrap; justify-content: center; margin-top: 10px; }
+        .kart-kare .tags span { background: rgba(255,255,255,0.04); padding: 3px 12px; border-radius: 50px; font-size: 10px; color: #94a3b8; border: 1px solid rgba(255,255,255,0.03); }
+
+        @media (max-width: 768px) {
+            .kart-kare { padding: 15px; }
+            .kart-kare .icon { font-size: 28px; margin-bottom: 8px; }
+            .kart-kare h3 { font-size: 13px; }
+            .kart-kare p { font-size: 11px; }
+            .kart-kare .tags span { font-size: 8px; padding: 2px 8px; }
         }
     </style>
 </head>
