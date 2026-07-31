@@ -1,9 +1,10 @@
 @extends('layouts.app')
 
-@section('title', 'Blog')
+@section('title', 'Hakkımızda')
 
 @section('content')
-<section class="hero" style="min-height:40vh;background:transparent;">
+<!-- ===== HERO ===== -->
+<section class="hero" style="min-height:50vh;background:transparent;">
     <div class="particles">
         <div class="particle"></div>
         <div class="particle"></div>
@@ -13,69 +14,59 @@
     </div>
     <div class="container">
         <div class="hero-content" data-aos="fade-up">
-            <div class="badge"><i class="fas fa-blog"></i> Blog</div>
-            <h1>Blog & <span>Yazılar</span></h1>
-            <p>Teknoloji, yazılım ve dijital dünya üzerine güncel yazılar</p>
+            <div class="badge"><i class="fas fa-info-circle"></i> Hakkımızda</div>
+            <h1>Biz <span>Kimiz?</span></h1>
+            <p>Yazılım dünyasında yenilikçi çözümler üreten lider firma</p>
         </div>
     </div>
 </section>
 
-<section class="section-padding" style="background:rgba(10,14,26,0.3);backdrop-filter:blur(5px);border-top:1px solid rgba(255,255,255,0.02);border-bottom:1px solid rgba(255,255,255,0.02);">
+<!-- ===== HAKKIMIZDA İÇERİK ===== -->
+<section class="section-padding" style="background:rgba(10,14,26,0.3);backdrop-filter:blur(5px);border-top:1px solid rgba(255,255,255,0.02);border-bottom:1px solid rgba(255,255,255,0.02);position:relative;overflow:hidden;">
+    <div style="position:absolute;top:-30%;right:-10%;width:500px;height:500px;background:radial-gradient(circle,rgba(255,107,107,0.03),transparent 70%);border-radius:50%;pointer-events:none;"></div>
+    <div style="position:absolute;bottom:-30%;left:-10%;width:400px;height:400px;background:radial-gradient(circle,rgba(77,150,255,0.03),transparent 70%);border-radius:50%;pointer-events:none;"></div>
+
     <div class="container">
-        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:30px;">
-            @php
-                $blogPosts = [
-                    [
-                        'slug' => 'erp-uygulama-sureci',
-                        'date' => '02 Temmuz, 2025',
-                        'title' => 'Başarılı Bir ERP Uygulama Süreci Nasıl İlerler?',
-                        'excerpt' => 'ERP sistemlerinin başarılı bir şekilde uygulanması için izlenmesi gereken adımlar ve stratejiler.',
-                        'color' => '#ff6b6b',
-                        'icon' => 'fa-cubes',
-                        'tag' => 'ERP',
-                        'author' => 'Ahmet Yılmaz'
-                    ],
-                    [
-                        'slug' => 'efatura-earsiv',
-                        'date' => '27 Haziran, 2025',
-                        'title' => 'İşletmenizi Geleceğe Taşıyın: e-Fatura ve e-Arşiv Sistemlerinin',
-                        'excerpt' => 'e-Fatura ve e-Arşiv sistemleri ile işletmenizi dijital dönüşüme hazırlayın.',
-                        'color' => '#ffd93d',
-                        'icon' => 'fa-file-invoice',
-                        'tag' => 'Dijital Dönüşüm',
-                        'author' => 'Mehmet Demir'
-                    ],
-                    [
-                        'slug' => 'windows-12',
-                        'date' => '21 Ağustos, 2025',
-                        'title' => 'Windows 12 ile Gelen Yenilikler ve İşletmelere Etkileri',
-                        'excerpt' => 'Windows 12\'nin getirdiği yenilikler, performans iyileştirmeleri ve işletmelere sağlayacağı avantajlar.',
-                        'color' => '#4d96ff',
-                        'icon' => 'fa-windows',
-                        'tag' => 'Teknoloji',
-                        'author' => 'Can Öztürk'
-                    ]
-                ];
-            @endphp
-            @foreach($blogPosts as $post)
-                <div class="glass tilt" data-aos="flip-up" style="border-color:{{ $post['color'] }}15;background:{{ $post['color'] }}05;padding:30px;transition:all 0.5s ease;"
-                     onmouseover="this.style.transform='translateY(-10px) scale(1.03)';this.style.borderColor='{{ $post['color'] }}';this.style.boxShadow='0 20px 50px {{ $post['color'] }}22'"
-                     onmouseout="this.style.transform='translateY(0) scale(1)';this.style.borderColor='{{ $post['color'] }}15';this.style.boxShadow='none'">
-                    <div style="font-size:40px;color:{{ $post['color'] }};margin-bottom:15px;"><i class="fas {{ $post['icon'] }}"></i></div>
-                    <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px;">
-                        <span style="background:{{ $post['color'] }}10;color:{{ $post['color'] }};padding:3px 12px;border-radius:50px;font-size:11px;border:1px solid {{ $post['color'] }}10;">{{ $post['tag'] }}</span>
-                        <span style="color:#64748b;font-size:12px;"><i class="far fa-calendar"></i> {{ $post['date'] }}</span>
-                    </div>
-                    <h3 style="font-size:18px;font-weight:700;margin-bottom:8px;transition:0.3s;" onmouseover="this.style.color='{{ $post['color'] }}'" onmouseout="this.style.color='#fff'">{{ $post['title'] }}</h3>
-                    <p style="color:#94a3b8;font-size:14px;line-height:1.7;margin-bottom:15px;">{{ $post['excerpt'] }}</p>
-                    <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;">
-                        <span style="color:#64748b;font-size:12px;"><i class="fas fa-user" style="color:{{ $post['color'] }};"></i> {{ $post['author'] }}</span>
-                        <a href="{{ route('blog.show', $post['slug']) }}" style="color:{{ $post['color'] }};text-decoration:none;font-weight:600;display:inline-flex;align-items:center;gap:5px;transition:0.3s;" onmouseover="this.style.gap='10px'" onmouseout="this.style.gap='5px'">
-                            Devamını Oku <i class="fas fa-arrow-right"></i>
-                        </a>
-                    </div>
+        <div style="max-width:900px;margin:0 auto;">
+            <div class="glass" data-aos="fade-up" style="padding:45px;border-color:rgba(255,255,255,0.05);">
+                <!-- Etiketler -->
+                <div style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-bottom:25px;">
+                    <span style="background:rgba(255,107,107,0.08);color:#ff6b6b;padding:6px 20px;border-radius:50px;font-size:13px;border:1px solid rgba(255,107,107,0.06);font-weight:600;">ERP</span>
+                    <span style="background:rgba(255,217,61,0.08);color:#ffd93d;padding:6px 20px;border-radius:50px;font-size:13px;border:1px solid rgba(255,217,61,0.06);font-weight:600;">CRM</span>
+                    <span style="background:rgba(107,203,119,0.08);color:#6bcb77;padding:6px 20px;border-radius:50px;font-size:13px;border:1px solid rgba(107,203,119,0.06);font-weight:600;">E-Ticaret</span>
+                    <span style="background:rgba(77,150,255,0.08);color:#4d96ff;padding:6px 20px;border-radius:50px;font-size:13px;border:1px solid rgba(77,150,255,0.06);font-weight:600;">Web Çözümleri</span>
                 </div>
-            @endforeach
+
+                <p style="color:#e2e8f0;font-size:15px;line-height:1.9;text-align:center;margin-bottom:15px;">
+                    İşletmelere dijital dönüşüm yolculuklarında <span style="color:#ff6b6b;font-weight:600;">yenilikçi</span> ve <span style="color:#ffd93d;font-weight:600;">özelleştirilmiş</span> yazılım çözümleri sunan bir teknoloji firmasıdır.
+                </p>
+
+                <p style="color:#e2e8f0;font-size:15px;line-height:1.9;text-align:center;margin-bottom:15px;">
+                    ERP, CRM, e-ticaret entegrasyonları ve kurumsal web çözümleri konularında uzmanlaşarak, farklı sektörlerdeki işletmelerin iş süreçlerini <span style="color:#6bcb77;font-weight:600;">dijitalleştirip</span> operasyonel verimliliklerini artırmayı hedefliyoruz.
+                </p>
+
+                <p style="color:#e2e8f0;font-size:15px;line-height:1.9;text-align:center;margin-bottom:0;">
+                    Geniş teknik bilgi birikimimizle, her işletmenin özgün ihtiyaçlarına uygun stratejiler geliştiriyor; esnek, ölçeklenebilir ve sürdürülebilir yazılım altyapıları kuruyoruz.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== İLETİŞİME GEÇİN ===== -->
+<section class="section-padding" id="cta">
+    <div class="container">
+        <div class="cta-content" data-aos="fade-up">
+            <h2>Bizimle <span>İletişime Geçin</span></h2>
+            <p>Projenizi konuşmak, teklif almak veya sorularınız için hemen bize ulaşın.</p>
+            <div style="display:flex;gap:15px;justify-content:center;flex-wrap:wrap;">
+                <a href="{{ route('contact') }}" class="btn-white">
+                    <i class="fas fa-paper-plane"></i> Hemen İletişim
+                </a>
+                <a href="tel:+905551234567" class="btn-secondary">
+                    <i class="fas fa-phone"></i> +90 (555) 123 45 67
+                </a>
+            </div>
         </div>
     </div>
 </section>

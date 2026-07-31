@@ -1,196 +1,633 @@
 @extends('layouts.app')
 
-@section('title', 'İletişim')
+@section('title', 'İletişim - Yazılım Şirketi')
 
 @section('content')
+<style>
+    .contact-hero {
+        padding: 140px 0 40px;
+        text-align: center;
+        position: relative;
+        z-index: 1;
+    }
+    .contact-hero h1 {
+        font-size: 48px;
+        font-weight: 900;
+        margin-bottom: 10px;
+    }
+    .contact-hero h1 span {
+        background: linear-gradient(135deg, #ff6b6b, #ffd93d, #6bcb77, #4d96ff);
+        background-size: 300% 300%;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: rainbowText 4s ease infinite;
+    }
+    .contact-hero p {
+        color: #94a3b8;
+        font-size: 17px;
+        max-width: 550px;
+        margin: 0 auto;
+        line-height: 1.7;
+    }
+
+    /* ===== İLETİŞİM KONTEYNERİ ===== */
+    .contact-wrapper {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+        padding: 20px 0 40px;
+        position: relative;
+        z-index: 1;
+    }
+
+    /* ===== İLETİŞİM FORMU ===== */
+    .contact-form-wrapper {
+        background: rgba(255,255,255,0.02);
+        border: 1px solid rgba(255,255,255,0.04);
+        border-radius: 20px;
+        padding: 40px;
+        order: 1;
+    }
+
+    .contact-form-wrapper h2 {
+        font-size: 24px;
+        font-weight: 700;
+        color: #fff;
+        margin-bottom: 10px;
+    }
+
+    .contact-form-wrapper .subtitle {
+        color: #94a3b8;
+        font-size: 15px;
+        margin-bottom: 30px;
+        line-height: 1.7;
+    }
+
+    .contact-form-wrapper .form-group {
+        margin-bottom: 20px;
+    }
+
+    .contact-form-wrapper .form-group label {
+        display: block;
+        color: #e2e8f0;
+        font-size: 14px;
+        font-weight: 500;
+        margin-bottom: 6px;
+    }
+
+    .contact-form-wrapper .form-group label .required {
+        color: #ff6b6b;
+    }
+
+    .contact-form-wrapper .form-group input,
+    .contact-form-wrapper .form-group textarea,
+    .contact-form-wrapper .form-group select {
+        width: 100%;
+        padding: 12px 16px;
+        background: rgba(255,255,255,0.03);
+        border: 1px solid rgba(255,255,255,0.06);
+        border-radius: 12px;
+        color: #fff;
+        font-size: 14px;
+        font-family: 'Inter', sans-serif;
+        transition: all 0.3s ease;
+        outline: none;
+    }
+
+    .contact-form-wrapper .form-group input:focus,
+    .contact-form-wrapper .form-group textarea:focus,
+    .contact-form-wrapper .form-group select:focus {
+        border-color: #ff6b6b;
+        background: rgba(255,255,255,0.05);
+        box-shadow: 0 0 0 3px rgba(255,107,107,0.1);
+    }
+
+    .contact-form-wrapper .form-group input::placeholder,
+    .contact-form-wrapper .form-group textarea::placeholder {
+        color: #64748b;
+    }
+
+    .contact-form-wrapper .form-group textarea {
+        min-height: 130px;
+        resize: vertical;
+    }
+
+    .contact-form-wrapper .form-group select {
+        appearance: none;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%2364748b' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: right 16px center;
+        cursor: pointer;
+    }
+
+    .contact-form-wrapper .form-group select option {
+        background: #1a1a2e;
+        color: #fff;
+    }
+
+    .contact-form-wrapper .form-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+    }
+
+    .contact-form-wrapper .submit-btn {
+        width: 100%;
+        padding: 14px 30px;
+        background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+        border: none;
+        border-radius: 12px;
+        color: #fff;
+        font-size: 16px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .contact-form-wrapper .submit-btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 15px 40px rgba(255,107,107,0.3);
+    }
+
+    .contact-form-wrapper .submit-btn:active {
+        transform: scale(0.97);
+    }
+
+    /* ===== İLETİŞİM BİLGİLERİ ===== */
+    .contact-info {
+        background: rgba(255,255,255,0.02);
+        border: 1px solid rgba(255,255,255,0.04);
+        border-radius: 20px;
+        padding: 40px;
+        order: 2;
+    }
+
+    .contact-info h2 {
+        font-size: 24px;
+        font-weight: 700;
+        color: #fff;
+        margin-bottom: 10px;
+    }
+
+    .contact-info .subtitle {
+        color: #94a3b8;
+        font-size: 15px;
+        margin-bottom: 30px;
+        line-height: 1.7;
+    }
+
+    .contact-info .info-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 18px;
+        margin-bottom: 25px;
+        padding: 15px 20px;
+        background: rgba(255,255,255,0.02);
+        border-radius: 12px;
+        transition: 0.3s;
+        border: 1px solid rgba(255,255,255,0.02);
+    }
+
+    .contact-info .info-item:hover {
+        background: rgba(255,255,255,0.04);
+        border-color: rgba(255,107,107,0.1);
+        transform: translateX(5px);
+    }
+
+    .contact-info .info-item .icon {
+        width: 50px;
+        height: 50px;
+        min-width: 50px;
+        background: linear-gradient(135deg, rgba(255,107,107,0.1), rgba(255,217,61,0.05));
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 20px;
+        color: #ff6b6b;
+        transition: 0.3s;
+    }
+
+    .contact-info .info-item:hover .icon {
+        background: linear-gradient(135deg, rgba(255,107,107,0.2), rgba(255,217,61,0.1));
+        transform: scale(1.05);
+    }
+
+    .contact-info .info-item .text h4 {
+        font-size: 15px;
+        font-weight: 600;
+        color: #fff;
+        margin-bottom: 4px;
+    }
+
+    .contact-info .info-item .text p {
+        color: #94a3b8;
+        font-size: 14px;
+        margin: 0;
+    }
+
+    .contact-info .info-item .text a {
+        color: #94a3b8;
+        text-decoration: none;
+        transition: 0.3s;
+    }
+
+    .contact-info .info-item .text a:hover {
+        color: #ff6b6b;
+    }
+
+    /* ===== SOSYAL MEDYA ===== */
+    .contact-info .social-section {
+        margin-top: 30px;
+        padding-top: 25px;
+        border-top: 1px solid rgba(255,255,255,0.04);
+    }
+
+    .contact-info .social-section h4 {
+        font-size: 15px;
+        font-weight: 600;
+        color: #fff;
+        margin-bottom: 15px;
+    }
+
+    .contact-info .social-section .social-links {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+    }
+
+    .contact-info .social-section .social-links a {
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(255,255,255,0.03);
+        border: 1px solid rgba(255,255,255,0.04);
+        color: #94a3b8;
+        font-size: 18px;
+        transition: all 0.3s ease;
+        text-decoration: none;
+    }
+
+    .contact-info .social-section .social-links a:hover {
+        background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+        color: #fff;
+        transform: translateY(-5px) scale(1.05);
+        box-shadow: 0 10px 30px rgba(255,107,107,0.2);
+        border-color: transparent;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 992px) {
+        .contact-wrapper {
+            grid-template-columns: 1fr;
+            gap: 30px;
+        }
+        .contact-hero h1 {
+            font-size: 38px;
+        }
+        .contact-info,
+        .contact-form-wrapper {
+            padding: 30px;
+        }
+        .contact-form-wrapper {
+            order: 1;
+        }
+        .contact-info {
+            order: 2;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .contact-hero {
+            padding: 100px 0 20px;
+        }
+        .contact-hero h1 {
+            font-size: 30px;
+        }
+        .contact-hero p {
+            font-size: 15px;
+            padding: 0 15px;
+        }
+        .contact-wrapper {
+            padding: 10px 0 30px;
+            gap: 20px;
+        }
+        .contact-info,
+        .contact-form-wrapper {
+            padding: 25px 20px;
+        }
+        .contact-info h2,
+        .contact-form-wrapper h2 {
+            font-size: 20px;
+        }
+        .contact-info .subtitle,
+        .contact-form-wrapper .subtitle {
+            font-size: 14px;
+        }
+        .contact-info .info-item {
+            padding: 12px 15px;
+        }
+        .contact-info .info-item .icon {
+            width: 40px;
+            height: 40px;
+            min-width: 40px;
+            font-size: 16px;
+        }
+        .contact-info .info-item .text h4 {
+            font-size: 14px;
+        }
+        .contact-info .info-item .text p {
+            font-size: 13px;
+        }
+        .contact-form-wrapper .form-row {
+            grid-template-columns: 1fr;
+            gap: 0;
+        }
+        .contact-form-wrapper .form-group input,
+        .contact-form-wrapper .form-group textarea,
+        .contact-form-wrapper .form-group select {
+            padding: 10px 14px;
+            font-size: 13px;
+        }
+        .contact-form-wrapper .submit-btn {
+            font-size: 14px;
+            padding: 12px 25px;
+        }
+        .contact-info .social-section .social-links a {
+            width: 40px;
+            height: 40px;
+            font-size: 16px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .contact-hero h1 {
+            font-size: 24px;
+        }
+        .contact-hero p {
+            font-size: 13px;
+        }
+        .contact-info,
+        .contact-form-wrapper {
+            padding: 20px 16px;
+            border-radius: 16px;
+        }
+        .contact-info h2,
+        .contact-form-wrapper h2 {
+            font-size: 18px;
+        }
+        .contact-info .subtitle,
+        .contact-form-wrapper .subtitle {
+            font-size: 13px;
+        }
+        .contact-info .info-item {
+            padding: 10px 12px;
+            gap: 12px;
+        }
+        .contact-info .info-item .icon {
+            width: 36px;
+            height: 36px;
+            min-width: 36px;
+            font-size: 14px;
+        }
+        .contact-info .info-item .text h4 {
+            font-size: 13px;
+        }
+        .contact-info .info-item .text p {
+            font-size: 12px;
+        }
+        .contact-form-wrapper .form-group {
+            margin-bottom: 15px;
+        }
+        .contact-form-wrapper .form-group label {
+            font-size: 13px;
+        }
+        .contact-form-wrapper .form-group input,
+        .contact-form-wrapper .form-group textarea,
+        .contact-form-wrapper .form-group select {
+            padding: 8px 12px;
+            font-size: 12px;
+        }
+        .contact-form-wrapper .form-group textarea {
+            min-height: 100px;
+        }
+        .contact-form-wrapper .submit-btn {
+            font-size: 13px;
+            padding: 10px 20px;
+        }
+        .contact-info .social-section .social-links a {
+            width: 36px;
+            height: 36px;
+            font-size: 14px;
+        }
+    }
+
+    @keyframes rainbowText {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+    }
+</style>
+
 <!-- ===== HERO ===== -->
-<section class="hero" style="min-height:50vh;background:transparent;">
-    <div class="particles">
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-    </div>
-    <div class="floating-shapes">
-        <div class="shape"></div>
-        <div class="shape"></div>
-        <div class="shape"></div>
-        <div class="shape"></div>
-        <div class="shape"></div>
-    </div>
+<section class="contact-hero">
     <div class="container">
-        <div class="hero-content" data-aos="fade-up">
-            <div class="badge"><i class="fas fa-envelope"></i> İletişim</div>
-            <h1>Bizimle <span>İletişime Geçin</span></h1>
-            <p>Projenizi konuşmak, teklif almak veya sorularınız için hemen bize ulaşın.</p>
+        <div class="section-tag" style="display:inline-block;background:linear-gradient(135deg,rgba(255,107,107,0.08),rgba(255,217,61,0.08));padding:5px 20px;border-radius:50px;font-size:11px;color:#ffd93d;margin-bottom:12px;border:1px solid rgba(255,217,61,0.06);letter-spacing:2px;text-transform:uppercase;">
+            <i class="fas fa-phone"></i> İletişim
         </div>
+        <h1>Bizimle <span>İletişime Geçin</span></h1>
+        <p>Sorularınız, önerileriniz veya projeleriniz için bize ulaşın.</p>
     </div>
 </section>
 
-<!-- ===== İLETİŞİM ===== -->
-<section class="section-padding" style="background:rgba(10,14,26,0.3);backdrop-filter:blur(5px);border-top:1px solid rgba(255,255,255,0.02);border-bottom:1px solid rgba(255,255,255,0.02);">
+<!-- ===== İLETİŞİM KONTEYNERİ ===== -->
+<section class="contact-section">
     <div class="container">
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:60px;">
-            <!-- Sol: İletişim Bilgileri -->
-            <div data-aos="fade-right">
-                <div class="glass" style="padding:45px;border-color:rgba(255,107,107,0.05);">
-                    <h2 style="font-size:28px;font-weight:700;margin-bottom:10px;color:#fff;">Bize Ulaşın</h2>
-                    <p style="color:#94a3b8;font-size:15px;margin-bottom:30px;">Size en kısa sürede dönüş yapmaktan mutluluk duyarız.</p>
+        <div class="contact-wrapper">
+            <!-- ===== İLETİŞİM FORMU (ÜSTTE) ===== -->
+            <div class="contact-form-wrapper" data-aos="fade-right" data-aos-delay="0">
+                <h2>Bize Yazın</h2>
+                <p class="subtitle">Size en kısa sürede dönüş yapalım.</p>
 
-                    <!-- İletişim Kartları -->
-                    <div style="display:flex;flex-direction:column;gap:20px;">
-                        <!-- Telefon -->
-                        <div class="glass" style="padding:20px 25px;border-color:rgba(255,107,107,0.05);display:flex;align-items:center;gap:18px;transition:all 0.4s ease;cursor:pointer;pointer-events:auto;" onmouseover="this.style.borderColor='#ff6b6b';this.style.transform='translateX(8px)';this.style.background='rgba(255,107,107,0.05)'" onmouseout="this.style.borderColor='rgba(255,107,107,0.05)';this.style.transform='translateX(0)';this.style.background='transparent'">
-                            <div style="width:50px;height:50px;border-radius:50%;background:rgba(255,107,107,0.1);display:flex;align-items:center;justify-content:center;font-size:20px;color:#ff6b6b;flex-shrink:0;">
-                                <i class="fas fa-phone"></i>
-                            </div>
-                            <div>
-                                <p style="color:#64748b;font-size:12px;margin-bottom:2px;">Telefon</p>
-                                <p style="color:#fff;font-size:16px;font-weight:600;">+90 (555) 123 45 67</p>
-                            </div>
+                <form action="{{ route('contact.send') }}" method="POST">
+                    @csrf
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Adınız Soyadınız <span class="required">*</span></label>
+                            <input type="text" id="name" name="name" placeholder="Adınız soyadınız" required>
                         </div>
-
-                        <!-- E-posta -->
-                        <div class="glass" style="padding:20px 25px;border-color:rgba(255,217,61,0.05);display:flex;align-items:center;gap:18px;transition:all 0.4s ease;cursor:pointer;pointer-events:auto;" onmouseover="this.style.borderColor='#ffd93d';this.style.transform='translateX(8px)';this.style.background='rgba(255,217,61,0.05)'" onmouseout="this.style.borderColor='rgba(255,217,61,0.05)';this.style.transform='translateX(0)';this.style.background='transparent'">
-                            <div style="width:50px;height:50px;border-radius:50%;background:rgba(255,217,61,0.1);display:flex;align-items:center;justify-content:center;font-size:20px;color:#ffd93d;flex-shrink:0;">
-                                <i class="fas fa-envelope"></i>
-                            </div>
-                            <div>
-                                <p style="color:#64748b;font-size:12px;margin-bottom:2px;">E-posta</p>
-                                <p style="color:#fff;font-size:16px;font-weight:600;">info@sirket.com</p>
-                            </div>
-                        </div>
-
-                        <!-- Adres -->
-                        <div class="glass" style="padding:20px 25px;border-color:rgba(107,203,119,0.05);display:flex;align-items:center;gap:18px;transition:all 0.4s ease;cursor:pointer;pointer-events:auto;" onmouseover="this.style.borderColor='#6bcb77';this.style.transform='translateX(8px)';this.style.background='rgba(107,203,119,0.05)'" onmouseout="this.style.borderColor='rgba(107,203,119,0.05)';this.style.transform='translateX(0)';this.style.background='transparent'">
-                            <div style="width:50px;height:50px;border-radius:50%;background:rgba(107,203,119,0.1);display:flex;align-items:center;justify-content:center;font-size:20px;color:#6bcb77;flex-shrink:0;">
-                                <i class="fas fa-map-marker-alt"></i>
-                            </div>
-                            <div>
-                                <p style="color:#64748b;font-size:12px;margin-bottom:2px;">Adres</p>
-                                <p style="color:#fff;font-size:16px;font-weight:600;">İstanbul, Türkiye</p>
-                            </div>
-                        </div>
-
-                        <!-- Çalışma Saatleri -->
-                        <div class="glass" style="padding:20px 25px;border-color:rgba(77,150,255,0.05);display:flex;align-items:center;gap:18px;transition:all 0.4s ease;cursor:pointer;pointer-events:auto;" onmouseover="this.style.borderColor='#4d96ff';this.style.transform='translateX(8px)';this.style.background='rgba(77,150,255,0.05)'" onmouseout="this.style.borderColor='rgba(77,150,255,0.05)';this.style.transform='translateX(0)';this.style.background='transparent'">
-                            <div style="width:50px;height:50px;border-radius:50%;background:rgba(77,150,255,0.1);display:flex;align-items:center;justify-content:center;font-size:20px;color:#4d96ff;flex-shrink:0;">
-                                <i class="fas fa-clock"></i>
-                            </div>
-                            <div>
-                                <p style="color:#64748b;font-size:12px;margin-bottom:2px;">Çalışma Saatleri</p>
-                                <p style="color:#fff;font-size:16px;font-weight:600;">Paz - Cum: 09:00 - 18:00</p>
-                            </div>
+                        <div class="form-group">
+                            <label for="email">E-Posta Adresiniz <span class="required">*</span></label>
+                            <input type="email" id="email" name="email" placeholder="ornek@mail.com" required>
                         </div>
                     </div>
 
-                    <!-- Sosyal Medya -->
-                    <div style="margin-top:30px;padding-top:25px;border-top:1px solid rgba(255,255,255,0.03);">
-                        <p style="color:#94a3b8;font-size:13px;margin-bottom:15px;">Sosyal Medyada Bizi Takip Edin</p>
-                        <div style="display:flex;gap:12px;">
-                            <a href="#" style="width:45px;height:45px;border-radius:50%;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.03);display:flex;align-items:center;justify-content:center;color:#94a3b8;transition:all 0.4s ease;text-decoration:none;font-size:18px;pointer-events:auto;" onmouseover="this.style.background='#ff6b6b';this.style.color='#fff';this.style.transform='translateY(-5px) scale(1.1)';this.style.boxShadow='0 10px 30px rgba(255,107,107,0.2)'" onmouseout="this.style.background='rgba(255,255,255,0.02)';this.style.color='#94a3b8';this.style.transform='translateY(0) scale(1)';this.style.boxShadow='none'">
-                                <i class="fab fa-facebook-f"></i>
-                            </a>
-                            <a href="#" style="width:45px;height:45px;border-radius:50%;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.03);display:flex;align-items:center;justify-content:center;color:#94a3b8;transition:all 0.4s ease;text-decoration:none;font-size:18px;pointer-events:auto;" onmouseover="this.style.background='#1DA1F2';this.style.color='#fff';this.style.transform='translateY(-5px) scale(1.1)';this.style.boxShadow='0 10px 30px rgba(29,161,242,0.2)'" onmouseout="this.style.background='rgba(255,255,255,0.02)';this.style.color='#94a3b8';this.style.transform='translateY(0) scale(1)';this.style.boxShadow='none'">
-                                <i class="fab fa-twitter"></i>
-                            </a>
-                            <a href="#" style="width:45px;height:45px;border-radius:50%;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.03);display:flex;align-items:center;justify-content:center;color:#94a3b8;transition:all 0.4s ease;text-decoration:none;font-size:18px;pointer-events:auto;" onmouseover="this.style.background='#0A66C2';this.style.color='#fff';this.style.transform='translateY(-5px) scale(1.1)';this.style.boxShadow='0 10px 30px rgba(10,102,194,0.2)'" onmouseout="this.style.background='rgba(255,255,255,0.02)';this.style.color='#94a3b8';this.style.transform='translateY(0) scale(1)';this.style.boxShadow='none'">
-                                <i class="fab fa-linkedin-in"></i>
-                            </a>
-                            <a href="#" style="width:45px;height:45px;border-radius:50%;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.03);display:flex;align-items:center;justify-content:center;color:#94a3b8;transition:all 0.4s ease;text-decoration:none;font-size:18px;pointer-events:auto;" onmouseover="this.style.background='#E4405F';this.style.color='#fff';this.style.transform='translateY(-5px) scale(1.1)';this.style.boxShadow='0 10px 30px rgba(228,64,95,0.2)'" onmouseout="this.style.background='rgba(255,255,255,0.02)';this.style.color='#94a3b8';this.style.transform='translateY(0) scale(1)';this.style.boxShadow='none'">
-                                <i class="fab fa-instagram"></i>
-                            </a>
-                            <a href="#" style="width:45px;height:45px;border-radius:50%;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.03);display:flex;align-items:center;justify-content:center;color:#94a3b8;transition:all 0.4s ease;text-decoration:none;font-size:18px;pointer-events:auto;" onmouseover="this.style.background='#FF0000';this.style.color='#fff';this.style.transform='translateY(-5px) scale(1.1)';this.style.boxShadow='0 10px 30px rgba(255,0,0,0.2)'" onmouseout="this.style.background='rgba(255,255,255,0.02)';this.style.color='#94a3b8';this.style.transform='translateY(0) scale(1)';this.style.boxShadow='none'">
-                                <i class="fab fa-youtube"></i>
-                            </a>
-                        </div>
+                    <div class="form-group">
+                        <label for="subject">Konu <span class="required">*</span></label>
+                        <select id="subject" name="subject" required>
+                            <option value="">Konu seçin</option>
+                            <option value="genel">Genel Soru</option>
+                            <option value="proje">Proje Teklifi</option>
+                            <option value="destek">Teknik Destek</option>
+                            <option value="isbirligi">İş Birliği</option>
+                            <option value="diger">Diğer</option>
+                        </select>
                     </div>
-                </div>
+
+                    <div class="form-group">
+                        <label for="message">Mesajınız <span class="required">*</span></label>
+                        <textarea id="message" name="message" placeholder="Mesajınızı buraya yazın..." required></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-btn">
+                        <i class="fas fa-paper-plane"></i> Gönder
+                    </button>
+                </form>
             </div>
 
-            <!-- Sağ: İletişim Formu -->
-            <div data-aos="fade-left">
-                <div class="glass" style="padding:45px;border-color:rgba(255,107,107,0.05);position:relative;z-index:2;">
-                    <h2 style="font-size:24px;font-weight:700;margin-bottom:8px;color:#fff;">Mesaj Gönderin</h2>
-                    <p style="color:#94a3b8;font-size:14px;margin-bottom:25px;">Size en kısa sürede dönüş yapalım.</p>
+            <!-- ===== İLETİŞİM BİLGİLERİ (ALTT A) ===== -->
+            <div class="contact-info" data-aos="fade-left" data-aos-delay="100">
+                <h2>İletişim Bilgileri</h2>
+                <p class="subtitle">Size en hızlı şekilde dönüş yapabilmemiz için aşağıdaki kanallardan bize ulaşabilirsiniz.</p>
 
-                    @if(session('success'))
-                        <div style="background:rgba(107,203,119,0.15);border:1px solid rgba(107,203,119,0.3);border-radius:12px;padding:18px 22px;margin-bottom:25px;color:#6bcb77;display:flex;align-items:center;gap:12px;animation:slideDown 0.5s ease;">
-                            <i class="fas fa-check-circle" style="font-size:22px;"></i>
-                            <div>
-                                <strong style="display:block;font-size:15px;">Mesajınız Gönderildi!</strong>
-                                <span style="font-size:13px;color:#94a3b8;">{{ session('success') }}</span>
-                            </div>
-                        </div>
-                    @endif
+                <div class="info-item">
+                    <div class="icon"><i class="fas fa-map-marker-alt"></i></div>
+                    <div class="text">
+                        <h4>Adres</h4>
+                        <p>İstanbul, Türkiye</p>
+                    </div>
+                </div>
 
-                    @if($errors->any())
-                        <div style="background:rgba(255,107,107,0.1);border:1px solid rgba(255,107,107,0.2);border-radius:12px;padding:15px 20px;margin-bottom:20px;color:#ff6b6b;">
-                            <i class="fas fa-exclamation-circle"></i> Lütfen tüm alanları doldurun.
-                        </div>
-                    @endif
+                <div class="info-item">
+                    <div class="icon"><i class="fas fa-phone"></i></div>
+                    <div class="text">
+                        <h4>Telefon</h4>
+                        <p><a href="tel:+905551234567">+90 (555) 123 45 67</a></p>
+                    </div>
+                </div>
 
-                    <form action="{{ route('contact.send') }}" method="POST" style="position:relative;z-index:3;">
-                        @csrf
-                        <div style="display:grid;grid-template-columns:1fr 1fr;gap:15px;">
-                            <div>
-                                <label style="color:#94a3b8;font-size:13px;display:block;margin-bottom:5px;">Adınız Soyadınız</label>
-                                <input type="text" name="name" value="{{ old('name') }}" required style="width:100%;padding:12px 16px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);border-radius:10px;color:#fff;font-size:14px;transition:all 0.3s ease;outline:none;pointer-events:auto;" onfocus="this.style.borderColor='#ff6b6b';this.style.boxShadow='0 0 20px rgba(255,107,107,0.1)'" onblur="this.style.borderColor='rgba(255,255,255,0.08)';this.style.boxShadow='none'">
-                            </div>
-                            <div>
-                                <label style="color:#94a3b8;font-size:13px;display:block;margin-bottom:5px;">E-posta Adresiniz</label>
-                                <input type="email" name="email" value="{{ old('email') }}" required style="width:100%;padding:12px 16px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);border-radius:10px;color:#fff;font-size:14px;transition:all 0.3s ease;outline:none;pointer-events:auto;" onfocus="this.style.borderColor='#ff6b6b';this.style.boxShadow='0 0 20px rgba(255,107,107,0.1)'" onblur="this.style.borderColor='rgba(255,255,255,0.08)';this.style.boxShadow='none'">
-                            </div>
-                        </div>
-                        <div style="margin-top:15px;">
-                            <label style="color:#94a3b8;font-size:13px;display:block;margin-bottom:5px;">Konu</label>
-                            <input type="text" name="subject" value="{{ old('subject') }}" required style="width:100%;padding:12px 16px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);border-radius:10px;color:#fff;font-size:14px;transition:all 0.3s ease;outline:none;pointer-events:auto;" onfocus="this.style.borderColor='#ff6b6b';this.style.boxShadow='0 0 20px rgba(255,107,107,0.1)'" onblur="this.style.borderColor='rgba(255,255,255,0.08)';this.style.boxShadow='none'">
-                        </div>
-                        <div style="margin-top:15px;">
-                            <label style="color:#94a3b8;font-size:13px;display:block;margin-bottom:5px;">Mesajınız</label>
-                            <textarea name="message" required rows="5" style="width:100%;padding:12px 16px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);border-radius:10px;color:#fff;font-size:14px;transition:all 0.3s ease;outline:none;resize:vertical;font-family:inherit;pointer-events:auto;" onfocus="this.style.borderColor='#ff6b6b';this.style.boxShadow='0 0 20px rgba(255,107,107,0.1)'" onblur="this.style.borderColor='rgba(255,255,255,0.08)';this.style.boxShadow='none'">{{ old('message') }}</textarea>
-                        </div>
-                        <button type="submit" style="margin-top:20px;width:100%;padding:14px;background:linear-gradient(135deg,#ff6b6b,#ee5a24);color:#fff;border:none;border-radius:50px;font-size:16px;font-weight:600;cursor:pointer;transition:all 0.4s ease;display:inline-flex;align-items:center;justify-content:center;gap:10px;pointer-events:auto;position:relative;z-index:3;" onmouseover="this.style.transform='translateY(-3px) scale(1.02)';this.style.boxShadow='0 15px 40px rgba(255,107,107,0.3)'" onmouseout="this.style.transform='translateY(0) scale(1)';this.style.boxShadow='none'">
-                            <i class="fas fa-paper-plane"></i> Mesaj Gönder
-                        </button>
-                    </form>
+                <div class="info-item">
+                    <div class="icon"><i class="fas fa-envelope"></i></div>
+                    <div class="text">
+                        <h4>E-Posta</h4>
+                        <p><a href="mailto:info@yazilimsirketi.com">info@yazilimsirketi.com</a></p>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <div class="icon"><i class="fas fa-clock"></i></div>
+                    <div class="text">
+                        <h4>Çalışma Saatleri</h4>
+                        <p>Pazartesi - Cumartesi: 09:00 - 18:00</p>
+                    </div>
+                </div>
+
+                <div class="social-section">
+                    <h4>Bizi Takip Edin</h4>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
 
-<!-- ===== HARİTA ===== -->
-<section class="section-padding" style="padding:0;background:rgba(10,14,26,0.2);border-top:1px solid rgba(255,255,255,0.02);border-bottom:1px solid rgba(255,255,255,0.02);">
-    <div class="container" style="max-width:100%;padding:0;">
-        <div style="height:400px;width:100%;background:linear-gradient(135deg,#1a1a2e,#0a0e1a);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;">
-            <div style="position:absolute;top:-50%;right:-20%;width:500px;height:500px;background:radial-gradient(circle,rgba(255,107,107,0.03),transparent 70%);border-radius:50%;animation:floatBubble 15s ease-in-out infinite;"></div>
-            <div style="position:absolute;bottom:-30%;left:-10%;width:400px;height:400px;background:radial-gradient(circle,rgba(77,150,255,0.03),transparent 70%);border-radius:50%;animation:floatBubble 20s ease-in-out infinite reverse;"></div>
+<!-- ===== HARİTA (OPSİYONEL) ===== -->
+<section style="padding:0 0 60px;position:relative;z-index:1;">
+    <div class="container">
+        <div style="border-radius:20px;overflow:hidden;border:1px solid rgba(255,255,255,0.04);">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3010.782445761974!2d28.9785274!3d41.0351461!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cab9f7a4b8e6c1%3A0x8b8b8b8b8b8b8b8b!2s%C4%B0stanbul!5e0!3m2!1str!2str!4v1700000000000"
+                width="100%"
+                height="350"
+                style="border:0;"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </div>
+    </div>
+</section>
 
-            <div style="text-align:center;position:relative;z-index:1;">
-                <div style="font-size:80px;color:#ff6b6b;opacity:0.2;margin-bottom:15px;">
-                    <i class="fas fa-map-marked-alt"></i>
-                </div>
-                <h3 style="font-size:28px;font-weight:700;color:#fff;margin-bottom:10px;">Bizi Ziyaret Edin</h3>
-                <p style="color:#94a3b8;font-size:16px;">İstanbul, Türkiye</p>
-                <div style="margin-top:20px;display:flex;gap:15px;justify-content:center;flex-wrap:wrap;">
-                    <a href="https://maps.google.com" target="_blank" class="btn-primary"><i class="fas fa-directions"></i> Yol Tarifi Al</a>
-                </div>
-            </div>
+<!-- ===== CTA ===== -->
+<section id="cta" style="padding:60px 0;position:relative;z-index:1;background:linear-gradient(135deg,#ff6b6b,#ee5a24,#ff6b6b) !important;background-size:200% 200% !important;animation:btnGradient 4s ease infinite !important;border-top:none !important;border-bottom:none !important;">
+    <div class="container">
+        <div class="cta-content" style="text-align:center;padding:0;position:relative;z-index:1;">
+            <h2 style="font-size:34px;font-weight:800;margin-bottom:15px;color:#fff;">Hemen <span style="color:#fff;">Teklif Alın</span></h2>
+            <p style="font-size:16px;margin-bottom:25px;opacity:0.9;max-width:500px;margin-left:auto;margin-right:auto;color:rgba(255,255,255,0.9);">
+                Projenizi hayata geçirmek için hemen bizimle iletişime geçin.
+            </p>
+            <a href="tel:+905551234567" class="btn-white" style="background:#fff;color:#0a0e1a !important;padding:12px 35px;border-radius:50px;text-decoration:none;font-weight:600;transition:all 0.3s ease;display:inline-block;font-size:15px;">
+                <i class="fas fa-phone"></i> Hemen Ara
+            </a>
         </div>
     </div>
 </section>
 
 <style>
-@keyframes floatBubble {
-    0%, 100% { transform: translate(0, 0) scale(1); }
-    33% { transform: translate(30px, -30px) scale(1.2); }
-    66% { transform: translate(-20px, 20px) scale(0.8); }
-}
-@keyframes slideDown {
-    0% { opacity: 0; transform: translateY(-20px); }
-    100% { opacity: 1; transform: translateY(0); }
-}
+    @keyframes btnGradient {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+    }
+
+    @media (max-width: 768px) {
+        #cta {
+            padding: 40px 0 !important;
+        }
+        #cta .cta-content h2 {
+            font-size: 24px !important;
+        }
+        #cta .cta-content p {
+            font-size: 14px !important;
+            padding: 0 15px;
+        }
+        #cta .btn-white {
+            padding: 10px 25px !important;
+            font-size: 13px !important;
+        }
+        section[style*="padding:0 0 60px"] iframe {
+            height: 200px !important;
+        }
+    }
+    @media (max-width: 480px) {
+        #cta .cta-content h2 {
+            font-size: 20px !important;
+        }
+        section[style*="padding:0 0 60px"] iframe {
+            height: 150px !important;
+        }
+    }
 </style>
+
+@push('scripts')
+<script>
+    // Form validation - basit
+    document.querySelector('form').addEventListener('submit', function(e) {
+        const name = document.getElementById('name').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const subject = document.getElementById('subject').value;
+        const message = document.getElementById('message').value.trim();
+
+        if (!name || !email || !subject || !message) {
+            e.preventDefault();
+            alert('Lütfen tüm alanları doldurun.');
+        }
+    });
+</script>
+@endpush
+
 @endsection

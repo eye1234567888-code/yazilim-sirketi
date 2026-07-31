@@ -1,211 +1,369 @@
 @extends('layouts.app')
 
-@section('title', 'Hizmetlerimiz')
+@section('title', 'Hizmetlerimiz - Yazılım Şirketi')
 
 @section('content')
-<!-- ===== HERO ===== -->
-<section class="hero" style="min-height:40vh;background:transparent;">
-    <div class="particles">
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-    </div>
+<style>
+    .services-hero {
+        padding: 140px 0 60px;
+        text-align: center;
+        position: relative;
+        z-index: 1;
+    }
+    .services-hero h1 {
+        font-size: 52px;
+        font-weight: 900;
+        margin-bottom: 15px;
+    }
+    .services-hero h1 span {
+        background: linear-gradient(135deg, #ff6b6b, #ffd93d, #6bcb77, #4d96ff);
+        background-size: 300% 300%;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: rainbowText 4s ease infinite;
+    }
+    .services-hero p {
+        color: #94a3b8;
+        font-size: 18px;
+        max-width: 600px;
+        margin: 0 auto;
+        line-height: 1.8;
+    }
+    .services-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+        padding: 40px 0 80px;
+        position: relative;
+        z-index: 1;
+    }
+    .service-card {
+        background: rgba(255,255,255,0.02);
+        border: 1px solid rgba(255,255,255,0.04);
+        border-radius: 20px;
+        padding: 40px 30px;
+        transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        position: relative;
+        overflow: hidden;
+        text-align: center;
+    }
+    .service-card::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(255,107,107,0.06), transparent 50%);
+        opacity: 0;
+        transition: 0.5s;
+        pointer-events: none;
+    }
+    .service-card:hover::before {
+        opacity: 1;
+    }
+    .service-card:hover {
+        transform: translateY(-10px);
+        border-color: rgba(255,107,107,0.2);
+        box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        background: rgba(255,255,255,0.04);
+    }
+    .service-card .icon {
+        width: 70px;
+        height: 70px;
+        background: linear-gradient(135deg, rgba(255,107,107,0.1), rgba(255,217,61,0.1));
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 20px;
+        font-size: 30px;
+        color: #ff6b6b;
+        transition: 0.4s;
+    }
+    .service-card:hover .icon {
+        transform: scale(1.1) rotate(10deg);
+        background: linear-gradient(135deg, rgba(255,107,107,0.2), rgba(255,217,61,0.2));
+    }
+    .service-card h3 {
+        font-size: 20px;
+        font-weight: 700;
+        margin-bottom: 12px;
+        color: #fff;
+    }
+    .service-card p {
+        color: #94a3b8;
+        font-size: 14px;
+        line-height: 1.7;
+        margin-bottom: 20px;
+    }
+
+    /* ===== BUTON - DÜZELTİLDİ ===== */
+    .service-card .btn-service {
+        display: inline-block;
+        padding: 10px 28px;
+        border: 2px solid rgba(255,107,107,0.3);
+        border-radius: 50px;
+        color: #ff6b6b;
+        font-size: 14px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        text-decoration: none;
+        cursor: pointer;
+        position: relative;
+        z-index: 10;
+        background: transparent;
+    }
+    .service-card .btn-service:hover {
+        background: #ff6b6b;
+        color: #fff;
+        border-color: #ff6b6b;
+        transform: translateY(-2px);
+        box-shadow: 0 10px 30px rgba(255,107,107,0.3);
+    }
+    .service-card .btn-service i {
+        margin-left: 6px;
+        transition: 0.3s;
+    }
+    .service-card .btn-service:hover i {
+        transform: translateX(4px);
+    }
+
+    .service-card .badge {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+        padding: 4px 14px;
+        border-radius: 50px;
+        font-size: 10px;
+        font-weight: 600;
+        color: #fff;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        z-index: 5;
+    }
+
+    /* Renkler */
+    .service-card:nth-child(1) .icon { color: #ff6b6b; }
+    .service-card:nth-child(2) .icon { color: #ffd93d; }
+    .service-card:nth-child(3) .icon { color: #6bcb77; }
+    .service-card:nth-child(4) .icon { color: #4d96ff; }
+    .service-card:nth-child(5) .icon { color: #a66cff; }
+    .service-card:nth-child(6) .icon { color: #ff6b6b; }
+
+    .service-card:nth-child(1):hover { border-color: rgba(255,107,107,0.3); }
+    .service-card:nth-child(2):hover { border-color: rgba(255,217,61,0.3); }
+    .service-card:nth-child(3):hover { border-color: rgba(107,203,119,0.3); }
+    .service-card:nth-child(4):hover { border-color: rgba(77,150,255,0.3); }
+    .service-card:nth-child(5):hover { border-color: rgba(166,108,255,0.3); }
+    .service-card:nth-child(6):hover { border-color: rgba(255,107,107,0.3); }
+
+    @media (max-width: 992px) {
+        .services-grid {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+        .services-hero h1 {
+            font-size: 40px;
+        }
+    }
+    @media (max-width: 768px) {
+        .services-hero {
+            padding: 100px 0 30px;
+        }
+        .services-hero h1 {
+            font-size: 32px;
+        }
+        .services-hero p {
+            font-size: 15px;
+            padding: 0 15px;
+        }
+        .services-grid {
+            grid-template-columns: 1fr;
+            gap: 20px;
+            padding: 20px 0 60px;
+        }
+        .service-card {
+            padding: 30px 20px;
+        }
+        .service-card .icon {
+            width: 60px;
+            height: 60px;
+            font-size: 24px;
+        }
+        .service-card h3 {
+            font-size: 18px;
+        }
+        .service-card .badge {
+            font-size: 9px;
+            padding: 3px 10px;
+        }
+        .service-card .btn-service {
+            font-size: 13px;
+            padding: 8px 20px;
+        }
+    }
+    @media (max-width: 480px) {
+        .services-hero h1 {
+            font-size: 26px;
+        }
+        .services-hero p {
+            font-size: 14px;
+        }
+        .service-card {
+            padding: 25px 16px;
+        }
+        .service-card h3 {
+            font-size: 16px;
+        }
+        .service-card p {
+            font-size: 13px;
+        }
+        .service-card .btn-service {
+            font-size: 12px;
+            padding: 6px 18px;
+        }
+    }
+    @keyframes rainbowText {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+    }
+</style>
+
+<!-- HERO -->
+<section class="services-hero">
     <div class="container">
-        <div class="hero-content" data-aos="fade-up">
-            <div class="badge"><i class="fas fa-bolt"></i> Hizmetlerimiz</div>
-            <h1>Hizmetler & <span>Çözümler</span></h1>
-            <p>İşinizi büyütmek için ihtiyacınız olan tüm teknolojik çözümler</p>
+        <div class="section-tag" style="display:inline-block;background:linear-gradient(135deg,rgba(255,107,107,0.08),rgba(255,217,61,0.08));padding:6px 22px;border-radius:50px;font-size:12px;color:#ffd93d;margin-bottom:15px;border:1px solid rgba(255,217,61,0.06);letter-spacing:2px;text-transform:uppercase;">
+            <i class="fas fa-cogs"></i> Hizmetlerimiz
         </div>
+        <h1>Profesyonel <span>Yazılım</span> Hizmetleri</h1>
+        <p>İşletmenizi dijital dönüşümde bir adım öne taşıyacak yenilikçi yazılım çözümlerimizle yanınızdayız.</p>
     </div>
 </section>
 
-<!-- ===== HİZMETLER ===== -->
-<section class="section-padding" id="services" style="background:rgba(10,14,26,0.3);backdrop-filter:blur(5px);border-top:1px solid rgba(255,255,255,0.02);border-bottom:1px solid rgba(255,255,255,0.02);">
+<!-- HİZMET KARTLARI -->
+<section class="services-section">
     <div class="container">
-        <div class="section-header" data-aos="fade-up">
-            <span class="section-tag"><i class="fas fa-list"></i> Hizmetlerimiz</span>
-            <h2>Hizmetler & <span>Çözümler</span></h2>
-            <p>İşletmenizin ihtiyaçlarına özel yenilikçi çözümler</p>
-        </div>
+        <div class="services-grid">
+            <!-- CRM -->
+            <div class="service-card" data-aos="fade-up" data-aos-delay="0">
+                <span class="badge">Popüler</span>
+                <div class="icon"><i class="fas fa-users"></i></div>
+                <h3>CRM Çözümleri</h3>
+                <p>Müşteri ilişkilerinizi yönetin, satış süreçlerinizi optimize edin ve müşteri memnuniyetini artırın.</p>
+                <a href="{{ route('crm') }}" class="btn-service">Detaylı İncele <i class="fas fa-arrow-right"></i></a>
+            </div>
 
-        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:30px;">
-            @php
-                $allServices = [
-                    [
-                        'title' => 'CRM Çözümleri',
-                        'desc' => 'Müşteri ilişkileri yönetimini optimize eden, satış ve pazarlama süreçlerini otomatikleştiren, müşteri memnuniyetini artıran kapsamlı CRM çözümleri sunuyoruz.',
-                        'icon' => 'fa-users',
-                        'color' => '#ff6b6b',
-                        'bg' => 'rgba(255,107,107,0.05)',
-                        'border' => 'rgba(255,107,107,0.15)',
-                        'route' => 'crm'
-                    ],
-                    [
-                        'title' => 'Sektörel Çözümler',
-                        'desc' => 'Farklı sektörlerin dinamik ihtiyaçlarına yönelik yenilikçi yazılım çözümleri sunuyoruz. Her sektöre özel stratejiler geliştiriyoruz.',
-                        'icon' => 'fa-industry',
-                        'color' => '#ffd93d',
-                        'bg' => 'rgba(255,217,61,0.05)',
-                        'border' => 'rgba(255,217,61,0.15)',
-                        'route' => 'sektorel'
-                    ],
-                    [
-                        'title' => 'E-Ticaret',
-                        'desc' => 'Dijital dünyada e-ticaret işletmeleri için çeşitli pazaryerlerinde yer almak, müşteri deneyimini iyileştirmek ve satışları artırmak için özel çözümler.',
-                        'icon' => 'fa-shopping-cart',
-                        'color' => '#6bcb77',
-                        'bg' => 'rgba(107,203,119,0.05)',
-                        'border' => 'rgba(107,203,119,0.15)',
-                        'route' => 'eticaret'
-                    ],
-                    [
-                        'title' => 'E-Dönüşüm',
-                        'desc' => 'Dijital çağda iş süreçlerini daha verimli, hızlı ve güvenli hale getirmek isteyen işletmeler için e-Dönüşüm çözümleri sunuyoruz.',
-                        'icon' => 'fa-sync-alt',
-                        'color' => '#4d96ff',
-                        'bg' => 'rgba(77,150,255,0.05)',
-                        'border' => 'rgba(77,150,255,0.15)',
-                        'route' => 'edonusum'
-                    ],
-                    [
-                        'title' => 'ERP Çözümleri',
-                        'desc' => 'Her işletmenin kendine özgü gereksinimlerine göre uyarlanabilen modüler yapıda, tüm iş süreçlerini tek platformda yönetin.',
-                        'icon' => 'fa-cubes',
-                        'color' => '#ff6b6b',
-                        'bg' => 'rgba(255,107,107,0.05)',
-                        'border' => 'rgba(255,107,107,0.15)',
-                        'route' => 'erp'
-                    ],
-                    [
-                        'title' => 'Mobil Çözümler',
-                        'desc' => 'Mobil dünyada etkin olmanın önemini biliyoruz. İşletmenizi mobil cihazlarla buluşturan özel çözümler geliştiriyoruz.',
-                        'icon' => 'fa-mobile-alt',
-                        'color' => '#ffd93d',
-                        'bg' => 'rgba(255,217,61,0.05)',
-                        'border' => 'rgba(255,217,61,0.15)',
-                        'route' => 'mobil'
-                    ]
-                ];
-            @endphp
-            @foreach($allServices as $index => $service)
-                <div class="glass tilt"
-                     data-aos="fade-up"
-                     data-aos-delay="{{ $loop->iteration * 60 }}"
-                     style="
-                        border-color:{{ $service['border'] }};
-                        background:{{ $service['bg'] }};
-                        padding:30px 25px;
-                        position:relative;
-                        overflow:hidden;
-                        transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-                        cursor:pointer;
-                        border-width:2px;
-                        animation: serviceFloat {{ 3 + ($index % 3) }}s ease-in-out infinite;
-                        animation-delay: {{ $index * 0.15 }}s;
-                     "
-                     onmouseover="
-                        this.style.transform='scale(1.03) translateY(-8px)';
-                        this.style.borderColor='{{ $service['color'] }}';
-                        this.style.boxShadow='0 20px 60px {{ $service['color'] }}22';
-                        this.style.background='{{ $service['color'] }}11';
-                        this.querySelector('.service-icon').style.transform='scale(1.2) rotate(10deg)';
-                        this.style.animation='none';
-                     "
-                     onmouseout="
-                        this.style.transform='scale(1) translateY(0)';
-                        this.style.borderColor='{{ $service['border'] }}';
-                        this.style.boxShadow='none';
-                        this.style.background='{{ $service['bg'] }}';
-                        this.querySelector('.service-icon').style.transform='scale(1) rotate(0deg)';
-                        this.style.animation='serviceFloat {{ 3 + ($index % 3) }}s ease-in-out infinite';
-                        this.style.animationDelay='{{ $index * 0.15 }}s';
-                     "
-                >
-                    <div style="position:absolute;top:-50px;right:-50px;width:100px;height:100px;background:radial-gradient(circle,{{ $service['color'] }}10,transparent 70%);border-radius:50%;pointer-events:none;"></div>
+            <!-- Sektörel -->
+            <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+                <span class="badge">Özel</span>
+                <div class="icon"><i class="fas fa-industry"></i></div>
+                <h3>Sektörel Çözümler</h3>
+                <p>Her sektöre özel yazılım çözümleri ile iş süreçlerinizi dijitalleştirin ve verimliliğinizi artırın.</p>
+                <a href="{{ route('sektorel') }}" class="btn-service">Detaylı İncele <i class="fas fa-arrow-right"></i></a>
+            </div>
 
-                    <div style="display:flex;align-items:center;gap:15px;margin-bottom:12px;">
-                        <div class="service-icon" style="
-                            width:50px;
-                            height:50px;
-                            border-radius:50%;
-                            display:flex;
-                            align-items:center;
-                            justify-content:center;
-                            font-size:22px;
-                            color:{{ $service['color'] }};
-                            background:{{ $service['color'] }}10;
-                            border:2px solid {{ $service['border'] }};
-                            transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-                            flex-shrink:0;
-                        ">
-                            <i class="fas {{ $service['icon'] }}"></i>
-                        </div>
-                        <h3 style="font-size:17px;font-weight:700;margin:0;transition:0.3s;" onmouseover="this.style.color='{{ $service['color'] }}'" onmouseout="this.style.color='#fff'">
-                            {{ $service['title'] }}
-                        </h3>
-                    </div>
+            <!-- E-Ticaret -->
+            <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                <span class="badge">Yeni</span>
+                <div class="icon"><i class="fas fa-shopping-cart"></i></div>
+                <h3>E-Ticaret</h3>
+                <p>Güçlü altyapılı, kullanıcı dostu ve dönüşüm odaklı e-ticaret platformları ile online satışınızı başlatın.</p>
+                <a href="{{ route('eticaret') }}" class="btn-service">Detaylı İncele <i class="fas fa-arrow-right"></i></a>
+            </div>
 
-                    <p style="color:#94a3b8;font-size:13px;line-height:1.7;margin-bottom:12px;position:relative;z-index:1;">
-                        {{ $service['desc'] }}
-                    </p>
+            <!-- E-Dönüşüm -->
+            <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+                <div class="icon"><i class="fas fa-sync-alt"></i></div>
+                <h3>E-Dönüşüm</h3>
+                <p>Dijital dönüşüm sürecinizde size rehberlik ediyor, iş süreçlerinizi modern teknolojilerle buluşturuyoruz.</p>
+                <a href="{{ route('edonusum') }}" class="btn-service">Detaylı İncele <i class="fas fa-arrow-right"></i></a>
+            </div>
 
-                    <div style="margin-top:8px;position:relative;z-index:1;">
-                        <a href="{{ route($service['route']) }}" style="
-                            color:{{ $service['color'] }};
-                            text-decoration:none;
-                            font-size:12px;
-                            font-weight:600;
-                            transition: all 0.4s ease;
-                            display:inline-flex;
-                            align-items:center;
-                            gap:6px;
-                            padding:4px 14px;
-                            border-radius:50px;
-                            border:1px solid {{ $service['border'] }};
-                            background:transparent;
-                        "
-                        onmouseover="
-                            this.style.background='{{ $service['color'] }}';
-                            this.style.color='#fff';
-                            this.style.transform='translateX(5px) scale(1.05)';
-                            this.style.boxShadow='0 10px 30px {{ $service['color'] }}33';
-                        "
-                        onmouseout="
-                            this.style.background='transparent';
-                            this.style.color='{{ $service['color'] }}';
-                            this.style.transform='translateX(0) scale(1)';
-                            this.style.boxShadow='none';
-                        ">
-                            Detaylı Bilgi <i class="fas fa-arrow-right"></i>
-                        </a>
-                    </div>
-                </div>
-            @endforeach
-        </div>
-    </div>
-</section>
+            <!-- ERP -->
+            <div class="service-card" data-aos="fade-up" data-aos-delay="400">
+                <div class="icon"><i class="fas fa-cubes"></i></div>
+                <h3>ERP Çözümleri</h3>
+                <p>Tüm iş süreçlerinizi tek bir platformda yönetin, operasyonel verimliliğinizi maksimuma çıkarın.</p>
+                <a href="{{ route('erp') }}" class="btn-service">Detaylı İncele <i class="fas fa-arrow-right"></i></a>
+            </div>
 
-<!-- ===== BİZE ULAŞIN ===== -->
-<section class="section-padding" id="cta" style="background:linear-gradient(135deg, rgba(255,107,107,0.08), rgba(124,58,237,0.08)); backdrop-filter:blur(10px); border-top:1px solid rgba(255,255,255,0.02); border-bottom:1px solid rgba(255,255,255,0.02);">
-    <div class="container">
-        <div class="cta-content" data-aos="fade-up">
-            <h2>Bize <span style="color:#fff;">Ulaşın</span></h2>
-            <p style="color:#94a3b8;">Projenizi konuşmak ve teklif almak için hemen iletişime geçin.</p>
-            <div style="display:flex;gap:15px;justify-content:center;flex-wrap:wrap;">
-                <a href="{{ route('contact') }}" class="btn-primary"><i class="fas fa-paper-plane"></i> Hemen İletişim</a>
-                <a href="tel:+905551234567" class="btn-secondary" style="border-color:rgba(255,255,255,0.15);"><i class="fas fa-phone"></i> +90 (555) 123 45 67</a>
+            <!-- Mobil -->
+            <div class="service-card" data-aos="fade-up" data-aos-delay="500">
+                <div class="icon"><i class="fas fa-mobile-alt"></i></div>
+                <h3>Mobil Çözümler</h3>
+                <p>iOS ve Android platformları için yüksek performanslı, kullanıcı deneyimi odaklı mobil uygulamalar geliştiriyoruz.</p>
+                <a href="{{ route('mobil') }}" class="btn-service">Detaylı İncele <i class="fas fa-arrow-right"></i></a>
             </div>
         </div>
     </div>
 </section>
 
+<!-- CTA -->
+<section id="cta" style="padding:80px 0;position:relative;z-index:1;background:linear-gradient(135deg,#ff6b6b,#ee5a24,#ff6b6b) !important;background-size:200% 200% !important;animation:btnGradient 4s ease infinite !important;border-top:none !important;border-bottom:none !important;">
+    <div class="container">
+        <div class="cta-content" style="text-align:center;padding:0;position:relative;z-index:1;">
+            <h2 style="font-size:42px;font-weight:800;margin-bottom:20px;color:#fff;">Özel Çözümler <span style="color:#fff;">İçin Bize Ulaşın</span></h2>
+            <p style="font-size:18px;margin-bottom:30px;opacity:0.9;max-width:600px;margin-left:auto;margin-right:auto;color:rgba(255,255,255,0.9);">
+                İhtiyaçlarınıza özel yazılım çözümleri için hemen bizimle iletişime geçin.
+            </p>
+            <a href="{{ route('contact') }}" class="btn-white" style="background:#fff;color:#0a0e1a !important;padding:14px 40px;border-radius:50px;text-decoration:none;font-weight:600;transition:all 0.3s ease;display:inline-block;font-size:16px;">
+                <i class="fas fa-phone"></i> Hemen Ara
+            </a>
+        </div>
+    </div>
+</section>
+
 <style>
-@keyframes serviceFloat {
-    0%, 100% { transform: translateY(0px) rotate(0deg); }
-    25% { transform: translateY(-6px) rotate(0.5deg); }
-    75% { transform: translateY(6px) rotate(-0.5deg); }
-}
+    @keyframes btnGradient {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+    }
+    @media (max-width: 768px) {
+        #cta {
+            padding: 50px 0 !important;
+        }
+        #cta .cta-content h2 {
+            font-size: 28px !important;
+        }
+        #cta .cta-content p {
+            font-size: 15px !important;
+            padding: 0 15px;
+        }
+        #cta .btn-white {
+            padding: 12px 30px !important;
+            font-size: 14px !important;
+        }
+    }
+    @media (max-width: 480px) {
+        #cta .cta-content h2 {
+            font-size: 22px !important;
+        }
+    }
 </style>
+
+@push('scripts')
+<script>
+    document.querySelectorAll('.service-card').forEach(card => {
+        card.addEventListener('mousemove', function(e) {
+            const rect = this.getBoundingClientRect();
+            const x = ((e.clientX - rect.left) / rect.width * 100);
+            const y = ((e.clientY - rect.top) / rect.height * 100);
+            this.style.setProperty('--mouse-x', x + '%');
+            this.style.setProperty('--mouse-y', y + '%');
+        });
+    });
+
+    // Butonların çalıştığını test et
+    document.querySelectorAll('.btn-service').forEach(btn => {
+        btn.addEventListener('click', function(e) {
+            console.log('Butona tıklandı! Yönlendiriliyor: ' + this.getAttribute('href'));
+        });
+    });
+</script>
+@endpush
+
 @endsection
