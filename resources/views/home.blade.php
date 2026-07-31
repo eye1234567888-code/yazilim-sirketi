@@ -4,6 +4,7 @@
 
 @section('content')
 <!-- ===== HERO ===== -->
+<!-- ===== HERO ===== -->
 <section class="hero" id="home">
     <div class="particles">
         <div class="particle"></div>
@@ -25,8 +26,45 @@
             <h1>Geleceği <span>Birlikte</span> Kodlayalım</h1>
             <p>Yenilikçi teknolojilerle işinizi dijital dünyaya taşıyor, sürdürülebilir ve ölçeklenebilir çözümler üretiyoruz. 8 yıllık deneyimimizle yanınızdayız.</p>
             <div class="hero-buttons">
-                <a href="{{ route('contact') }}" class="btn-primary"><i class="fas fa-paper-plane"></i> Hemen İletişim</a>
-                <a href="{{ route('about') }}" class="btn-secondary"><i class="fas fa-play-circle"></i> Keşfet</a>
+                <a href="{{ route('contact') }}" style="
+                    background:linear-gradient(135deg, #ff6b6b, #ee5a24);
+                    color:#fff !important;
+                    padding:14px 35px;
+                    border-radius:50px;
+                    text-decoration:none;
+                    font-weight:600;
+                    transition:all 0.4s cubic-bezier(0.175,0.885,0.32,1.275);
+                    display:inline-flex;
+                    align-items:center;
+                    gap:10px;
+                    font-size:16px;
+                    border:none;
+                    cursor:pointer;
+                    box-shadow:0 10px 40px rgba(255,107,107,0.3);
+                "
+                onmouseover="this.style.transform='translateY(-3px) scale(1.05)';this.style.boxShadow='0 20px 60px rgba(255,107,107,0.5)'"
+                onmouseout="this.style.transform='translateY(0) scale(1)';this.style.boxShadow='0 10px 40px rgba(255,107,107,0.3)'">
+                    <i class="fas fa-paper-plane"></i> Hemen İletişim
+                </a>
+                <a href="{{ route('about') }}" style="
+                    background:rgba(255,255,255,0.08);
+                    color:#fff !important;
+                    padding:14px 35px;
+                    border-radius:50px;
+                    text-decoration:none;
+                    font-weight:600;
+                    transition:all 0.4s cubic-bezier(0.175,0.885,0.32,1.275);
+                    display:inline-flex;
+                    align-items:center;
+                    gap:10px;
+                    font-size:16px;
+                    backdrop-filter:blur(10px);
+                    border:1px solid rgba(255,255,255,0.15);
+                "
+                onmouseover="this.style.background='rgba(255,255,255,0.15)';this.style.transform='translateY(-3px) scale(1.05)';this.style.borderColor='rgba(255,255,255,0.3)'"
+                onmouseout="this.style.background='rgba(255,255,255,0.08)';this.style.transform='translateY(0) scale(1)';this.style.borderColor='rgba(255,255,255,0.15)'">
+                    <i class="fas fa-play-circle"></i> Keşfet
+                </a>
             </div>
             <div class="hero-stats">
                 <div class="stat"><h3 class="counter-number" data-target="250">0</h3><p>Tamamlanan Proje</p></div>
@@ -885,7 +923,7 @@
     </div>
 </section>
 
-<!-- ===== İLETİŞİME GEÇİN (DÜZELTİLMİŞ) ===== -->
+<!-- ===== İLETİŞİME GEÇİN ===== -->
 <section class="section-padding" id="cta" style="background:linear-gradient(135deg, #1a1a2e, #2d2d44);border-top:1px solid rgba(255,255,255,0.05);border-bottom:1px solid rgba(255,255,255,0.05);position:relative;overflow:hidden;">
     <div style="position:absolute;top:-50%;right:-20%;width:600px;height:600px;background:radial-gradient(circle,rgba(255,107,107,0.05),transparent 70%);border-radius:50%;pointer-events:none;"></div>
     <div style="position:absolute;bottom:-50%;left:-20%;width:500px;height:500px;background:radial-gradient(circle,rgba(77,150,255,0.05),transparent 70%);border-radius:50%;pointer-events:none;"></div>
@@ -993,6 +1031,7 @@
     100% { background-position: 0% 50%; }
 }
 
+/* ===== MOBİL KUTUCUK KISALTMA ===== */
 @media (max-width: 992px) {
     .services-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
     .projects-grid { grid-template-columns: 1fr 1fr; gap: 20px; }
@@ -1000,21 +1039,223 @@
     .news-grid { grid-template-columns: repeat(2, 1fr); gap: 25px; }
     #cta .cta-content h2 { font-size: 34px !important; }
 }
+
 @media (max-width: 768px) {
-    .services-grid { grid-template-columns: 1fr 1fr; gap: 15px; }
-    .projects-grid { grid-template-columns: 1fr 1fr; gap: 15px; }
-    .blog-grid { grid-template-columns: 1fr 1fr; gap: 20px; }
-    .news-grid { grid-template-columns: 1fr 1fr; gap: 20px; }
+    .services-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
+    .projects-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
+    .blog-grid { grid-template-columns: 1fr 1fr; gap: 15px; }
+    .news-grid { grid-template-columns: 1fr 1fr; gap: 15px; }
+
+    /* ===== KUTUCUK İÇİ PADDING KISALTMA ===== */
+    .services-grid .glass,
+    .projects-grid .glass {
+        padding: 18px 14px !important;
+    }
+    .services-grid .glass .service-icon {
+        font-size: 30px !important;
+        margin-bottom: 8px !important;
+    }
+    .services-grid .glass h3,
+    .projects-grid .glass h3 {
+        font-size: 14px !important;
+        margin-bottom: 4px !important;
+    }
+    .services-grid .glass p,
+    .projects-grid .glass p {
+        font-size: 12px !important;
+        line-height: 1.5 !important;
+        margin-bottom: 8px !important;
+    }
+    .services-grid .glass .service-icon + h3 + p {
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+    .services-grid .glass a,
+    .projects-grid .glass a {
+        font-size: 11px !important;
+        padding: 4px 12px !important;
+    }
+    .projects-grid .glass .project-icon {
+        width: 38px !important;
+        height: 38px !important;
+        font-size: 16px !important;
+    }
+    .projects-grid .glass .project-icon + h3 {
+        font-size: 14px !important;
+    }
+    .projects-grid .glass .project-icon + h3 + p {
+        font-size: 12px !important;
+        line-height: 1.5 !important;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+    .projects-grid .glass .project-icon + h3 + p + div {
+        margin-top: 4px !important;
+    }
+    .projects-grid .glass .project-icon + h3 + p + div span {
+        font-size: 9px !important;
+        padding: 2px 10px !important;
+    }
+
+    /* ===== BLOG KUTUCUK KISALTMA ===== */
+    .blog-grid .glass .blog-image {
+        height: 140px !important;
+    }
+    .blog-grid .glass .blog-image .blog-icon {
+        font-size: 40px !important;
+    }
+    .blog-grid .glass .blog-content {
+        padding: 14px 16px 18px !important;
+    }
+    .blog-grid .glass .blog-content h3 {
+        font-size: 14px !important;
+        margin-bottom: 6px !important;
+    }
+    .blog-grid .glass .blog-content p {
+        font-size: 12px !important;
+        margin-bottom: 10px !important;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+    .blog-grid .glass .blog-content .blog-read-btn {
+        font-size: 12px !important;
+        padding: 6px 16px !important;
+    }
+    .blog-grid .glass .blog-content .blog-meta {
+        font-size: 10px !important;
+        gap: 8px !important;
+        margin-bottom: 6px !important;
+    }
+    .blog-grid .glass .blog-content .blog-meta span {
+        font-size: 10px !important;
+    }
+
+    /* ===== HABER KUTUCUK KISALTMA ===== */
+    .news-grid .glass .news-image {
+        height: 120px !important;
+    }
+    .news-grid .glass .news-image .news-icon {
+        font-size: 32px !important;
+    }
+    .news-grid .glass .news-content {
+        padding: 14px 16px 18px !important;
+    }
+    .news-grid .glass .news-content h3 {
+        font-size: 13px !important;
+        margin-bottom: 6px !important;
+    }
+    .news-grid .glass .news-content p {
+        font-size: 12px !important;
+        margin-bottom: 10px !important;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+    .news-grid .glass .news-content .news-read-btn {
+        font-size: 11px !important;
+        padding: 5px 14px !important;
+    }
+
     #cta .cta-content h2 { font-size: 28px !important; }
     #cta .cta-content p { font-size: 15px !important; padding: 0 15px; }
     #cta .cta-content div { flex-direction: column !important; align-items: center !important; }
     #cta .cta-content a { width: 100% !important; max-width: 320px !important; justify-content: center !important; padding: 14px 30px !important; font-size: 15px !important; }
 }
+
 @media (max-width: 480px) {
-    .services-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
-    .projects-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
-    .blog-grid { grid-template-columns: 1fr 1fr; gap: 15px; }
-    .news-grid { grid-template-columns: 1fr 1fr; gap: 15px; }
+    .services-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+    .projects-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+    .blog-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
+    .news-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
+
+    .services-grid .glass,
+    .projects-grid .glass {
+        padding: 14px 10px !important;
+    }
+    .services-grid .glass .service-icon {
+        font-size: 24px !important;
+        margin-bottom: 6px !important;
+    }
+    .services-grid .glass h3,
+    .projects-grid .glass h3 {
+        font-size: 12px !important;
+    }
+    .services-grid .glass p,
+    .projects-grid .glass p {
+        font-size: 10px !important;
+        line-height: 1.4 !important;
+    }
+    .services-grid .glass a,
+    .projects-grid .glass a {
+        font-size: 10px !important;
+        padding: 3px 10px !important;
+    }
+    .projects-grid .glass .project-icon {
+        width: 30px !important;
+        height: 30px !important;
+        font-size: 13px !important;
+    }
+    .projects-grid .glass .project-icon + h3 {
+        font-size: 12px !important;
+    }
+    .projects-grid .glass .project-icon + h3 + p {
+        font-size: 10px !important;
+        -webkit-line-clamp: 2 !important;
+    }
+    .projects-grid .glass .project-icon + h3 + p + div span {
+        font-size: 8px !important;
+        padding: 1px 8px !important;
+    }
+
+    .blog-grid .glass .blog-image {
+        height: 100px !important;
+    }
+    .blog-grid .glass .blog-image .blog-icon {
+        font-size: 28px !important;
+    }
+    .blog-grid .glass .blog-content {
+        padding: 10px 12px 14px !important;
+    }
+    .blog-grid .glass .blog-content h3 {
+        font-size: 12px !important;
+    }
+    .blog-grid .glass .blog-content p {
+        font-size: 10px !important;
+        -webkit-line-clamp: 2 !important;
+    }
+    .blog-grid .glass .blog-content .blog-read-btn {
+        font-size: 10px !important;
+        padding: 4px 12px !important;
+    }
+
+    .news-grid .glass .news-image {
+        height: 90px !important;
+    }
+    .news-grid .glass .news-image .news-icon {
+        font-size: 24px !important;
+    }
+    .news-grid .glass .news-content {
+        padding: 10px 12px 14px !important;
+    }
+    .news-grid .glass .news-content h3 {
+        font-size: 11px !important;
+    }
+    .news-grid .glass .news-content p {
+        font-size: 10px !important;
+        -webkit-line-clamp: 2 !important;
+    }
+    .news-grid .glass .news-content .news-read-btn {
+        font-size: 10px !important;
+        padding: 4px 12px !important;
+    }
+
     #cta .cta-content h2 { font-size: 22px !important; }
     #cta .cta-content a { padding: 12px 20px !important; font-size: 13px !important; max-width: 280px !important; }
 }
