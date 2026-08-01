@@ -484,7 +484,6 @@
                         this.style.boxShadow='0 40px 100px {{ $post['color'] }}55, 0 20px 60px {{ $post['color'] }}33';
                         this.style.background='linear-gradient(135deg, {{ $post['color'] }}15, #1a1a2e)';
                         this.querySelector('.blog-image').style.transform='scale(1.08)';
-                        this.querySelector('.blog-overlay').style.opacity='1';
                         this.querySelector('.blog-icon').style.transform='scale(1.4) rotate(25deg)';
                         this.querySelector('.blog-content').style.transform='translateY(-5px)';
                         this.querySelector('.blog-read-btn').style.transform='translateX(10px) scale(1.05)';
@@ -498,7 +497,6 @@
                         this.style.boxShadow='0 10px 40px rgba(0,0,0,0.3)';
                         this.style.background='{{ $post['bg'] }}';
                         this.querySelector('.blog-image').style.transform='scale(1)';
-                        this.querySelector('.blog-overlay').style.opacity='0';
                         this.querySelector('.blog-icon').style.transform='scale(1) rotate(0deg)';
                         this.querySelector('.blog-content').style.transform='translateY(0)';
                         this.querySelector('.blog-read-btn').style.transform='translateX(0) scale(1)';
@@ -530,38 +528,6 @@
                             text-shadow: 0 0 40px {{ $post['color'] }}33;
                         ">
                             <i class="fas {{ $post['icon'] }}"></i>
-                        </div>
-
-                        <div class="blog-overlay" style="
-                            position:absolute;
-                            top:0;
-                            left:0;
-                            width:100%;
-                            height:100%;
-                            background:linear-gradient(135deg, {{ $post['color'] }}88, {{ $post['color'] }}bb);
-                            opacity:0;
-                            transition: all 0.7s ease;
-                            display:flex;
-                            align-items:center;
-                            justify-content:center;
-                            z-index:2;
-                            backdrop-filter:blur(4px);
-                        ">
-                            <span style="
-                                color:#fff;
-                                font-size:15px;
-                                font-weight:700;
-                                padding:14px 35px;
-                                border-radius:60px;
-                                border:2px solid rgba(255,255,255,0.5);
-                                background:rgba(255,255,255,0.1);
-                                backdrop-filter:blur(15px);
-                                transition:all 0.5s ease;
-                                letter-spacing:1px;
-                                box-shadow: 0 10px 40px rgba(0,0,0,0.2);
-                            " onmouseover="this.style.transform='scale(1.12)';this.style.background='rgba(255,255,255,0.2)';this.style.borderColor='#fff'" onmouseout="this.style.transform='scale(1)';this.style.background='rgba(255,255,255,0.1)';this.style.borderColor='rgba(255,255,255,0.5)'">
-                                <i class="fas fa-book-open"></i> Okumaya Başla
-                            </span>
                         </div>
 
                         <div style="position:absolute;top:18px;left:18px;background:{{ $post['color'] }};color:#fff;padding:6px 18px;border-radius:50px;font-size:11px;font-weight:700;z-index:3;box-shadow:0 6px 25px {{ $post['color'] }}66;letter-spacing:0.5px;text-transform:uppercase;">
@@ -692,7 +658,6 @@
                         this.style.boxShadow='0 40px 100px {{ $news['color'] }}55, 0 20px 60px {{ $news['color'] }}33';
                         this.style.background='linear-gradient(135deg, {{ $news['color'] }}15, #1a1a2e)';
                         this.querySelector('.news-image').style.transform='scale(1.08)';
-                        this.querySelector('.news-overlay').style.opacity='1';
                         this.querySelector('.news-icon').style.transform='scale(1.4) rotate(-25deg)';
                         this.querySelector('.news-content').style.transform='translateY(-5px)';
                         this.querySelector('.news-read-btn').style.transform='translateX(10px) scale(1.05)';
@@ -706,7 +671,6 @@
                         this.style.boxShadow='0 10px 40px rgba(0,0,0,0.3)';
                         this.style.background='{{ $news['bg'] }}';
                         this.querySelector('.news-image').style.transform='scale(1)';
-                        this.querySelector('.news-overlay').style.opacity='0';
                         this.querySelector('.news-icon').style.transform='scale(1) rotate(0deg)';
                         this.querySelector('.news-content').style.transform='translateY(0)';
                         this.querySelector('.news-read-btn').style.transform='translateX(0) scale(1)';
@@ -738,38 +702,6 @@
                             text-shadow: 0 0 40px {{ $news['color'] }}33;
                         ">
                             <i class="fas {{ $news['icon'] }}"></i>
-                        </div>
-
-                        <div class="news-overlay" style="
-                            position:absolute;
-                            top:0;
-                            left:0;
-                            width:100%;
-                            height:100%;
-                            background:linear-gradient(135deg, {{ $news['color'] }}88, {{ $news['color'] }}bb);
-                            opacity:0;
-                            transition: all 0.7s ease;
-                            display:flex;
-                            align-items:center;
-                            justify-content:center;
-                            z-index:2;
-                            backdrop-filter:blur(4px);
-                        ">
-                            <span style="
-                                color:#fff;
-                                font-size:14px;
-                                font-weight:700;
-                                padding:12px 30px;
-                                border-radius:60px;
-                                border:2px solid rgba(255,255,255,0.5);
-                                background:rgba(255,255,255,0.1);
-                                backdrop-filter:blur(15px);
-                                transition:all 0.5s ease;
-                                letter-spacing:1px;
-                                box-shadow: 0 10px 40px rgba(0,0,0,0.2);
-                            " onmouseover="this.style.transform='scale(1.12)';this.style.background='rgba(255,255,255,0.2)';this.style.borderColor='#fff'" onmouseout="this.style.transform='scale(1)';this.style.background='rgba(255,255,255,0.1)';this.style.borderColor='rgba(255,255,255,0.5)'">
-                                <i class="fas fa-eye"></i> Haberi Oku
-                            </span>
                         </div>
 
                         <div style="position:absolute;top:16px;left:16px;background:{{ $news['color'] }};color:#fff;padding:5px 16px;border-radius:50px;font-size:10px;font-weight:700;z-index:3;box-shadow:0 6px 25px {{ $news['color'] }}66;letter-spacing:0.5px;text-transform:uppercase;">

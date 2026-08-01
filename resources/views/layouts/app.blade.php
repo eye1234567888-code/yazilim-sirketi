@@ -68,13 +68,15 @@
             box-shadow: 0 4px 40px rgba(0,0,0,0.5);
             padding: 5px 0;
         }
+
         .nav-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
             width: 100%;
-            gap: 30px;
+            gap: 20px;
         }
+
         .nav-logo {
             color: #fff;
             text-decoration: none;
@@ -114,6 +116,7 @@
             padding: 5px;
             z-index: 1001;
             flex-shrink: 0;
+            margin-left: auto;
         }
         .nav-toggle span {
             width: 28px;
@@ -711,7 +714,7 @@
                 display: none;
             }
             .nav-container {
-                gap: 20px;
+                gap: 10px;
             }
             .nav-logo {
                 font-size: 22px;
@@ -762,16 +765,14 @@
             .hero-stats .stat h3 { font-size: 24px; }
             .hero-buttons { flex-direction: column; align-items: stretch; }
             .hero-buttons a { text-align: center; }
-            .nav-logo { font-size: 22px; }
-            .nav-logo i { font-size: 24px; }
+            .nav-logo { font-size: 18px; }
+            .nav-logo i { font-size: 20px; }
             .hero { min-height: 90vh; padding-top: 60px; }
         }
 
         @media (max-width: 480px) {
             .section-padding { padding: 35px 0; }
             .section-header h2 { font-size: 22px; }
-            .nav-logo { font-size: 18px; }
-            .nav-logo i { font-size: 20px; }
             .footer { padding: 30px 0 15px; }
             .hero-content h1 { font-size: 32px; }
             .hero-content p { font-size: 16px; }
