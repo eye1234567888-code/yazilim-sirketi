@@ -46,7 +46,7 @@
         position: relative;
         overflow: hidden;
         text-align: center;
-        border: 1px solid rgba(255,255,255,0.04);
+        border: 2px solid rgba(255,255,255,0.06);
         background: rgba(255,255,255,0.02);
         cursor: pointer;
         -webkit-tap-highlight-color: transparent;
@@ -54,28 +54,74 @@
     }
 
     /* ===== RENKLER (NORMAL) ===== */
-    .project-card:nth-child(1) { background: rgba(255,107,107,0.04); border-color: rgba(255,107,107,0.08); }
-    .project-card:nth-child(2) { background: rgba(255,217,61,0.04); border-color: rgba(255,217,61,0.08); }
-    .project-card:nth-child(3) { background: rgba(107,203,119,0.04); border-color: rgba(107,203,119,0.08); }
-    .project-card:nth-child(4) { background: rgba(77,150,255,0.04); border-color: rgba(77,150,255,0.08); }
-    .project-card:nth-child(5) { background: rgba(166,108,255,0.04); border-color: rgba(166,108,255,0.08); }
-    .project-card:nth-child(6) { background: rgba(255,107,107,0.04); border-color: rgba(255,107,107,0.08); }
+    .project-card:nth-child(1) {
+        border-color: rgba(255,107,107,0.2);
+        background: linear-gradient(135deg, rgba(255,107,107,0.04), rgba(255,107,107,0.01));
+    }
+    .project-card:nth-child(2) {
+        border-color: rgba(255,215,0,0.2);
+        background: linear-gradient(135deg, rgba(255,215,0,0.04), rgba(255,215,0,0.01));
+    }
+    .project-card:nth-child(3) {
+        border-color: rgba(0,255,127,0.2);
+        background: linear-gradient(135deg, rgba(0,255,127,0.04), rgba(0,255,127,0.01));
+    }
+    .project-card:nth-child(4) {
+        border-color: rgba(0,191,255,0.2);
+        background: linear-gradient(135deg, rgba(0,191,255,0.04), rgba(0,191,255,0.01));
+    }
+    .project-card:nth-child(5) {
+        border-color: rgba(255,20,147,0.2);
+        background: linear-gradient(135deg, rgba(255,20,147,0.04), rgba(255,20,147,0.01));
+    }
+    .project-card:nth-child(6) {
+        border-color: rgba(255,165,0,0.2);
+        background: linear-gradient(135deg, rgba(255,165,0,0.04), rgba(255,165,0,0.01));
+    }
 
-    /* ===== RENKLER (HOVER - Desktop) ===== */
-    .project-card:nth-child(1):hover { background: #ff6b6b !important; border-color: #ff6b6b !important; transform: translateY(-10px); box-shadow: 0 20px 60px rgba(255,107,107,0.4); }
-    .project-card:nth-child(2):hover { background: #ffd93d !important; border-color: #ffd93d !important; transform: translateY(-10px); box-shadow: 0 20px 60px rgba(255,217,61,0.4); }
-    .project-card:nth-child(3):hover { background: #6bcb77 !important; border-color: #6bcb77 !important; transform: translateY(-10px); box-shadow: 0 20px 60px rgba(107,203,119,0.4); }
-    .project-card:nth-child(4):hover { background: #4d96ff !important; border-color: #4d96ff !important; transform: translateY(-10px); box-shadow: 0 20px 60px rgba(77,150,255,0.4); }
-    .project-card:nth-child(5):hover { background: #a66cff !important; border-color: #a66cff !important; transform: translateY(-10px); box-shadow: 0 20px 60px rgba(166,108,255,0.4); }
-    .project-card:nth-child(6):hover { background: #ff6b6b !important; border-color: #ff6b6b !important; transform: translateY(-10px); box-shadow: 0 20px 60px rgba(255,107,107,0.4); }
-
-    /* ===== RENKLER (MOBİL TOUCH HOVER) ===== */
-    .project-card:nth-child(1).touch-hover { background: #ff6b6b !important; border-color: #ff6b6b !important; transform: translateY(-10px); box-shadow: 0 20px 60px rgba(255,107,107,0.4); }
-    .project-card:nth-child(2).touch-hover { background: #ffd93d !important; border-color: #ffd93d !important; transform: translateY(-10px); box-shadow: 0 20px 60px rgba(255,217,61,0.4); }
-    .project-card:nth-child(3).touch-hover { background: #6bcb77 !important; border-color: #6bcb77 !important; transform: translateY(-10px); box-shadow: 0 20px 60px rgba(107,203,119,0.4); }
-    .project-card:nth-child(4).touch-hover { background: #4d96ff !important; border-color: #4d96ff !important; transform: translateY(-10px); box-shadow: 0 20px 60px rgba(77,150,255,0.4); }
-    .project-card:nth-child(5).touch-hover { background: #a66cff !important; border-color: #a66cff !important; transform: translateY(-10px); box-shadow: 0 20px 60px rgba(166,108,255,0.4); }
-    .project-card:nth-child(6).touch-hover { background: #ff6b6b !important; border-color: #ff6b6b !important; transform: translateY(-10px); box-shadow: 0 20px 60px rgba(255,107,107,0.4); }
+    /* ===== RENKLER (HOVER) ===== */
+    .project-card:nth-child(1):hover,
+    .project-card:nth-child(1).touch-hover {
+        border-color: #ff6b6b;
+        background: linear-gradient(135deg, rgba(255,107,107,0.12), rgba(255,107,107,0.04));
+        transform: translateY(-12px);
+        box-shadow: 0 25px 70px rgba(255,107,107,0.25);
+    }
+    .project-card:nth-child(2):hover,
+    .project-card:nth-child(2).touch-hover {
+        border-color: #ffd700;
+        background: linear-gradient(135deg, rgba(255,215,0,0.12), rgba(255,215,0,0.04));
+        transform: translateY(-12px);
+        box-shadow: 0 25px 70px rgba(255,215,0,0.25);
+    }
+    .project-card:nth-child(3):hover,
+    .project-card:nth-child(3).touch-hover {
+        border-color: #00ff7f;
+        background: linear-gradient(135deg, rgba(0,255,127,0.12), rgba(0,255,127,0.04));
+        transform: translateY(-12px);
+        box-shadow: 0 25px 70px rgba(0,255,127,0.25);
+    }
+    .project-card:nth-child(4):hover,
+    .project-card:nth-child(4).touch-hover {
+        border-color: #00bfff;
+        background: linear-gradient(135deg, rgba(0,191,255,0.12), rgba(0,191,255,0.04));
+        transform: translateY(-12px);
+        box-shadow: 0 25px 70px rgba(0,191,255,0.25);
+    }
+    .project-card:nth-child(5):hover,
+    .project-card:nth-child(5).touch-hover {
+        border-color: #ff1493;
+        background: linear-gradient(135deg, rgba(255,20,147,0.12), rgba(255,20,147,0.04));
+        transform: translateY(-12px);
+        box-shadow: 0 25px 70px rgba(255,20,147,0.25);
+    }
+    .project-card:nth-child(6):hover,
+    .project-card:nth-child(6).touch-hover {
+        border-color: #ffa500;
+        background: linear-gradient(135deg, rgba(255,165,0,0.12), rgba(255,165,0,0.04));
+        transform: translateY(-12px);
+        box-shadow: 0 25px 70px rgba(255,165,0,0.25);
+    }
 
     .project-card .icon {
         width: 70px;
@@ -90,25 +136,13 @@
         background: rgba(255,255,255,0.03);
     }
 
+    /* ===== İKON RENKLERİ ===== */
     .project-card:nth-child(1) .icon { color: #ff6b6b; }
-    .project-card:nth-child(2) .icon { color: #ffd93d; }
-    .project-card:nth-child(3) .icon { color: #6bcb77; }
-    .project-card:nth-child(4) .icon { color: #4d96ff; }
-    .project-card:nth-child(5) .icon { color: #a66cff; }
-    .project-card:nth-child(6) .icon { color: #ff6b6b; }
-
-    .project-card:nth-child(1):hover .icon,
-    .project-card:nth-child(1).touch-hover .icon { color: #fff !important; background: rgba(255,255,255,0.15); }
-    .project-card:nth-child(2):hover .icon,
-    .project-card:nth-child(2).touch-hover .icon { color: #0a0e1a !important; background: rgba(0,0,0,0.1); }
-    .project-card:nth-child(3):hover .icon,
-    .project-card:nth-child(3).touch-hover .icon { color: #0a0e1a !important; background: rgba(0,0,0,0.1); }
-    .project-card:nth-child(4):hover .icon,
-    .project-card:nth-child(4).touch-hover .icon { color: #fff !important; background: rgba(255,255,255,0.15); }
-    .project-card:nth-child(5):hover .icon,
-    .project-card:nth-child(5).touch-hover .icon { color: #fff !important; background: rgba(255,255,255,0.15); }
-    .project-card:nth-child(6):hover .icon,
-    .project-card:nth-child(6).touch-hover .icon { color: #fff !important; background: rgba(255,255,255,0.15); }
+    .project-card:nth-child(2) .icon { color: #ffd700; }
+    .project-card:nth-child(3) .icon { color: #00ff7f; }
+    .project-card:nth-child(4) .icon { color: #00bfff; }
+    .project-card:nth-child(5) .icon { color: #ff1493; }
+    .project-card:nth-child(6) .icon { color: #ffa500; }
 
     .project-card:hover .icon,
     .project-card.touch-hover .icon {
@@ -124,79 +158,38 @@
     }
 
     .project-card:nth-child(1):hover h3,
-    .project-card:nth-child(1).touch-hover h3 { color: #fff !important; }
+    .project-card:nth-child(1).touch-hover h3 { color: #ff6b6b; }
     .project-card:nth-child(2):hover h3,
-    .project-card:nth-child(2).touch-hover h3 { color: #0a0e1a !important; }
+    .project-card:nth-child(2).touch-hover h3 { color: #ffd700; }
     .project-card:nth-child(3):hover h3,
-    .project-card:nth-child(3).touch-hover h3 { color: #0a0e1a !important; }
+    .project-card:nth-child(3).touch-hover h3 { color: #00ff7f; }
     .project-card:nth-child(4):hover h3,
-    .project-card:nth-child(4).touch-hover h3 { color: #fff !important; }
+    .project-card:nth-child(4).touch-hover h3 { color: #00bfff; }
     .project-card:nth-child(5):hover h3,
-    .project-card:nth-child(5).touch-hover h3 { color: #fff !important; }
+    .project-card:nth-child(5).touch-hover h3 { color: #ff1493; }
     .project-card:nth-child(6):hover h3,
-    .project-card:nth-child(6).touch-hover h3 { color: #fff !important; }
+    .project-card:nth-child(6).touch-hover h3 { color: #ffa500; }
 
     .project-card p {
         color: #94a3b8;
         font-size: 14px;
-        line-height: 1.7;
-        margin-bottom: 18px;
+        line-height: 1.8;
+        margin-bottom: 0;
         transition: 0.3s;
     }
 
     .project-card:nth-child(1):hover p,
-    .project-card:nth-child(1).touch-hover p { color: rgba(255,255,255,0.85) !important; }
+    .project-card:nth-child(1).touch-hover p { color: #c8d0e0; }
     .project-card:nth-child(2):hover p,
-    .project-card:nth-child(2).touch-hover p { color: rgba(0,0,0,0.7) !important; }
+    .project-card:nth-child(2).touch-hover p { color: #c8d0e0; }
     .project-card:nth-child(3):hover p,
-    .project-card:nth-child(3).touch-hover p { color: rgba(0,0,0,0.7) !important; }
+    .project-card:nth-child(3).touch-hover p { color: #c8d0e0; }
     .project-card:nth-child(4):hover p,
-    .project-card:nth-child(4).touch-hover p { color: rgba(255,255,255,0.85) !important; }
+    .project-card:nth-child(4).touch-hover p { color: #c8d0e0; }
     .project-card:nth-child(5):hover p,
-    .project-card:nth-child(5).touch-hover p { color: rgba(255,255,255,0.85) !important; }
+    .project-card:nth-child(5).touch-hover p { color: #c8d0e0; }
     .project-card:nth-child(6):hover p,
-    .project-card:nth-child(6).touch-hover p { color: rgba(255,255,255,0.85) !important; }
-
-    .project-card .btn-project {
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-        padding: 8px 22px;
-        border: 2px solid rgba(255,107,107,0.2);
-        border-radius: 50px;
-        font-size: 13px;
-        font-weight: 600;
-        transition: all 0.3s ease;
-        text-decoration: none;
-        background: transparent;
-    }
-
-    .project-card:nth-child(1) .btn-project { color: #ff6b6b; border-color: rgba(255,107,107,0.2); }
-    .project-card:nth-child(2) .btn-project { color: #ffd93d; border-color: rgba(255,217,61,0.2); }
-    .project-card:nth-child(3) .btn-project { color: #6bcb77; border-color: rgba(107,203,119,0.2); }
-    .project-card:nth-child(4) .btn-project { color: #4d96ff; border-color: rgba(77,150,255,0.2); }
-    .project-card:nth-child(5) .btn-project { color: #a66cff; border-color: rgba(166,108,255,0.2); }
-    .project-card:nth-child(6) .btn-project { color: #ff6b6b; border-color: rgba(255,107,107,0.2); }
-
-    .project-card:nth-child(1):hover .btn-project,
-    .project-card:nth-child(1).touch-hover .btn-project { background: #fff; color: #ff6b6b !important; border-color: #fff; }
-    .project-card:nth-child(2):hover .btn-project,
-    .project-card:nth-child(2).touch-hover .btn-project { background: #0a0e1a; color: #ffd93d !important; border-color: #0a0e1a; }
-    .project-card:nth-child(3):hover .btn-project,
-    .project-card:nth-child(3).touch-hover .btn-project { background: #0a0e1a; color: #6bcb77 !important; border-color: #0a0e1a; }
-    .project-card:nth-child(4):hover .btn-project,
-    .project-card:nth-child(4).touch-hover .btn-project { background: #fff; color: #4d96ff !important; border-color: #fff; }
-    .project-card:nth-child(5):hover .btn-project,
-    .project-card:nth-child(5).touch-hover .btn-project { background: #fff; color: #a66cff !important; border-color: #fff; }
-    .project-card:nth-child(6):hover .btn-project,
-    .project-card:nth-child(6).touch-hover .btn-project { background: #fff; color: #ff6b6b !important; border-color: #fff; }
-
-    .project-card .btn-project i {
-        transition: 0.3s;
-    }
-    .project-card .btn-project:hover i {
-        transform: translateX(4px);
-    }
+    .project-card:nth-child(6).touch-hover p { color: #c8d0e0; }
 
     .project-card .badge {
         position: absolute;
@@ -210,27 +203,24 @@
         text-transform: uppercase;
         z-index: 2;
         transition: 0.3s;
+        background: rgba(0,0,0,0.5);
+        backdrop-filter: blur(10px);
+        color: #94a3b8;
+        border: 1px solid rgba(255,255,255,0.05);
     }
 
-    .project-card:nth-child(1) .badge { background: rgba(255,107,107,0.15); color: #ff6b6b; }
-    .project-card:nth-child(2) .badge { background: rgba(255,217,61,0.15); color: #ffd93d; }
-    .project-card:nth-child(3) .badge { background: rgba(107,203,119,0.15); color: #6bcb77; }
-    .project-card:nth-child(4) .badge { background: rgba(77,150,255,0.15); color: #4d96ff; }
-    .project-card:nth-child(5) .badge { background: rgba(166,108,255,0.15); color: #a66cff; }
-    .project-card:nth-child(6) .badge { background: rgba(255,107,107,0.15); color: #ff6b6b; }
-
     .project-card:nth-child(1):hover .badge,
-    .project-card:nth-child(1).touch-hover .badge { background: rgba(255,255,255,0.15); color: #fff; }
+    .project-card:nth-child(1).touch-hover .badge { background: #ff6b6b; color: #fff; border-color: #ff6b6b; box-shadow: 0 5px 25px rgba(255,107,107,0.3); }
     .project-card:nth-child(2):hover .badge,
-    .project-card:nth-child(2).touch-hover .badge { background: rgba(0,0,0,0.1); color: #0a0e1a; }
+    .project-card:nth-child(2).touch-hover .badge { background: #ffd700; color: #0a0e1a; border-color: #ffd700; box-shadow: 0 5px 25px rgba(255,215,0,0.3); }
     .project-card:nth-child(3):hover .badge,
-    .project-card:nth-child(3).touch-hover .badge { background: rgba(0,0,0,0.1); color: #0a0e1a; }
+    .project-card:nth-child(3).touch-hover .badge { background: #00ff7f; color: #0a0e1a; border-color: #00ff7f; box-shadow: 0 5px 25px rgba(0,255,127,0.3); }
     .project-card:nth-child(4):hover .badge,
-    .project-card:nth-child(4).touch-hover .badge { background: rgba(255,255,255,0.15); color: #fff; }
+    .project-card:nth-child(4).touch-hover .badge { background: #00bfff; color: #0a0e1a; border-color: #00bfff; box-shadow: 0 5px 25px rgba(0,191,255,0.3); }
     .project-card:nth-child(5):hover .badge,
-    .project-card:nth-child(5).touch-hover .badge { background: rgba(255,255,255,0.15); color: #fff; }
+    .project-card:nth-child(5).touch-hover .badge { background: #ff1493; color: #fff; border-color: #ff1493; box-shadow: 0 5px 25px rgba(255,20,147,0.3); }
     .project-card:nth-child(6):hover .badge,
-    .project-card:nth-child(6).touch-hover .badge { background: rgba(255,255,255,0.15); color: #fff; }
+    .project-card:nth-child(6).touch-hover .badge { background: #ffa500; color: #0a0e1a; border-color: #ffa500; box-shadow: 0 5px 25px rgba(255,165,0,0.3); }
 
     /* ===== RESPONSIVE ===== */
     @media (max-width: 992px) {
@@ -275,16 +265,11 @@
         }
         .project-card p {
             font-size: 12px;
-            line-height: 1.5;
-            margin-bottom: 12px;
+            line-height: 1.6;
             display: -webkit-box;
-            -webkit-line-clamp: 2;
+            -webkit-line-clamp: 3;
             -webkit-box-orient: vertical;
             overflow: hidden;
-        }
-        .project-card .btn-project {
-            font-size: 11px;
-            padding: 4px 12px;
         }
         .project-card .badge {
             font-size: 8px;
@@ -321,11 +306,8 @@
         }
         .project-card p {
             font-size: 10px;
-            margin-bottom: 8px;
-        }
-        .project-card .btn-project {
-            font-size: 10px;
-            padding: 3px 10px;
+            line-height: 1.5;
+            -webkit-line-clamp: 2;
         }
         .project-card .badge {
             font-size: 7px;
@@ -357,56 +339,50 @@
         <div class="projects-grid">
             <!-- Proje 1 -->
             <div class="project-card" data-aos="fade-up" data-aos-delay="0">
-                <span class="badge">Tamamlandı</span>
+                <span class="badge">⭐ Tamamlandı</span>
                 <div class="icon"><i class="fas fa-code"></i></div>
                 <h3>CRM Projesi</h3>
-                <p>Müşteri ilişkileri yönetim sistemi ile iş süreçlerini dijitalleştirdik.</p>
-                <a href="#" class="btn-project">Detaylı İncele <i class="fas fa-arrow-right"></i></a>
+                <p>Müşteri ilişkileri yönetim sistemi ile iş süreçlerini dijitalleştirdik. Müşteri verilerini tek platformda toplayarak satış ve pazarlama ekiplerinin verimliliğini artırdık. Otomatik raporlama ve analiz özellikleri ile karar alma süreçlerini hızlandırdık.</p>
             </div>
 
             <!-- Proje 2 -->
             <div class="project-card" data-aos="fade-up" data-aos-delay="100">
-                <span class="badge">Tamamlandı</span>
+                <span class="badge">⭐ Tamamlandı</span>
                 <div class="icon"><i class="fas fa-shopping-cart"></i></div>
                 <h3>E-Ticaret Platformu</h3>
-                <p>Kullanıcı dostu ve dönüşüm odaklı e-ticaret platformu geliştirdik.</p>
-                <a href="#" class="btn-project">Detaylı İncele <i class="fas fa-arrow-right"></i></a>
+                <p>Kullanıcı dostu ve dönüşüm odaklı e-ticaret platformu geliştirdik. Güçlü altyapısı, gelişmiş filtreleme ve arama özellikleri ile müşteri deneyimini en üst seviyeye taşıdık. Stok yönetimi, ödeme entegrasyonu ve sipariş takibi modülleri ile komple bir çözüm sunduk.</p>
             </div>
 
             <!-- Proje 3 -->
             <div class="project-card" data-aos="fade-up" data-aos-delay="200">
-                <span class="badge">Tamamlandı</span>
+                <span class="badge">⭐ Tamamlandı</span>
                 <div class="icon"><i class="fas fa-mobile-alt"></i></div>
                 <h3>Mobil Uygulama</h3>
-                <p>iOS ve Android için yüksek performanslı mobil uygulama geliştirdik.</p>
-                <a href="#" class="btn-project">Detaylı İncele <i class="fas fa-arrow-right"></i></a>
+                <p>iOS ve Android için yüksek performanslı mobil uygulama geliştirdik. Kullanıcı dostu arayüzü, hızlı yanıt süreleri ve offline çalışma özelliği ile mobil deneyimi yeniden tanımladık. Push bildirimler ve canlı destek ile müşteri bağlılığını artırdık.</p>
             </div>
 
             <!-- Proje 4 -->
             <div class="project-card" data-aos="fade-up" data-aos-delay="300">
-                <span class="badge">Tamamlandı</span>
+                <span class="badge">⭐ Tamamlandı</span>
                 <div class="icon"><i class="fas fa-hospital"></i></div>
                 <h3>Hastane Yönetim Sistemi</h3>
-                <p>Hastane süreçlerini dijitalleştiren yönetim sistemi geliştirdik.</p>
-                <a href="#" class="btn-project">Detaylı İncele <i class="fas fa-arrow-right"></i></a>
+                <p>Hastane süreçlerini dijitalleştiren yönetim sistemi geliştirdik. Hasta kayıtlarından randevu takibine, doktor çalışma planlarından fatura yönetimine kadar tüm hastane operasyonlarını tek bir platformda topladık. Veri güvenliği ve gizliliği en üst düzeyde sağladık.</p>
             </div>
 
             <!-- Proje 5 -->
             <div class="project-card" data-aos="fade-up" data-aos-delay="400">
-                <span class="badge">Tamamlandı</span>
+                <span class="badge">⭐ Tamamlandı</span>
                 <div class="icon"><i class="fas fa-truck"></i></div>
                 <h3>Lojistik Yönetim Sistemi</h3>
-                <p>Filo yönetimi ve rota optimizasyonu ile operasyonel verimlilik sağladık.</p>
-                <a href="#" class="btn-project">Detaylı İncele <i class="fas fa-arrow-right"></i></a>
+                <p>Filo yönetimi ve rota optimizasyonu ile operasyonel verimlilik sağladık. Araç takibi, teslimat planlaması ve sürücü yönetimi modülleri ile lojistik süreçlerini dijitalleştirdik. Gerçek zamanlı konum takibi ve raporlama ile işletme sahiplerine tam kontrol imkanı sunduk.</p>
             </div>
 
             <!-- Proje 6 -->
             <div class="project-card" data-aos="fade-up" data-aos-delay="500">
-                <span class="badge">Tamamlandı</span>
+                <span class="badge">⭐ Tamamlandı</span>
                 <div class="icon"><i class="fas fa-graduation-cap"></i></div>
                 <h3>Eğitim Platformu</h3>
-                <p>Uzaktan eğitim ve öğrenci yönetim sistemi ile dijital dönüşüm sağladık.</p>
-                <a href="#" class="btn-project">Detaylı İncele <i class="fas fa-arrow-right"></i></a>
+                <p>Uzaktan eğitim ve öğrenci yönetim sistemi ile dijital dönüşüm sağladık. Canlı dersler, video içerik yönetimi, sınav modülü ve ilerleme takibi gibi özellikler ile eğitim kurumlarının tüm ihtiyaçlarını karşılayan kapsamlı bir çözüm geliştirdik.</p>
             </div>
         </div>
     </div>
@@ -482,15 +458,6 @@
 
         card.addEventListener('touchcancel', function(e) {
             this.classList.remove('touch-hover');
-        });
-
-        // Kart içindeki butona tıklanırken hover'ı kaldır
-        card.querySelectorAll('.btn-project').forEach(btn => {
-            btn.addEventListener('touchstart', function(e) {
-                e.stopPropagation();
-                const parent = this.closest('.project-card');
-                parent.classList.remove('touch-hover');
-            });
         });
     });
 </script>
