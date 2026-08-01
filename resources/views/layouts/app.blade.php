@@ -685,10 +685,12 @@
                 transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
                 overflow-y: auto;
                 z-index: 999;
-                display: block;
+                display: block !important;
                 justify-content: flex-start;
                 flex: none;
                 box-shadow: -10px 0 40px rgba(0,0,0,0.5);
+                opacity: 1 !important;
+                visibility: visible !important;
             }
             .nav-menu.active {
                 right: 0;
