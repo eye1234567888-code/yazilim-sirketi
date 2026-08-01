@@ -53,27 +53,57 @@
         touch-action: manipulation;
     }
 
-    /* ===== RENKLER (NORMAL) ===== */
+    /* ===== GECE TEMASI RENKLERİ (NORMAL) ===== */
     .project-card:nth-child(1) { background: rgba(255,107,107,0.04); border-color: rgba(255,107,107,0.08); }
-    .project-card:nth-child(2) { background: rgba(255,217,61,0.04); border-color: rgba(255,217,61,0.08); }
-    .project-card:nth-child(3) { background: rgba(107,203,119,0.04); border-color: rgba(107,203,119,0.08); }
-    .project-card:nth-child(4) { background: rgba(77,150,255,0.04); border-color: rgba(77,150,255,0.08); }
-    .project-card:nth-child(5) { background: rgba(166,108,255,0.04); border-color: rgba(166,108,255,0.08); }
+    .project-card:nth-child(2) { background: rgba(255,215,0,0.04); border-color: rgba(255,215,0,0.08); }
+    .project-card:nth-child(3) { background: rgba(0,206,209,0.04); border-color: rgba(0,206,209,0.08); }
+    .project-card:nth-child(4) { background: rgba(100,149,237,0.04); border-color: rgba(100,149,237,0.08); }
+    .project-card:nth-child(5) { background: rgba(218,112,214,0.04); border-color: rgba(218,112,214,0.08); }
     .project-card:nth-child(6) { background: rgba(255,107,107,0.04); border-color: rgba(255,107,107,0.08); }
 
-    /* ===== RENKLER (HOVER) ===== */
+    /* ===== GECE TEMASI RENKLERİ (HOVER) - YUMUŞAK GEÇİŞ ===== */
     .project-card:nth-child(1):hover,
-    .project-card:nth-child(1).touch-hover { background: #ff6b6b !important; border-color: #ff6b6b !important; transform: translateY(-10px); box-shadow: 0 20px 60px rgba(255,107,107,0.4); }
+    .project-card:nth-child(1).touch-hover {
+        background: rgba(255,107,107,0.12) !important;
+        border-color: #ff6b6b !important;
+        transform: translateY(-10px);
+        box-shadow: 0 20px 60px rgba(255,107,107,0.15);
+    }
     .project-card:nth-child(2):hover,
-    .project-card:nth-child(2).touch-hover { background: #ffd93d !important; border-color: #ffd93d !important; transform: translateY(-10px); box-shadow: 0 20px 60px rgba(255,217,61,0.4); }
+    .project-card:nth-child(2).touch-hover {
+        background: rgba(255,215,0,0.12) !important;
+        border-color: #ffd700 !important;
+        transform: translateY(-10px);
+        box-shadow: 0 20px 60px rgba(255,215,0,0.15);
+    }
     .project-card:nth-child(3):hover,
-    .project-card:nth-child(3).touch-hover { background: #6bcb77 !important; border-color: #6bcb77 !important; transform: translateY(-10px); box-shadow: 0 20px 60px rgba(107,203,119,0.4); }
+    .project-card:nth-child(3).touch-hover {
+        background: rgba(0,206,209,0.12) !important;
+        border-color: #00ced1 !important;
+        transform: translateY(-10px);
+        box-shadow: 0 20px 60px rgba(0,206,209,0.15);
+    }
     .project-card:nth-child(4):hover,
-    .project-card:nth-child(4).touch-hover { background: #4d96ff !important; border-color: #4d96ff !important; transform: translateY(-10px); box-shadow: 0 20px 60px rgba(77,150,255,0.4); }
+    .project-card:nth-child(4).touch-hover {
+        background: rgba(100,149,237,0.12) !important;
+        border-color: #6495ed !important;
+        transform: translateY(-10px);
+        box-shadow: 0 20px 60px rgba(100,149,237,0.15);
+    }
     .project-card:nth-child(5):hover,
-    .project-card:nth-child(5).touch-hover { background: #a66cff !important; border-color: #a66cff !important; transform: translateY(-10px); box-shadow: 0 20px 60px rgba(166,108,255,0.4); }
+    .project-card:nth-child(5).touch-hover {
+        background: rgba(218,112,214,0.12) !important;
+        border-color: #da70d6 !important;
+        transform: translateY(-10px);
+        box-shadow: 0 20px 60px rgba(218,112,214,0.15);
+    }
     .project-card:nth-child(6):hover,
-    .project-card:nth-child(6).touch-hover { background: #ff6b6b !important; border-color: #ff6b6b !important; transform: translateY(-10px); box-shadow: 0 20px 60px rgba(255,107,107,0.4); }
+    .project-card:nth-child(6).touch-hover {
+        background: rgba(255,107,107,0.12) !important;
+        border-color: #ff6b6b !important;
+        transform: translateY(-10px);
+        box-shadow: 0 20px 60px rgba(255,107,107,0.15);
+    }
 
     .project-card .icon {
         width: 70px;
@@ -90,29 +120,29 @@
 
     /* ===== İKON RENKLERİ (NORMAL) ===== */
     .project-card:nth-child(1) .icon { color: #ff6b6b; }
-    .project-card:nth-child(2) .icon { color: #ffd93d; }
-    .project-card:nth-child(3) .icon { color: #6bcb77; }
-    .project-card:nth-child(4) .icon { color: #4d96ff; }
-    .project-card:nth-child(5) .icon { color: #a66cff; }
+    .project-card:nth-child(2) .icon { color: #ffd700; }
+    .project-card:nth-child(3) .icon { color: #00ced1; }
+    .project-card:nth-child(4) .icon { color: #6495ed; }
+    .project-card:nth-child(5) .icon { color: #da70d6; }
     .project-card:nth-child(6) .icon { color: #ff6b6b; }
 
     /* ===== İKON RENKLERİ (HOVER) ===== */
     .project-card:nth-child(1):hover .icon,
-    .project-card:nth-child(1).touch-hover .icon { color: #fff !important; background: rgba(255,255,255,0.15); }
+    .project-card:nth-child(1).touch-hover .icon { color: #ff6b6b !important; background: rgba(255,107,107,0.08); }
     .project-card:nth-child(2):hover .icon,
-    .project-card:nth-child(2).touch-hover .icon { color: #0a0e1a !important; background: rgba(0,0,0,0.1); }
+    .project-card:nth-child(2).touch-hover .icon { color: #ffd700 !important; background: rgba(255,215,0,0.08); }
     .project-card:nth-child(3):hover .icon,
-    .project-card:nth-child(3).touch-hover .icon { color: #0a0e1a !important; background: rgba(0,0,0,0.1); }
+    .project-card:nth-child(3).touch-hover .icon { color: #00ced1 !important; background: rgba(0,206,209,0.08); }
     .project-card:nth-child(4):hover .icon,
-    .project-card:nth-child(4).touch-hover .icon { color: #fff !important; background: rgba(255,255,255,0.15); }
+    .project-card:nth-child(4).touch-hover .icon { color: #6495ed !important; background: rgba(100,149,237,0.08); }
     .project-card:nth-child(5):hover .icon,
-    .project-card:nth-child(5).touch-hover .icon { color: #fff !important; background: rgba(255,255,255,0.15); }
+    .project-card:nth-child(5).touch-hover .icon { color: #da70d6 !important; background: rgba(218,112,214,0.08); }
     .project-card:nth-child(6):hover .icon,
-    .project-card:nth-child(6).touch-hover .icon { color: #fff !important; background: rgba(255,255,255,0.15); }
+    .project-card:nth-child(6).touch-hover .icon { color: #ff6b6b !important; background: rgba(255,107,107,0.08); }
 
     .project-card:hover .icon,
     .project-card.touch-hover .icon {
-        transform: scale(1.15) rotate(12deg);
+        transform: scale(1.1) rotate(8deg);
     }
 
     .project-card h3 {
@@ -125,17 +155,17 @@
 
     /* ===== BAŞLIK RENKLERİ (HOVER) ===== */
     .project-card:nth-child(1):hover h3,
-    .project-card:nth-child(1).touch-hover h3 { color: #fff !important; }
+    .project-card:nth-child(1).touch-hover h3 { color: #ff6b6b !important; }
     .project-card:nth-child(2):hover h3,
-    .project-card:nth-child(2).touch-hover h3 { color: #0a0e1a !important; }
+    .project-card:nth-child(2).touch-hover h3 { color: #ffd700 !important; }
     .project-card:nth-child(3):hover h3,
-    .project-card:nth-child(3).touch-hover h3 { color: #0a0e1a !important; }
+    .project-card:nth-child(3).touch-hover h3 { color: #00ced1 !important; }
     .project-card:nth-child(4):hover h3,
-    .project-card:nth-child(4).touch-hover h3 { color: #fff !important; }
+    .project-card:nth-child(4).touch-hover h3 { color: #6495ed !important; }
     .project-card:nth-child(5):hover h3,
-    .project-card:nth-child(5).touch-hover h3 { color: #fff !important; }
+    .project-card:nth-child(5).touch-hover h3 { color: #da70d6 !important; }
     .project-card:nth-child(6):hover h3,
-    .project-card:nth-child(6).touch-hover h3 { color: #fff !important; }
+    .project-card:nth-child(6).touch-hover h3 { color: #ff6b6b !important; }
 
     .project-card p {
         color: #94a3b8;
@@ -147,17 +177,17 @@
 
     /* ===== AÇIKLAMA RENKLERİ (HOVER) ===== */
     .project-card:nth-child(1):hover p,
-    .project-card:nth-child(1).touch-hover p { color: rgba(255,255,255,0.85) !important; }
+    .project-card:nth-child(1).touch-hover p { color: #e2e8f0 !important; }
     .project-card:nth-child(2):hover p,
-    .project-card:nth-child(2).touch-hover p { color: rgba(0,0,0,0.7) !important; }
+    .project-card:nth-child(2).touch-hover p { color: #e2e8f0 !important; }
     .project-card:nth-child(3):hover p,
-    .project-card:nth-child(3).touch-hover p { color: rgba(0,0,0,0.7) !important; }
+    .project-card:nth-child(3).touch-hover p { color: #e2e8f0 !important; }
     .project-card:nth-child(4):hover p,
-    .project-card:nth-child(4).touch-hover p { color: rgba(255,255,255,0.85) !important; }
+    .project-card:nth-child(4).touch-hover p { color: #e2e8f0 !important; }
     .project-card:nth-child(5):hover p,
-    .project-card:nth-child(5).touch-hover p { color: rgba(255,255,255,0.85) !important; }
+    .project-card:nth-child(5).touch-hover p { color: #e2e8f0 !important; }
     .project-card:nth-child(6):hover p,
-    .project-card:nth-child(6).touch-hover p { color: rgba(255,255,255,0.85) !important; }
+    .project-card:nth-child(6).touch-hover p { color: #e2e8f0 !important; }
 
     .project-card .badge {
         position: absolute;
@@ -171,24 +201,23 @@
         text-transform: uppercase;
         z-index: 2;
         transition: 0.3s;
-        background: rgba(0,0,0,0.4);
-        backdrop-filter: blur(10px);
+        background: rgba(255,255,255,0.04);
         color: #94a3b8;
-        border: 1px solid rgba(255,255,255,0.05);
+        border: 1px solid rgba(255,255,255,0.04);
     }
 
     .project-card:nth-child(1):hover .badge,
-    .project-card:nth-child(1).touch-hover .badge { background: rgba(255,255,255,0.15); color: #fff; }
+    .project-card:nth-child(1).touch-hover .badge { background: rgba(255,107,107,0.08); color: #ff6b6b; border-color: rgba(255,107,107,0.08); }
     .project-card:nth-child(2):hover .badge,
-    .project-card:nth-child(2).touch-hover .badge { background: rgba(0,0,0,0.1); color: #0a0e1a; }
+    .project-card:nth-child(2).touch-hover .badge { background: rgba(255,215,0,0.08); color: #ffd700; border-color: rgba(255,215,0,0.08); }
     .project-card:nth-child(3):hover .badge,
-    .project-card:nth-child(3).touch-hover .badge { background: rgba(0,0,0,0.1); color: #0a0e1a; }
+    .project-card:nth-child(3).touch-hover .badge { background: rgba(0,206,209,0.08); color: #00ced1; border-color: rgba(0,206,209,0.08); }
     .project-card:nth-child(4):hover .badge,
-    .project-card:nth-child(4).touch-hover .badge { background: rgba(255,255,255,0.15); color: #fff; }
+    .project-card:nth-child(4).touch-hover .badge { background: rgba(100,149,237,0.08); color: #6495ed; border-color: rgba(100,149,237,0.08); }
     .project-card:nth-child(5):hover .badge,
-    .project-card:nth-child(5).touch-hover .badge { background: rgba(255,255,255,0.15); color: #fff; }
+    .project-card:nth-child(5).touch-hover .badge { background: rgba(218,112,214,0.08); color: #da70d6; border-color: rgba(218,112,214,0.08); }
     .project-card:nth-child(6):hover .badge,
-    .project-card:nth-child(6).touch-hover .badge { background: rgba(255,255,255,0.15); color: #fff; }
+    .project-card:nth-child(6).touch-hover .badge { background: rgba(255,107,107,0.08); color: #ff6b6b; border-color: rgba(255,107,107,0.08); }
 
     /* ===== RESPONSIVE ===== */
     @media (max-width: 992px) {
