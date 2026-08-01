@@ -30,81 +30,96 @@
         line-height: 1.7;
     }
 
-    /* ===== REFERANS GRİD ===== */
+    /* ===== REFERANS GRİD - 2 SÜTUN (SABİT) ===== */
     .references-grid {
         display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 25px;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        max-width: 800px;
+        margin: 0 auto;
         padding: 30px 0 70px;
         position: relative;
         z-index: 1;
     }
 
     .reference-item {
-        background: rgba(255,255,255,0.03);
-        border: 1px solid rgba(255,255,255,0.05);
-        border-radius: 16px;
-        padding: 30px 20px;
+        background: rgba(255,255,255,0.02);
+        border: 1px solid rgba(255,255,255,0.04);
+        border-radius: 14px;
+        padding: 25px 20px;
         text-align: center;
         transition: all 0.4s ease;
         cursor: default;
     }
     .reference-item:hover {
-        transform: translateY(-8px);
-        background: rgba(255,255,255,0.06);
-        border-color: rgba(255,255,255,0.1);
+        transform: translateY(-5px);
+        background: rgba(255,255,255,0.05);
+        border-color: rgba(255,255,255,0.08);
     }
 
     .reference-item .icon {
-        font-size: 40px;
-        margin-bottom: 12px;
+        font-size: 34px;
         display: block;
+        margin-bottom: 8px;
     }
     .reference-item h3 {
-        font-size: 18px;
-        font-weight: 700;
+        font-size: 17px;
+        font-weight: 600;
         color: #fff;
-        margin-bottom: 4px;
+        margin-bottom: 2px;
     }
     .reference-item .sector {
-        font-size: 12px;
+        font-size: 13px;
         color: #94a3b8;
         font-weight: 500;
     }
 
     /* ===== RENKLER ===== */
     .reference-item:nth-child(1) .icon { color: #ff6b6b; }
-    .reference-item:nth-child(1):hover { border-color: rgba(255,107,107,0.3); }
+    .reference-item:nth-child(1):hover { border-color: rgba(255,107,107,0.25); }
 
     .reference-item:nth-child(2) .icon { color: #ffd93d; }
-    .reference-item:nth-child(2):hover { border-color: rgba(255,217,61,0.3); }
+    .reference-item:nth-child(2):hover { border-color: rgba(255,217,61,0.25); }
 
     .reference-item:nth-child(3) .icon { color: #6bcb77; }
-    .reference-item:nth-child(3):hover { border-color: rgba(107,203,119,0.3); }
+    .reference-item:nth-child(3):hover { border-color: rgba(107,203,119,0.25); }
 
     .reference-item:nth-child(4) .icon { color: #4d96ff; }
-    .reference-item:nth-child(4):hover { border-color: rgba(77,150,255,0.3); }
+    .reference-item:nth-child(4):hover { border-color: rgba(77,150,255,0.25); }
 
     .reference-item:nth-child(5) .icon { color: #a66cff; }
-    .reference-item:nth-child(5):hover { border-color: rgba(166,108,255,0.3); }
+    .reference-item:nth-child(5):hover { border-color: rgba(166,108,255,0.25); }
 
     .reference-item:nth-child(6) .icon { color: #ff6b6b; }
-    .reference-item:nth-child(6):hover { border-color: rgba(255,107,107,0.3); }
+    .reference-item:nth-child(6):hover { border-color: rgba(255,107,107,0.25); }
 
     .reference-item:nth-child(7) .icon { color: #ffd93d; }
-    .reference-item:nth-child(7):hover { border-color: rgba(255,217,61,0.3); }
+    .reference-item:nth-child(7):hover { border-color: rgba(255,217,61,0.25); }
 
     .reference-item:nth-child(8) .icon { color: #6bcb77; }
-    .reference-item:nth-child(8):hover { border-color: rgba(107,203,119,0.3); }
+    .reference-item:nth-child(8):hover { border-color: rgba(107,203,119,0.25); }
 
     /* ===== RESPONSIVE ===== */
     @media (max-width: 992px) {
-        .references-grid {
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-        }
         .references-hero h1 {
             font-size: 38px;
+        }
+        .references-grid {
+            gap: 15px;
+            padding: 25px 0 50px;
+            max-width: 100%;
+        }
+        .reference-item {
+            padding: 20px 16px;
+        }
+        .reference-item .icon {
+            font-size: 30px;
+        }
+        .reference-item h3 {
+            font-size: 15px;
+        }
+        .reference-item .sector {
+            font-size: 12px;
         }
     }
 
@@ -120,18 +135,21 @@
             padding: 0 15px;
         }
         .references-grid {
-            grid-template-columns: repeat(2, 1fr);
-            gap: 15px;
-            padding: 20px 0 50px;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            padding: 20px 0 40px;
+            max-width: 100%;
         }
         .reference-item {
-            padding: 20px 15px;
+            padding: 16px 12px;
+            border-radius: 12px;
         }
         .reference-item .icon {
-            font-size: 30px;
+            font-size: 24px;
+            margin-bottom: 6px;
         }
         .reference-item h3 {
-            font-size: 15px;
+            font-size: 14px;
         }
         .reference-item .sector {
             font-size: 11px;
@@ -146,20 +164,20 @@
             font-size: 13px;
         }
         .references-grid {
-            grid-template-columns: repeat(2, 1fr);
-            gap: 12px;
-            padding: 15px 0 40px;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            padding: 15px 0 30px;
         }
         .reference-item {
-            padding: 16px 12px;
-            border-radius: 12px;
+            padding: 14px 10px;
+            border-radius: 10px;
         }
         .reference-item .icon {
-            font-size: 24px;
-            margin-bottom: 8px;
+            font-size: 20px;
+            margin-bottom: 4px;
         }
         .reference-item h3 {
-            font-size: 13px;
+            font-size: 12px;
         }
         .reference-item .sector {
             font-size: 10px;
@@ -194,43 +212,43 @@
                 <span class="sector">Teknoloji</span>
             </div>
 
-            <div class="reference-item" data-aos="fade-up" data-aos-delay="100">
+            <div class="reference-item" data-aos="fade-up" data-aos-delay="50">
                 <span class="icon"><i class="fas fa-shopping-bag"></i></span>
                 <h3>Şirket B</h3>
                 <span class="sector">E-Ticaret</span>
             </div>
 
-            <div class="reference-item" data-aos="fade-up" data-aos-delay="200">
+            <div class="reference-item" data-aos="fade-up" data-aos-delay="100">
                 <span class="icon"><i class="fas fa-hospital"></i></span>
                 <h3>Şirket C</h3>
                 <span class="sector">Sağlık</span>
             </div>
 
-            <div class="reference-item" data-aos="fade-up" data-aos-delay="300">
+            <div class="reference-item" data-aos="fade-up" data-aos-delay="150">
                 <span class="icon"><i class="fas fa-truck"></i></span>
                 <h3>Şirket D</h3>
                 <span class="sector">Lojistik</span>
             </div>
 
-            <div class="reference-item" data-aos="fade-up" data-aos-delay="400">
+            <div class="reference-item" data-aos="fade-up" data-aos-delay="200">
                 <span class="icon"><i class="fas fa-graduation-cap"></i></span>
                 <h3>Şirket E</h3>
                 <span class="sector">Eğitim</span>
             </div>
 
-            <div class="reference-item" data-aos="fade-up" data-aos-delay="500">
+            <div class="reference-item" data-aos="fade-up" data-aos-delay="250">
                 <span class="icon"><i class="fas fa-utensils"></i></span>
                 <h3>Şirket F</h3>
                 <span class="sector">Gıda</span>
             </div>
 
-            <div class="reference-item" data-aos="fade-up" data-aos-delay="600">
+            <div class="reference-item" data-aos="fade-up" data-aos-delay="300">
                 <span class="icon"><i class="fas fa-film"></i></span>
                 <h3>Şirket G</h3>
                 <span class="sector">Medya</span>
             </div>
 
-            <div class="reference-item" data-aos="fade-up" data-aos-delay="700">
+            <div class="reference-item" data-aos="fade-up" data-aos-delay="350">
                 <span class="icon"><i class="fas fa-home"></i></span>
                 <h3>Şirket H</h3>
                 <span class="sector">Emlak</span>

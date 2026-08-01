@@ -30,7 +30,6 @@
         line-height: 1.7;
     }
 
-    /* ===== HABER KARTLARI ===== */
     .news-grid {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
@@ -42,16 +41,52 @@
 
     .news-card {
         border-radius: 20px;
-        overflow: hidden;
+        padding: 0;
         transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        border: 1px solid rgba(255,255,255,0.04);
+        position: relative;
+        overflow: hidden;
+        border: 2px solid rgba(255,255,255,0.06);
         background: rgba(255,255,255,0.02);
+        cursor: pointer;
+        -webkit-tap-highlight-color: transparent;
+        touch-action: manipulation;
     }
 
-    .news-card:hover {
+    /* ===== RENKLER (NORMAL) ===== */
+    .news-card:nth-child(1) {
+        border-color: rgba(255,107,107,0.2);
+        background: linear-gradient(135deg, rgba(255,107,107,0.04), rgba(255,107,107,0.01));
+    }
+    .news-card:nth-child(2) {
+        border-color: rgba(54,197,240,0.2);
+        background: linear-gradient(135deg, rgba(54,197,240,0.04), rgba(54,197,240,0.01));
+    }
+    .news-card:nth-child(3) {
+        border-color: rgba(46,213,115,0.2);
+        background: linear-gradient(135deg, rgba(46,213,115,0.04), rgba(46,213,115,0.01));
+    }
+
+    /* ===== RENKLER (HOVER) ===== */
+    .news-card:nth-child(1):hover,
+    .news-card:nth-child(1).touch-hover {
+        border-color: #ff6b6b;
+        background: linear-gradient(135deg, rgba(255,107,107,0.12), rgba(255,107,107,0.04));
         transform: translateY(-12px);
-        box-shadow: 0 30px 80px rgba(0,0,0,0.4);
-        border-color: rgba(255,107,107,0.15);
+        box-shadow: 0 25px 70px rgba(255,107,107,0.25);
+    }
+    .news-card:nth-child(2):hover,
+    .news-card:nth-child(2).touch-hover {
+        border-color: #36c5f0;
+        background: linear-gradient(135deg, rgba(54,197,240,0.12), rgba(54,197,240,0.04));
+        transform: translateY(-12px);
+        box-shadow: 0 25px 70px rgba(54,197,240,0.25);
+    }
+    .news-card:nth-child(3):hover,
+    .news-card:nth-child(3).touch-hover {
+        border-color: #2ed573;
+        background: linear-gradient(135deg, rgba(46,213,115,0.12), rgba(46,213,115,0.04));
+        transform: translateY(-12px);
+        box-shadow: 0 25px 70px rgba(46,213,115,0.25);
     }
 
     /* ===== HABER GÖRSEL ===== */
@@ -61,42 +96,82 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        font-size: 50px;
+        font-size: 55px;
         position: relative;
         overflow: hidden;
         transition: 0.5s;
+        background: rgba(255,255,255,0.02);
     }
 
-    .news-card:hover .news-image {
+    .news-card:hover .news-image,
+    .news-card.touch-hover .news-image {
         transform: scale(1.03);
     }
 
     .news-card .news-image .image-icon {
-        transition: 0.5s;
+        transition: 0.6s;
+        opacity: 0.5;
     }
 
-    .news-card:hover .news-image .image-icon {
-        transform: scale(1.1) rotate(5deg);
+    .news-card:hover .news-image .image-icon,
+    .news-card.touch-hover .news-image .image-icon {
+        transform: scale(1.15) rotate(8deg);
+        opacity: 0.9;
     }
+
+    /* ===== İKON RENKLERİ ===== */
+    .news-card:nth-child(1) .news-image .image-icon { color: #ff6b6b; }
+    .news-card:nth-child(2) .news-image .image-icon { color: #36c5f0; }
+    .news-card:nth-child(3) .news-image .image-icon { color: #2ed573; }
 
     .news-card .news-image .news-source-tag {
         position: absolute;
         bottom: 15px;
         left: 15px;
-        padding: 4px 14px;
+        padding: 5px 16px;
         border-radius: 50px;
-        font-size: 10px;
-        font-weight: 600;
+        font-size: 11px;
+        font-weight: 700;
         text-transform: uppercase;
         letter-spacing: 1px;
-        background: rgba(255,107,107,0.15);
-        color: #ff6b6b;
-        border: 1px solid rgba(255,107,107,0.1);
+        background: rgba(0,0,0,0.6);
+        backdrop-filter: blur(10px);
+        color: #fff;
+        border: 1px solid rgba(255,255,255,0.05);
+        transition: 0.4s;
+    }
+
+    .news-card:nth-child(1):hover .news-source-tag,
+    .news-card:nth-child(1).touch-hover .news-source-tag {
+        background: #ff6b6b;
+        color: #fff;
+        border-color: #ff6b6b;
+        box-shadow: 0 5px 25px rgba(255,107,107,0.3);
+    }
+    .news-card:nth-child(2):hover .news-source-tag,
+    .news-card:nth-child(2).touch-hover .news-source-tag {
+        background: #36c5f0;
+        color: #fff;
+        border-color: #36c5f0;
+        box-shadow: 0 5px 25px rgba(54,197,240,0.3);
+    }
+    .news-card:nth-child(3):hover .news-source-tag,
+    .news-card:nth-child(3).touch-hover .news-source-tag {
+        background: #2ed573;
+        color: #fff;
+        border-color: #2ed573;
+        box-shadow: 0 5px 25px rgba(46,213,115,0.3);
     }
 
     /* ===== HABER İÇERİK ===== */
     .news-card .news-content {
         padding: 25px;
+        transition: 0.4s;
+    }
+
+    .news-card:hover .news-content,
+    .news-card.touch-hover .news-content {
+        transform: translateY(-2px);
     }
 
     .news-card .news-content .news-meta {
@@ -107,6 +182,7 @@
         font-size: 12px;
         color: #64748b;
         flex-wrap: wrap;
+        transition: 0.3s;
     }
 
     .news-card .news-content .news-meta span {
@@ -116,12 +192,19 @@
     }
 
     .news-card .news-content .news-meta span i {
-        font-size: 11px;
-        color: #ff6b6b;
+        font-size: 12px;
+        transition: 0.3s;
     }
 
+    .news-card:nth-child(1):hover .news-meta span i,
+    .news-card:nth-child(1).touch-hover .news-meta span i { color: #ff6b6b; }
+    .news-card:nth-child(2):hover .news-meta span i,
+    .news-card:nth-child(2).touch-hover .news-meta span i { color: #36c5f0; }
+    .news-card:nth-child(3):hover .news-meta span i,
+    .news-card:nth-child(3).touch-hover .news-meta span i { color: #2ed573; }
+
     .news-card .news-content h3 {
-        font-size: 18px;
+        font-size: 19px;
         font-weight: 700;
         color: #fff;
         margin-bottom: 10px;
@@ -133,84 +216,75 @@
         overflow: hidden;
     }
 
-    .news-card:hover .news-content h3 {
-        color: #ff6b6b;
-    }
+    .news-card:nth-child(1):hover h3,
+    .news-card:nth-child(1).touch-hover h3 { color: #ff6b6b; }
+    .news-card:nth-child(2):hover h3,
+    .news-card:nth-child(2).touch-hover h3 { color: #36c5f0; }
+    .news-card:nth-child(3):hover h3,
+    .news-card:nth-child(3).touch-hover h3 { color: #2ed573; }
 
     .news-card .news-content .excerpt {
         color: #94a3b8;
         font-size: 14px;
-        line-height: 1.7;
+        line-height: 1.8;
         margin-bottom: 18px;
         display: -webkit-box;
         -webkit-line-clamp: 3;
         -webkit-box-orient: vertical;
         overflow: hidden;
+        transition: 0.3s;
     }
+
+    .news-card:nth-child(1):hover .excerpt,
+    .news-card:nth-child(1).touch-hover .excerpt { color: #c8d0e0; }
+    .news-card:nth-child(2):hover .excerpt,
+    .news-card:nth-child(2).touch-hover .excerpt { color: #c8d0e0; }
+    .news-card:nth-child(3):hover .excerpt,
+    .news-card:nth-child(3).touch-hover .excerpt { color: #c8d0e0; }
 
     .news-card .news-content .read-more {
         display: inline-flex;
         align-items: center;
         gap: 8px;
-        color: #ff6b6b;
         text-decoration: none;
         font-weight: 600;
         font-size: 13px;
-        transition: 0.3s;
-        padding: 8px 20px;
-        border: 2px solid rgba(255,107,107,0.1);
+        transition: all 0.4s ease;
+        padding: 8px 22px;
         border-radius: 50px;
+        background: transparent;
+        border: 2px solid rgba(255,255,255,0.08);
+        color: #94a3b8;
     }
 
-    .news-card .news-content .read-more:hover {
-        background: #ff6b6b;
-        color: #fff;
+    .news-card:nth-child(1):hover .read-more,
+    .news-card:nth-child(1).touch-hover .read-more {
         border-color: #ff6b6b;
+        color: #ff6b6b;
+        background: rgba(255,107,107,0.05);
+        box-shadow: 0 5px 25px rgba(255,107,107,0.1);
+    }
+    .news-card:nth-child(2):hover .read-more,
+    .news-card:nth-child(2).touch-hover .read-more {
+        border-color: #36c5f0;
+        color: #36c5f0;
+        background: rgba(54,197,240,0.05);
+        box-shadow: 0 5px 25px rgba(54,197,240,0.1);
+    }
+    .news-card:nth-child(3):hover .read-more,
+    .news-card:nth-child(3).touch-hover .read-more {
+        border-color: #2ed573;
+        color: #2ed573;
+        background: rgba(46,213,115,0.05);
+        box-shadow: 0 5px 25px rgba(46,213,115,0.1);
+    }
+
+    .news-card .news-content .read-more i {
+        transition: 0.3s;
+    }
+    .news-card .news-content .read-more:hover i {
         transform: translateX(5px);
     }
-
-    /* ===== RENK VARİANTLARI ===== */
-    .news-card:nth-child(1) .news-image { background: linear-gradient(135deg, rgba(255,107,107,0.12), rgba(255,107,107,0.03)); }
-    .news-card:nth-child(1) .news-image .image-icon { color: #ff6b6b; }
-    .news-card:nth-child(1) .news-image .news-source-tag { background: rgba(255,107,107,0.15); color: #ff6b6b; border-color: rgba(255,107,107,0.1); }
-    .news-card:nth-child(1):hover .news-content h3 { color: #ff6b6b; }
-    .news-card:nth-child(1) .news-content .read-more { color: #ff6b6b; border-color: rgba(255,107,107,0.1); }
-    .news-card:nth-child(1) .news-content .read-more:hover { background: #ff6b6b; color: #fff; border-color: #ff6b6b; }
-
-    .news-card:nth-child(2) .news-image { background: linear-gradient(135deg, rgba(255,217,61,0.12), rgba(255,217,61,0.03)); }
-    .news-card:nth-child(2) .news-image .image-icon { color: #ffd93d; }
-    .news-card:nth-child(2) .news-image .news-source-tag { background: rgba(255,217,61,0.15); color: #ffd93d; border-color: rgba(255,217,61,0.1); }
-    .news-card:nth-child(2):hover .news-content h3 { color: #ffd93d; }
-    .news-card:nth-child(2) .news-content .read-more { color: #ffd93d; border-color: rgba(255,217,61,0.1); }
-    .news-card:nth-child(2) .news-content .read-more:hover { background: #ffd93d; color: #0a0e1a; border-color: #ffd93d; }
-
-    .news-card:nth-child(3) .news-image { background: linear-gradient(135deg, rgba(77,150,255,0.12), rgba(77,150,255,0.03)); }
-    .news-card:nth-child(3) .news-image .image-icon { color: #4d96ff; }
-    .news-card:nth-child(3) .news-image .news-source-tag { background: rgba(77,150,255,0.15); color: #4d96ff; border-color: rgba(77,150,255,0.1); }
-    .news-card:nth-child(3):hover .news-content h3 { color: #4d96ff; }
-    .news-card:nth-child(3) .news-content .read-more { color: #4d96ff; border-color: rgba(77,150,255,0.1); }
-    .news-card:nth-child(3) .news-content .read-more:hover { background: #4d96ff; color: #fff; border-color: #4d96ff; }
-
-    .news-card:nth-child(4) .news-image { background: linear-gradient(135deg, rgba(107,203,119,0.12), rgba(107,203,119,0.03)); }
-    .news-card:nth-child(4) .news-image .image-icon { color: #6bcb77; }
-    .news-card:nth-child(4) .news-image .news-source-tag { background: rgba(107,203,119,0.15); color: #6bcb77; border-color: rgba(107,203,119,0.1); }
-    .news-card:nth-child(4):hover .news-content h3 { color: #6bcb77; }
-    .news-card:nth-child(4) .news-content .read-more { color: #6bcb77; border-color: rgba(107,203,119,0.1); }
-    .news-card:nth-child(4) .news-content .read-more:hover { background: #6bcb77; color: #0a0e1a; border-color: #6bcb77; }
-
-    .news-card:nth-child(5) .news-image { background: linear-gradient(135deg, rgba(166,108,255,0.12), rgba(166,108,255,0.03)); }
-    .news-card:nth-child(5) .news-image .image-icon { color: #a66cff; }
-    .news-card:nth-child(5) .news-image .news-source-tag { background: rgba(166,108,255,0.15); color: #a66cff; border-color: rgba(166,108,255,0.1); }
-    .news-card:nth-child(5):hover .news-content h3 { color: #a66cff; }
-    .news-card:nth-child(5) .news-content .read-more { color: #a66cff; border-color: rgba(166,108,255,0.1); }
-    .news-card:nth-child(5) .news-content .read-more:hover { background: #a66cff; color: #fff; border-color: #a66cff; }
-
-    .news-card:nth-child(6) .news-image { background: linear-gradient(135deg, rgba(255,107,107,0.12), rgba(255,107,107,0.03)); }
-    .news-card:nth-child(6) .news-image .image-icon { color: #ff6b6b; }
-    .news-card:nth-child(6) .news-image .news-source-tag { background: rgba(255,107,107,0.15); color: #ff6b6b; border-color: rgba(255,107,107,0.1); }
-    .news-card:nth-child(6):hover .news-content h3 { color: #ff6b6b; }
-    .news-card:nth-child(6) .news-content .read-more { color: #ff6b6b; border-color: rgba(255,107,107,0.1); }
-    .news-card:nth-child(6) .news-content .read-more:hover { background: #ff6b6b; color: #fff; border-color: #ff6b6b; }
 
     /* ===== RESPONSIVE ===== */
     @media (max-width: 992px) {
@@ -235,22 +309,35 @@
             padding: 0 15px;
         }
         .news-grid {
-            grid-template-columns: 1fr;
-            gap: 20px;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
             padding: 20px 0 60px;
         }
         .news-card .news-image {
-            height: 160px;
-            font-size: 40px;
+            height: 140px;
+            font-size: 36px;
         }
         .news-card .news-content {
-            padding: 20px;
+            padding: 16px;
         }
         .news-card .news-content h3 {
-            font-size: 17px;
+            font-size: 14px;
         }
         .news-card .news-content .excerpt {
-            font-size: 14px;
+            font-size: 12px;
+            -webkit-line-clamp: 2;
+        }
+        .news-card .news-content .read-more {
+            font-size: 11px;
+            padding: 5px 14px;
+        }
+        .news-card .news-content .news-meta {
+            font-size: 10px;
+            gap: 10px;
+        }
+        .news-card .news-image .news-source-tag {
+            font-size: 9px;
+            padding: 3px 10px;
         }
     }
 
@@ -262,35 +349,36 @@
             font-size: 13px;
         }
         .news-grid {
-            gap: 15px;
+            gap: 12px;
             padding: 15px 0 40px;
         }
         .news-card {
             border-radius: 16px;
         }
         .news-card .news-image {
-            height: 130px;
-            font-size: 32px;
+            height: 110px;
+            font-size: 28px;
         }
         .news-card .news-content {
-            padding: 16px;
+            padding: 12px;
         }
         .news-card .news-content h3 {
-            font-size: 15px;
-        }
-        .news-card .news-content .excerpt {
             font-size: 13px;
         }
-        .news-card .news-content .read-more {
-            font-size: 12px;
-            padding: 6px 16px;
-        }
-        .news-card .news-content .news-meta {
+        .news-card .news-content .excerpt {
             font-size: 11px;
         }
-        .news-card .news-image .news-source-tag {
+        .news-card .news-content .read-more {
+            font-size: 10px;
+            padding: 4px 12px;
+        }
+        .news-card .news-content .news-meta {
             font-size: 9px;
-            padding: 3px 10px;
+            gap: 8px;
+        }
+        .news-card .news-image .news-source-tag {
+            font-size: 8px;
+            padding: 2px 8px;
         }
     }
 
@@ -344,33 +432,6 @@
                         'title' => 'Fleet Space, Yapay Zeka ve Uydu Teknolojisiyle Madencilikte Devrim Yaratıyor',
                         'excerpt' => 'Fleet Space, yapay zeka ve uydu teknolojisini birleştirerek madencilik sektöründe devrim yaratıyor. %90 daha hızlı kaynak tespiti sağlıyor.',
                         'date' => '28 Kasım, 2025'
-                    ],
-                    [
-                        'slug' => 'openai-gpt5',
-                        'icon' => 'fa-robot',
-                        'source' => 'Reuters',
-                        'category' => 'Yapay Zeka',
-                        'title' => 'OpenAI, GPT-5\'i Duyurdu: İnsan Seviyesinde Zeka Kapıda',
-                        'excerpt' => 'OpenAI, yeni yapay zeka modeli GPT-5\'in insan seviyesinde zeka kapasitesine ulaştığını duyurdu. Model, karmaşık problemleri çözme yeteneğine sahip.',
-                        'date' => '15 Kasım, 2025'
-                    ],
-                    [
-                        'slug' => 'tesla-robot',
-                        'icon' => 'fa-robot',
-                        'source' => 'The Verge',
-                        'category' => 'Robotik',
-                        'title' => 'Tesla\'nın İnsansı Robotu Optimus, Fabrikalarda Çalışmaya Başladı',
-                        'excerpt' => 'Tesla\'nın geliştirdiği insansı robot Optimus, fabrikalarda üretim süreçlerinde çalışmaya başladı. Robot, insan benzeri hareket yeteneğine sahip.',
-                        'date' => '08 Kasım, 2025'
-                    ],
-                    [
-                        'slug' => 'apple-vr',
-                        'icon' => 'fa-vr-cardboard',
-                        'source' => 'MacRumors',
-                        'category' => 'Sanal Gerçeklik',
-                        'title' => 'Apple\'ın Yeni VR Gözlüğü Vision Pro 2, 2026\'da Geliyor',
-                        'excerpt' => 'Apple, ikinci nesil sanal gerçeklik gözlüğü Vision Pro 2\'nin 2026 yılında piyasaya sürüleceğini duyurdu. Yeni model daha hafif ve güçlü olacak.',
-                        'date' => '02 Kasım, 2025'
                     ]
                 ];
             @endphp
@@ -389,7 +450,7 @@
                     <h3>{{ $news['title'] }}</h3>
                     <p class="excerpt">{{ $news['excerpt'] }}</p>
                     <a href="{{ route('news.show', $news['slug']) }}" class="read-more">
-                        Devamını Oku <i class="fas fa-arrow-right"></i>
+                        Haberi Oku <i class="fas fa-arrow-right"></i>
                     </a>
                 </div>
             </div>
@@ -442,5 +503,44 @@
         }
     }
 </style>
+
+@push('scripts')
+<script>
+    document.querySelectorAll('.news-card').forEach(card => {
+        // Desktop mouse efekti
+        card.addEventListener('mousemove', function(e) {
+            const rect = this.getBoundingClientRect();
+            const x = ((e.clientX - rect.left) / rect.width * 100);
+            const y = ((e.clientY - rect.top) / rect.height * 100);
+            this.style.setProperty('--mouse-x', x + '%');
+            this.style.setProperty('--mouse-y', y + '%');
+        });
+
+        // ===== MOBİL TOUCH HOVER =====
+        card.addEventListener('touchstart', function(e) {
+            this.classList.add('touch-hover');
+        });
+
+        card.addEventListener('touchend', function(e) {
+            setTimeout(() => {
+                this.classList.remove('touch-hover');
+            }, 300);
+        });
+
+        card.addEventListener('touchcancel', function(e) {
+            this.classList.remove('touch-hover');
+        });
+
+        // Kart içindeki butona tıklanırken hover'ı kaldır
+        card.querySelectorAll('.read-more').forEach(btn => {
+            btn.addEventListener('touchstart', function(e) {
+                e.stopPropagation();
+                const parent = this.closest('.news-card');
+                parent.classList.remove('touch-hover');
+            });
+        });
+    });
+</script>
+@endpush
 
 @endsection

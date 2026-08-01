@@ -30,7 +30,6 @@
         line-height: 1.7;
     }
 
-    /* ===== BLOG KARTLARI ===== */
     .blog-grid {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
@@ -42,15 +41,52 @@
 
     .blog-card {
         border-radius: 20px;
-        overflow: hidden;
+        padding: 0;
         transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        border: 1px solid rgba(255,255,255,0.04);
+        position: relative;
+        overflow: hidden;
+        border: 2px solid rgba(255,255,255,0.06);
         background: rgba(255,255,255,0.02);
+        cursor: pointer;
+        -webkit-tap-highlight-color: transparent;
+        touch-action: manipulation;
     }
 
-    .blog-card:hover {
+    /* ===== RENKLER (NORMAL) - ZENGİN RENKLER ===== */
+    .blog-card:nth-child(1) {
+        border-color: rgba(255,107,107,0.2);
+        background: linear-gradient(135deg, rgba(255,107,107,0.04), rgba(255,107,107,0.01));
+    }
+    .blog-card:nth-child(2) {
+        border-color: rgba(255,159,67,0.2);
+        background: linear-gradient(135deg, rgba(255,159,67,0.04), rgba(255,159,67,0.01));
+    }
+    .blog-card:nth-child(3) {
+        border-color: rgba(46,213,115,0.2);
+        background: linear-gradient(135deg, rgba(46,213,115,0.04), rgba(46,213,115,0.01));
+    }
+
+    /* ===== RENKLER (HOVER) ===== */
+    .blog-card:nth-child(1):hover,
+    .blog-card:nth-child(1).touch-hover {
+        border-color: #ff6b6b;
+        background: linear-gradient(135deg, rgba(255,107,107,0.12), rgba(255,107,107,0.04));
         transform: translateY(-12px);
-        box-shadow: 0 30px 80px rgba(0,0,0,0.4);
+        box-shadow: 0 25px 70px rgba(255,107,107,0.25);
+    }
+    .blog-card:nth-child(2):hover,
+    .blog-card:nth-child(2).touch-hover {
+        border-color: #ff9f43;
+        background: linear-gradient(135deg, rgba(255,159,67,0.12), rgba(255,159,67,0.04));
+        transform: translateY(-12px);
+        box-shadow: 0 25px 70px rgba(255,159,67,0.25);
+    }
+    .blog-card:nth-child(3):hover,
+    .blog-card:nth-child(3).touch-hover {
+        border-color: #2ed573;
+        background: linear-gradient(135deg, rgba(46,213,115,0.12), rgba(46,213,115,0.04));
+        transform: translateY(-12px);
+        box-shadow: 0 25px 70px rgba(46,213,115,0.25);
     }
 
     /* ===== BLOG GÖRSEL ===== */
@@ -60,42 +96,89 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        font-size: 50px;
+        font-size: 55px;
         position: relative;
         overflow: hidden;
         transition: 0.5s;
+        background: rgba(255,255,255,0.02);
     }
 
-    .blog-card:hover .blog-image {
+    .blog-card:hover .blog-image,
+    .blog-card.touch-hover .blog-image {
         transform: scale(1.03);
     }
 
     .blog-card .blog-image .image-icon {
-        transition: 0.5s;
+        transition: 0.6s;
+        opacity: 0.5;
     }
 
-    .blog-card:hover .blog-image .image-icon {
-        transform: scale(1.1) rotate(5deg);
+    .blog-card:hover .blog-image .image-icon,
+    .blog-card.touch-hover .blog-image .image-icon {
+        transform: scale(1.15) rotate(8deg);
+        opacity: 0.9;
     }
+
+    /* ===== İKON RENKLERİ ===== */
+    .blog-card:nth-child(1) .blog-image .image-icon { color: #ff6b6b; }
+    .blog-card:nth-child(2) .blog-image .image-icon { color: #ff9f43; }
+    .blog-card:nth-child(3) .blog-image .image-icon { color: #2ed573; }
+
+    .blog-card:nth-child(1):hover .image-icon,
+    .blog-card:nth-child(1).touch-hover .image-icon { color: #ff6b6b; }
+    .blog-card:nth-child(2):hover .image-icon,
+    .blog-card:nth-child(2).touch-hover .image-icon { color: #ff9f43; }
+    .blog-card:nth-child(3):hover .image-icon,
+    .blog-card:nth-child(3).touch-hover .image-icon { color: #2ed573; }
 
     .blog-card .blog-image .blog-category-tag {
         position: absolute;
         bottom: 15px;
         left: 15px;
-        padding: 4px 14px;
+        padding: 5px 16px;
         border-radius: 50px;
-        font-size: 10px;
-        font-weight: 600;
+        font-size: 11px;
+        font-weight: 700;
         text-transform: uppercase;
         letter-spacing: 1px;
-        background: rgba(255,107,107,0.15);
-        color: #ff6b6b;
-        border: 1px solid rgba(255,107,107,0.1);
+        background: rgba(0,0,0,0.6);
+        backdrop-filter: blur(10px);
+        color: #fff;
+        border: 1px solid rgba(255,255,255,0.05);
+        transition: 0.4s;
+    }
+
+    .blog-card:nth-child(1):hover .blog-category-tag,
+    .blog-card:nth-child(1).touch-hover .blog-category-tag {
+        background: #ff6b6b;
+        color: #fff;
+        border-color: #ff6b6b;
+        box-shadow: 0 5px 25px rgba(255,107,107,0.3);
+    }
+    .blog-card:nth-child(2):hover .blog-category-tag,
+    .blog-card:nth-child(2).touch-hover .blog-category-tag {
+        background: #ff9f43;
+        color: #fff;
+        border-color: #ff9f43;
+        box-shadow: 0 5px 25px rgba(255,159,67,0.3);
+    }
+    .blog-card:nth-child(3):hover .blog-category-tag,
+    .blog-card:nth-child(3).touch-hover .blog-category-tag {
+        background: #2ed573;
+        color: #fff;
+        border-color: #2ed573;
+        box-shadow: 0 5px 25px rgba(46,213,115,0.3);
     }
 
     /* ===== BLOG İÇERİK ===== */
     .blog-card .blog-content {
         padding: 25px;
+        transition: 0.4s;
+    }
+
+    .blog-card:hover .blog-content,
+    .blog-card.touch-hover .blog-content {
+        transform: translateY(-2px);
     }
 
     .blog-card .blog-content .blog-meta {
@@ -106,6 +189,7 @@
         font-size: 12px;
         color: #64748b;
         flex-wrap: wrap;
+        transition: 0.3s;
     }
 
     .blog-card .blog-content .blog-meta span {
@@ -115,12 +199,19 @@
     }
 
     .blog-card .blog-content .blog-meta span i {
-        font-size: 11px;
-        color: #ff6b6b;
+        font-size: 12px;
+        transition: 0.3s;
     }
 
+    .blog-card:nth-child(1):hover .blog-meta span i,
+    .blog-card:nth-child(1).touch-hover .blog-meta span i { color: #ff6b6b; }
+    .blog-card:nth-child(2):hover .blog-meta span i,
+    .blog-card:nth-child(2).touch-hover .blog-meta span i { color: #ff9f43; }
+    .blog-card:nth-child(3):hover .blog-meta span i,
+    .blog-card:nth-child(3).touch-hover .blog-meta span i { color: #2ed573; }
+
     .blog-card .blog-content h3 {
-        font-size: 18px;
+        font-size: 19px;
         font-weight: 700;
         color: #fff;
         margin-bottom: 10px;
@@ -132,63 +223,75 @@
         overflow: hidden;
     }
 
-    .blog-card:hover .blog-content h3 {
-        color: #ff6b6b;
-    }
+    .blog-card:nth-child(1):hover h3,
+    .blog-card:nth-child(1).touch-hover h3 { color: #ff6b6b; }
+    .blog-card:nth-child(2):hover h3,
+    .blog-card:nth-child(2).touch-hover h3 { color: #ff9f43; }
+    .blog-card:nth-child(3):hover h3,
+    .blog-card:nth-child(3).touch-hover h3 { color: #2ed573; }
 
     .blog-card .blog-content .excerpt {
         color: #94a3b8;
         font-size: 14px;
-        line-height: 1.7;
+        line-height: 1.8;
         margin-bottom: 18px;
         display: -webkit-box;
         -webkit-line-clamp: 3;
         -webkit-box-orient: vertical;
         overflow: hidden;
+        transition: 0.3s;
     }
+
+    .blog-card:nth-child(1):hover .excerpt,
+    .blog-card:nth-child(1).touch-hover .excerpt { color: #c8d0e0; }
+    .blog-card:nth-child(2):hover .excerpt,
+    .blog-card:nth-child(2).touch-hover .excerpt { color: #c8d0e0; }
+    .blog-card:nth-child(3):hover .excerpt,
+    .blog-card:nth-child(3).touch-hover .excerpt { color: #c8d0e0; }
 
     .blog-card .blog-content .read-more {
         display: inline-flex;
         align-items: center;
         gap: 8px;
-        color: #ff6b6b;
         text-decoration: none;
         font-weight: 600;
         font-size: 13px;
-        transition: 0.3s;
-        padding: 8px 20px;
-        border: 2px solid rgba(255,107,107,0.1);
+        transition: all 0.4s ease;
+        padding: 8px 22px;
         border-radius: 50px;
+        background: transparent;
+        border: 2px solid rgba(255,255,255,0.08);
+        color: #94a3b8;
     }
 
-    .blog-card .blog-content .read-more:hover {
-        background: #ff6b6b;
-        color: #fff;
+    .blog-card:nth-child(1):hover .read-more,
+    .blog-card:nth-child(1).touch-hover .read-more {
         border-color: #ff6b6b;
+        color: #ff6b6b;
+        background: rgba(255,107,107,0.05);
+        box-shadow: 0 5px 25px rgba(255,107,107,0.1);
+    }
+    .blog-card:nth-child(2):hover .read-more,
+    .blog-card:nth-child(2).touch-hover .read-more {
+        border-color: #ff9f43;
+        color: #ff9f43;
+        background: rgba(255,159,67,0.05);
+        box-shadow: 0 5px 25px rgba(255,159,67,0.1);
+    }
+    .blog-card:nth-child(3):hover .read-more,
+    .blog-card:nth-child(3).touch-hover .read-more {
+        border-color: #2ed573;
+        color: #2ed573;
+        background: rgba(46,213,115,0.05);
+        box-shadow: 0 5px 25px rgba(46,213,115,0.1);
+    }
+
+    .blog-card .blog-content .read-more i {
+        transition: 0.3s;
+    }
+    .blog-card .blog-content .read-more:hover i {
         transform: translateX(5px);
     }
-
-    /* ===== RENK VARİANTLARI ===== */
-    .blog-card:nth-child(1) .blog-image { background: linear-gradient(135deg, rgba(255,107,107,0.12), rgba(255,107,107,0.03)); }
-    .blog-card:nth-child(1) .blog-image .image-icon { color: #ff6b6b; }
-    .blog-card:nth-child(1) .blog-image .blog-category-tag { background: rgba(255,107,107,0.15); color: #ff6b6b; border-color: rgba(255,107,107,0.1); }
-    .blog-card:nth-child(1):hover .blog-content h3 { color: #ff6b6b; }
-    .blog-card:nth-child(1) .blog-content .read-more { color: #ff6b6b; border-color: rgba(255,107,107,0.1); }
-    .blog-card:nth-child(1) .blog-content .read-more:hover { background: #ff6b6b; color: #fff; border-color: #ff6b6b; }
-
-    .blog-card:nth-child(2) .blog-image { background: linear-gradient(135deg, rgba(255,217,61,0.12), rgba(255,217,61,0.03)); }
-    .blog-card:nth-child(2) .blog-image .image-icon { color: #ffd93d; }
-    .blog-card:nth-child(2) .blog-image .blog-category-tag { background: rgba(255,217,61,0.15); color: #ffd93d; border-color: rgba(255,217,61,0.1); }
-    .blog-card:nth-child(2):hover .blog-content h3 { color: #ffd93d; }
-    .blog-card:nth-child(2) .blog-content .read-more { color: #ffd93d; border-color: rgba(255,217,61,0.1); }
-    .blog-card:nth-child(2) .blog-content .read-more:hover { background: #ffd93d; color: #0a0e1a; border-color: #ffd93d; }
-
-    .blog-card:nth-child(3) .blog-image { background: linear-gradient(135deg, rgba(77,150,255,0.12), rgba(77,150,255,0.03)); }
-    .blog-card:nth-child(3) .blog-image .image-icon { color: #4d96ff; }
-    .blog-card:nth-child(3) .blog-image .blog-category-tag { background: rgba(77,150,255,0.15); color: #4d96ff; border-color: rgba(77,150,255,0.1); }
-    .blog-card:nth-child(3):hover .blog-content h3 { color: #4d96ff; }
-    .blog-card:nth-child(3) .blog-content .read-more { color: #4d96ff; border-color: rgba(77,150,255,0.1); }
-    .blog-card:nth-child(3) .blog-content .read-more:hover { background: #4d96ff; color: #fff; border-color: #4d96ff; }
 
     /* ===== RESPONSIVE ===== */
     @media (max-width: 992px) {
@@ -213,22 +316,35 @@
             padding: 0 15px;
         }
         .blog-grid {
-            grid-template-columns: 1fr;
-            gap: 20px;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
             padding: 20px 0 60px;
         }
         .blog-card .blog-image {
-            height: 160px;
-            font-size: 40px;
+            height: 140px;
+            font-size: 36px;
         }
         .blog-card .blog-content {
-            padding: 20px;
+            padding: 16px;
         }
         .blog-card .blog-content h3 {
-            font-size: 17px;
+            font-size: 14px;
         }
         .blog-card .blog-content .excerpt {
-            font-size: 14px;
+            font-size: 12px;
+            -webkit-line-clamp: 2;
+        }
+        .blog-card .blog-content .read-more {
+            font-size: 11px;
+            padding: 5px 14px;
+        }
+        .blog-card .blog-content .blog-meta {
+            font-size: 10px;
+            gap: 10px;
+        }
+        .blog-card .blog-image .blog-category-tag {
+            font-size: 9px;
+            padding: 3px 10px;
         }
     }
 
@@ -240,35 +356,36 @@
             font-size: 13px;
         }
         .blog-grid {
-            gap: 15px;
+            gap: 12px;
             padding: 15px 0 40px;
         }
         .blog-card {
             border-radius: 16px;
         }
         .blog-card .blog-image {
-            height: 130px;
-            font-size: 32px;
+            height: 110px;
+            font-size: 28px;
         }
         .blog-card .blog-content {
-            padding: 16px;
+            padding: 12px;
         }
         .blog-card .blog-content h3 {
-            font-size: 15px;
-        }
-        .blog-card .blog-content .excerpt {
             font-size: 13px;
         }
-        .blog-card .blog-content .read-more {
-            font-size: 12px;
-            padding: 6px 16px;
-        }
-        .blog-card .blog-content .blog-meta {
+        .blog-card .blog-content .excerpt {
             font-size: 11px;
         }
-        .blog-card .blog-image .blog-category-tag {
+        .blog-card .blog-content .read-more {
+            font-size: 10px;
+            padding: 4px 12px;
+        }
+        .blog-card .blog-content .blog-meta {
             font-size: 9px;
-            padding: 3px 10px;
+            gap: 8px;
+        }
+        .blog-card .blog-image .blog-category-tag {
+            font-size: 8px;
+            padding: 2px 8px;
         }
     }
 
@@ -325,36 +442,6 @@
                         'date' => '21 Ağustos, 2025',
                         'author' => 'Can Öztürk',
                         'comments' => '6'
-                    ],
-                    [
-                        'slug' => 'yapay-zeka-trendleri',
-                        'icon' => 'fa-brain',
-                        'category' => 'Yapay Zeka',
-                        'title' => '2025\'te Yapay Zeka Trendleri ve İş Dünyasına Etkileri',
-                        'excerpt' => 'Yapay zeka teknolojilerinin iş dünyasına etkileri, fırsatlar ve gelecekteki potansiyeli.',
-                        'date' => '15 Mayıs, 2025',
-                        'author' => 'Zeynep Kara',
-                        'comments' => '15'
-                    ],
-                    [
-                        'slug' => 'mobil-uygulama-gelistirme',
-                        'icon' => 'fa-mobile-alt',
-                        'category' => 'Mobil',
-                        'title' => 'Mobil Uygulama Geliştirmede Dikkat Edilmesi Gerekenler',
-                        'excerpt' => 'Başarılı bir mobil uygulama geliştirme sürecinde dikkat edilmesi gereken noktalar.',
-                        'date' => '03 Nisan, 2025',
-                        'author' => 'Ali Yıldız',
-                        'comments' => '10'
-                    ],
-                    [
-                        'slug' => 'bulut-bilisim-stratejileri',
-                        'icon' => 'fa-cloud',
-                        'category' => 'Bulut',
-                        'title' => 'Bulut Bilişim Stratejileri ile İşletmenizi Güçlendirin',
-                        'excerpt' => 'Bulut bilişim stratejileri ile işletmenizin verimliliğini ve güvenliğini artırın.',
-                        'date' => '12 Mart, 2025',
-                        'author' => 'Ece Demir',
-                        'comments' => '7'
                     ]
                 ];
             @endphp
@@ -427,5 +514,44 @@
         }
     }
 </style>
+
+@push('scripts')
+<script>
+    document.querySelectorAll('.blog-card').forEach(card => {
+        // Desktop mouse efekti
+        card.addEventListener('mousemove', function(e) {
+            const rect = this.getBoundingClientRect();
+            const x = ((e.clientX - rect.left) / rect.width * 100);
+            const y = ((e.clientY - rect.top) / rect.height * 100);
+            this.style.setProperty('--mouse-x', x + '%');
+            this.style.setProperty('--mouse-y', y + '%');
+        });
+
+        // ===== MOBİL TOUCH HOVER =====
+        card.addEventListener('touchstart', function(e) {
+            this.classList.add('touch-hover');
+        });
+
+        card.addEventListener('touchend', function(e) {
+            setTimeout(() => {
+                this.classList.remove('touch-hover');
+            }, 300);
+        });
+
+        card.addEventListener('touchcancel', function(e) {
+            this.classList.remove('touch-hover');
+        });
+
+        // Kart içindeki butona tıklanırken hover'ı kaldır
+        card.querySelectorAll('.read-more').forEach(btn => {
+            btn.addEventListener('touchstart', function(e) {
+                e.stopPropagation();
+                const parent = this.closest('.blog-card');
+                parent.classList.remove('touch-hover');
+            });
+        });
+    });
+</script>
+@endpush
 
 @endsection
