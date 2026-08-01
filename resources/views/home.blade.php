@@ -4,7 +4,6 @@
 
 @section('content')
 <!-- ===== HERO ===== -->
-<!-- ===== HERO ===== -->
 <section class="hero" id="home">
     <div class="particles">
         <div class="particle"></div>
@@ -26,43 +25,10 @@
             <h1>Geleceği <span>Birlikte</span> Kodlayalım</h1>
             <p>Yenilikçi teknolojilerle işinizi dijital dünyaya taşıyor, sürdürülebilir ve ölçeklenebilir çözümler üretiyoruz. 8 yıllık deneyimimizle yanınızdayız.</p>
             <div class="hero-buttons">
-                <a href="{{ route('contact') }}" style="
-                    background:linear-gradient(135deg, #ff6b6b, #ee5a24);
-                    color:#fff !important;
-                    padding:14px 35px;
-                    border-radius:50px;
-                    text-decoration:none;
-                    font-weight:600;
-                    transition:all 0.4s cubic-bezier(0.175,0.885,0.32,1.275);
-                    display:inline-flex;
-                    align-items:center;
-                    gap:10px;
-                    font-size:16px;
-                    border:none;
-                    cursor:pointer;
-                    box-shadow:0 10px 40px rgba(255,107,107,0.3);
-                "
-                onmouseover="this.style.transform='translateY(-3px) scale(1.05)';this.style.boxShadow='0 20px 60px rgba(255,107,107,0.5)'"
-                onmouseout="this.style.transform='translateY(0) scale(1)';this.style.boxShadow='0 10px 40px rgba(255,107,107,0.3)'">
+                <a href="{{ route('contact') }}" style="background:linear-gradient(135deg, #ff6b6b, #ee5a24);color:#fff !important;padding:14px 35px;border-radius:50px;text-decoration:none;font-weight:600;transition:all 0.4s cubic-bezier(0.175,0.885,0.32,1.275);display:inline-flex;align-items:center;gap:10px;font-size:16px;border:none;cursor:pointer;box-shadow:0 10px 40px rgba(255,107,107,0.3);" onmouseover="this.style.transform='translateY(-3px) scale(1.05)';this.style.boxShadow='0 20px 60px rgba(255,107,107,0.5)'" onmouseout="this.style.transform='translateY(0) scale(1)';this.style.boxShadow='0 10px 40px rgba(255,107,107,0.3)'">
                     <i class="fas fa-paper-plane"></i> Hemen İletişim
                 </a>
-                <a href="{{ route('about') }}" style="
-                    background:rgba(255,255,255,0.08);
-                    color:#fff !important;
-                    padding:14px 35px;
-                    border-radius:50px;
-                    text-decoration:none;
-                    font-weight:600;
-                    transition:all 0.4s cubic-bezier(0.175,0.885,0.32,1.275);
-                    display:inline-flex;
-                    align-items:center;
-                    gap:10px;
-                    font-size:16px;
-                    backdrop-filter:blur(10px);
-                    border:1px solid rgba(255,255,255,0.15);
-                "
-                onmouseover="this.style.background='rgba(255,255,255,0.15)';this.style.transform='translateY(-3px) scale(1.05)';this.style.borderColor='rgba(255,255,255,0.3)'"
-                onmouseout="this.style.background='rgba(255,255,255,0.08)';this.style.transform='translateY(0) scale(1)';this.style.borderColor='rgba(255,255,255,0.15)'">
+                <a href="{{ route('about') }}" style="background:rgba(255,255,255,0.08);color:#fff !important;padding:14px 35px;border-radius:50px;text-decoration:none;font-weight:600;transition:all 0.4s cubic-bezier(0.175,0.885,0.32,1.275);display:inline-flex;align-items:center;gap:10px;font-size:16px;backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,0.15);" onmouseover="this.style.background='rgba(255,255,255,0.15)';this.style.transform='translateY(-3px) scale(1.05)';this.style.borderColor='rgba(255,255,255,0.3)'" onmouseout="this.style.background='rgba(255,255,255,0.08)';this.style.transform='translateY(0) scale(1)';this.style.borderColor='rgba(255,255,255,0.15)'">
                     <i class="fas fa-play-circle"></i> Keşfet
                 </a>
             </div>
@@ -94,55 +60,55 @@
                 $servicesList = [
                     [
                         'title' => 'CRM Çözümleri',
-                        'desc' => 'Müşteri ilişkileri yönetimini optimize eden, satış ve pazarlama süreçlerini otomatikleştiren kapsamlı CRM çözümleri.',
+                        'desc' => 'Müşteri ilişkilerinizi yönetin, satış süreçlerinizi optimize edin ve müşteri memnuniyetini artırın.',
                         'icon' => 'fa-users',
                         'color' => '#ff6b6b',
-                        'bg' => 'rgba(255,107,107,0.05)',
+                        'bg' => 'rgba(255,107,107,0.04)',
                         'border' => 'rgba(255,107,107,0.15)',
                         'route' => 'crm'
                     ],
                     [
                         'title' => 'Sektörel Çözümler',
-                        'desc' => 'Farklı sektörlerin dinamik ihtiyaçlarına yönelik yenilikçi yazılım çözümleri ve özel stratejiler.',
+                        'desc' => 'Her sektöre özel yazılım çözümleri ile iş süreçlerinizi dijitalleştirin ve verimliliğinizi artırın.',
                         'icon' => 'fa-industry',
                         'color' => '#ffd93d',
-                        'bg' => 'rgba(255,217,61,0.05)',
+                        'bg' => 'rgba(255,217,61,0.04)',
                         'border' => 'rgba(255,217,61,0.15)',
                         'route' => 'sektorel'
                     ],
                     [
                         'title' => 'E-Ticaret',
-                        'desc' => 'Dijital dünyada e-ticaret işletmeleri için müşteri deneyimini iyileştiren ve satışları artıran özel çözümler.',
+                        'desc' => 'Güçlü altyapılı, kullanıcı dostu ve dönüşüm odaklı e-ticaret platformları ile online satışınızı başlatın.',
                         'icon' => 'fa-shopping-cart',
                         'color' => '#6bcb77',
-                        'bg' => 'rgba(107,203,119,0.05)',
+                        'bg' => 'rgba(107,203,119,0.04)',
                         'border' => 'rgba(107,203,119,0.15)',
                         'route' => 'eticaret'
                     ],
                     [
                         'title' => 'E-Dönüşüm',
-                        'desc' => 'Dijital çağda iş süreçlerini daha verimli, hızlı ve güvenli hale getiren e-Dönüşüm çözümleri.',
+                        'desc' => 'Dijital dönüşüm sürecinizde size rehberlik ediyor, iş süreçlerinizi modern teknolojilerle buluşturuyoruz.',
                         'icon' => 'fa-sync-alt',
                         'color' => '#4d96ff',
-                        'bg' => 'rgba(77,150,255,0.05)',
+                        'bg' => 'rgba(77,150,255,0.04)',
                         'border' => 'rgba(77,150,255,0.15)',
                         'route' => 'edonusum'
                     ],
                     [
                         'title' => 'ERP Çözümleri',
-                        'desc' => 'Her işletmenin ihtiyacına göre uyarlanabilen modüler yapıda, tüm iş süreçlerini tek platformda yönetin.',
+                        'desc' => 'Tüm iş süreçlerinizi tek bir platformda yönetin, operasyonel verimliliğinizi maksimuma çıkarın.',
                         'icon' => 'fa-cubes',
-                        'color' => '#ff6b6b',
-                        'bg' => 'rgba(255,107,107,0.05)',
-                        'border' => 'rgba(255,107,107,0.15)',
+                        'color' => '#a66cff',
+                        'bg' => 'rgba(166,108,255,0.04)',
+                        'border' => 'rgba(166,108,255,0.15)',
                         'route' => 'erp'
                     ],
                     [
                         'title' => 'Mobil Çözümler',
-                        'desc' => 'Mobil dünyada etkin olmanın önemini biliyoruz. İşletmenizi mobil cihazlarla buluşturan özel çözümler.',
+                        'desc' => 'iOS ve Android platformları için yüksek performanslı, kullanıcı deneyimi odaklı mobil uygulamalar geliştiriyoruz.',
                         'icon' => 'fa-mobile-alt',
                         'color' => '#ffd93d',
-                        'bg' => 'rgba(255,217,61,0.05)',
+                        'bg' => 'rgba(255,217,61,0.04)',
                         'border' => 'rgba(255,217,61,0.15)',
                         'route' => 'mobil'
                     ]
@@ -467,38 +433,29 @@
                 $blogPosts = [
                     [
                         'slug' => 'erp-uygulama-sureci',
-                        'date' => '02 Temmuz, 2025',
                         'title' => 'Başarılı Bir ERP Uygulama Süreci Nasıl İlerler?',
                         'excerpt' => 'ERP sistemlerinin başarılı bir şekilde uygulanması için izlenmesi gereken adımlar ve stratejiler.',
                         'color' => '#ff6b6b',
                         'icon' => 'fa-cubes',
                         'tag' => 'ERP',
-                        'author' => 'Ahmet Yılmaz',
-                        'read_time' => '5 dk',
                         'bg' => 'linear-gradient(135deg, #1a1a2e, #2d2d44)'
                     ],
                     [
                         'slug' => 'efatura-earsiv',
-                        'date' => '27 Haziran, 2025',
-                        'title' => 'İşletmenizi Geleceğe Taşıyın: e-Fatura ve e-Arşiv Sistemlerinin',
+                        'title' => 'İşletmenizi Geleceğe Taşıyın: e-Fatura ve e-Arşiv Sistemleri',
                         'excerpt' => 'e-Fatura ve e-Arşiv sistemleri ile işletmenizi dijital dönüşüme hazırlayın.',
                         'color' => '#ffd93d',
                         'icon' => 'fa-file-invoice',
                         'tag' => 'Dijital Dönüşüm',
-                        'author' => 'Mehmet Demir',
-                        'read_time' => '7 dk',
                         'bg' => 'linear-gradient(135deg, #1a1a2e, #2d2d44)'
                     ],
                     [
                         'slug' => 'windows-12',
-                        'date' => '21 Ağustos, 2025',
                         'title' => 'Windows 12 ile Gelen Yenilikler ve İşletmelere Etkileri',
-                        'excerpt' => 'Windows 12\'nin getirdiği yenilikler, performans iyileştirmeleri ve işletmelere sağlayacağı avantajlar.',
+                        'excerpt' => 'Windows 12\'nin getirdiği yenilikler ve işletmelere sağlayacağı avantajlar.',
                         'color' => '#4d96ff',
                         'icon' => 'fa-windows',
                         'tag' => 'Teknoloji',
-                        'author' => 'Can Öztürk',
-                        'read_time' => '4 dk',
                         'bg' => 'linear-gradient(135deg, #1a1a2e, #2d2d44)'
                     ]
                 ];
@@ -610,15 +567,6 @@
                         <div style="position:absolute;top:18px;left:18px;background:{{ $post['color'] }};color:#fff;padding:6px 18px;border-radius:50px;font-size:11px;font-weight:700;z-index:3;box-shadow:0 6px 25px {{ $post['color'] }}66;letter-spacing:0.5px;text-transform:uppercase;">
                             {{ $post['tag'] }}
                         </div>
-
-                        <div style="position:absolute;bottom:18px;right:18px;display:flex;gap:10px;z-index:3;">
-                            <span style="background:rgba(0,0,0,0.7);backdrop-filter:blur(15px);padding:5px 14px;border-radius:50px;font-size:11px;color:#fff;border:1px solid rgba(255,255,255,0.05);">
-                                <i class="far fa-calendar"></i> {{ $post['date'] }}
-                            </span>
-                            <span style="background:rgba(0,0,0,0.7);backdrop-filter:blur(15px);padding:5px 14px;border-radius:50px;font-size:11px;color:#fff;border:1px solid rgba(255,255,255,0.05);">
-                                <i class="far fa-clock"></i> {{ $post['read_time'] }}
-                            </span>
-                        </div>
                     </div>
 
                     <div class="blog-content" style="
@@ -627,27 +575,6 @@
                         z-index:1;
                         transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
                     ">
-                        <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;">
-                            <div style="
-                                width:32px;
-                                height:32px;
-                                border-radius:50%;
-                                background:{{ $post['color'] }}20;
-                                border:2px solid {{ $post['color'] }}30;
-                                display:flex;
-                                align-items:center;
-                                justify-content:center;
-                                color:{{ $post['color'] }};
-                                font-size:13px;
-                                font-weight:700;
-                            ">
-                                {{ substr($post['author'], 0, 1) }}
-                            </div>
-                            <span style="color:#94a3b8;font-size:13px;font-weight:500;">
-                                <i class="fas fa-user" style="color:{{ $post['color'] }};margin-right:4px;"></i> {{ $post['author'] }}
-                            </span>
-                        </div>
-
                         <h3 style="
                             font-size:18px;
                             font-weight:700;
@@ -714,35 +641,29 @@
                 $newsItems = [
                     [
                         'slug' => 'kuantum-hesaplama',
-                        'date' => '07 Aralık, 2025',
                         'title' => 'Google CEO\'su Sundar Pichai: "Kuantum Hesaplama ile 10 Yıl İçinde Devrim Yaşanacak"',
                         'excerpt' => 'Google CEO\'su Sundar Pichai, kuantum hesaplama teknolojisinin önümüzdeki 10 yıl içinde bilgisayar dünyasında devrim yaratacağını açıkladı.',
                         'category' => 'Kuantum Bilgisayar',
                         'color' => '#ff6b6b',
                         'icon' => 'fa-microchip',
-                        'source' => 'TechCrunch',
                         'bg' => 'linear-gradient(135deg, #1a1a2e, #2d2d44)'
                     ],
                     [
                         'slug' => 'ulusal-yapay-zeka',
-                        'date' => '01 Aralık, 2025',
                         'title' => 'Trump, "Genesis Mission" ile Ulusal Yapay Zeka Stratejisini Duyurdu',
                         'excerpt' => 'Eski ABD Başkanı Donald Trump, "Genesis Mission" adlı ulusal yapay zeka stratejisini duyurdu.',
                         'category' => 'Yapay Zeka',
                         'color' => '#ffd93d',
                         'icon' => 'fa-brain',
-                        'source' => 'Bloomberg',
                         'bg' => 'linear-gradient(135deg, #1a1a2e, #2d2d44)'
                     ],
                     [
                         'slug' => 'fleet-space',
-                        'date' => '28 Kasım, 2025',
                         'title' => 'Fleet Space, Yapay Zeka ve Uydu Teknolojisiyle Madencilikte Devrim Yaratıyor',
                         'excerpt' => 'Fleet Space, yapay zeka ve uydu teknolojisini birleştirerek madencilik sektöründe devrim yaratıyor.',
                         'category' => 'Uzay Teknolojisi',
                         'color' => '#4d96ff',
                         'icon' => 'fa-satellite',
-                        'source' => 'SpaceNews',
                         'bg' => 'linear-gradient(135deg, #1a1a2e, #2d2d44)'
                     ]
                 ];
@@ -853,15 +774,6 @@
 
                         <div style="position:absolute;top:16px;left:16px;background:{{ $news['color'] }};color:#fff;padding:5px 16px;border-radius:50px;font-size:10px;font-weight:700;z-index:3;box-shadow:0 6px 25px {{ $news['color'] }}66;letter-spacing:0.5px;text-transform:uppercase;">
                             {{ $news['category'] }}
-                        </div>
-
-                        <div style="position:absolute;bottom:16px;right:16px;display:flex;gap:10px;z-index:3;">
-                            <span style="background:rgba(0,0,0,0.7);backdrop-filter:blur(15px);padding:4px 14px;border-radius:50px;font-size:10px;color:#fff;border:1px solid rgba(255,255,255,0.05);">
-                                <i class="fas fa-newspaper"></i> {{ $news['source'] }}
-                            </span>
-                            <span style="background:rgba(0,0,0,0.7);backdrop-filter:blur(15px);padding:4px 14px;border-radius:50px;font-size:10px;color:#fff;border:1px solid rgba(255,255,255,0.05);">
-                                <i class="far fa-calendar"></i> {{ $news['date'] }}
-                            </span>
                         </div>
                     </div>
 
@@ -1010,14 +922,6 @@
     0%, 100% { opacity: 0.3; transform: scale(1); }
     50% { opacity: 1; transform: scale(1.2); }
 }
-@keyframes floatY {
-    0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-10px); }
-}
-@keyframes rotateIn {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-}
 @keyframes orbitFloat {
     0% { transform: translateY(0px) rotate(0deg); }
     25% { transform: translateY(-15px) rotate(2deg); }
@@ -1031,7 +935,6 @@
     100% { background-position: 0% 50%; }
 }
 
-/* ===== MOBİL KUTUCUK KISALTMA ===== */
 @media (max-width: 992px) {
     .services-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
     .projects-grid { grid-template-columns: 1fr 1fr; gap: 20px; }
@@ -1039,14 +942,12 @@
     .news-grid { grid-template-columns: repeat(2, 1fr); gap: 25px; }
     #cta .cta-content h2 { font-size: 34px !important; }
 }
-
 @media (max-width: 768px) {
     .services-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
     .projects-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
     .blog-grid { grid-template-columns: 1fr 1fr; gap: 15px; }
     .news-grid { grid-template-columns: 1fr 1fr; gap: 15px; }
 
-    /* ===== KUTUCUK İÇİ PADDING KISALTMA ===== */
     .services-grid .glass,
     .projects-grid .glass {
         padding: 18px 14px !important;
@@ -1093,15 +994,7 @@
         -webkit-box-orient: vertical;
         overflow: hidden;
     }
-    .projects-grid .glass .project-icon + h3 + p + div {
-        margin-top: 4px !important;
-    }
-    .projects-grid .glass .project-icon + h3 + p + div span {
-        font-size: 9px !important;
-        padding: 2px 10px !important;
-    }
 
-    /* ===== BLOG KUTUCUK KISALTMA ===== */
     .blog-grid .glass .blog-image {
         height: 140px !important;
     }
@@ -1127,16 +1020,7 @@
         font-size: 12px !important;
         padding: 6px 16px !important;
     }
-    .blog-grid .glass .blog-content .blog-meta {
-        font-size: 10px !important;
-        gap: 8px !important;
-        margin-bottom: 6px !important;
-    }
-    .blog-grid .glass .blog-content .blog-meta span {
-        font-size: 10px !important;
-    }
 
-    /* ===== HABER KUTUCUK KISALTMA ===== */
     .news-grid .glass .news-image {
         height: 120px !important;
     }
@@ -1208,10 +1092,6 @@
     .projects-grid .glass .project-icon + h3 + p {
         font-size: 10px !important;
         -webkit-line-clamp: 2 !important;
-    }
-    .projects-grid .glass .project-icon + h3 + p + div span {
-        font-size: 8px !important;
-        padding: 1px 8px !important;
     }
 
     .blog-grid .glass .blog-image {
