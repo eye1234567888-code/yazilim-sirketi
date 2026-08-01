@@ -670,7 +670,7 @@
         /* ========== MOBİL RESPONSIVE ========== */
         @media (max-width: 992px) {
             .nav-toggle {
-                display: flex;
+                display: flex !important;
             }
             .nav-menu {
                 position: fixed;
@@ -774,15 +774,18 @@
             .header {
                 padding: 8px 0;
             }
+            .nav-toggle {
+                display: flex !important;
+            }
+            .nav-toggle span {
+                width: 24px;
+                height: 2.5px;
+            }
             .nav-logo {
                 font-size: 18px;
             }
             .nav-logo i {
                 font-size: 20px;
-            }
-            .nav-toggle span {
-                width: 24px;
-                height: 2.5px;
             }
             .section-padding { padding: 50px 0; }
             .section-header h2 { font-size: 28px; }
