@@ -70,193 +70,134 @@
                 <h2 style="font-size:36px;">Mobil <span>Çözümler</span></h2>
             </div>
 
+            <!-- Giriş -->
             <div class="glass" style="padding:40px;border-color:rgba(255,217,61,0.05);margin-bottom:30px;" data-aos="fade-up">
                 <p style="color:#e2e8f0;font-size:16px;line-height:2;">
-                    Mobil dünyada etkin olmanın önemini biliyoruz. Sizin için en uygun mobil çözümleri geliştirmek amacıyla,
-                    kullanıcılara mükemmel deneyimler sunan mobil uygulamalar yaratıyoruz. İhtiyaçlarınıza özel olarak
-                    tasarlanmış uygulamalarla çözümler üretiyoruz.
+                    Mobil dünyada etkin olmanın önemini biliyoruz. İşletmenizin mobil stratejisini güçlendirecek,
+                    kullanıcı deneyimini ön planda tutan mobil uygulama ve çözümler sunuyoruz. Native, hibrit veya
+                    cross-platform mobil uygulama geliştirme süreçlerinde uzman ekibimizle yanınızdayız.
                 </p>
             </div>
 
-            <!-- Mobil Çözümlerimiz -->
+            <!-- Mobil Uygulama Geliştirme -->
             <div style="margin-bottom:40px;" data-aos="fade-up">
-                <h2 style="font-size:28px;font-weight:700;margin-bottom:20px;color:#ffd93d;">Mobil Çözümlerimiz</h2>
-
-                <div class="glass" style="padding:35px;border-color:rgba(255,217,61,0.05);">
-                    <p style="color:#e2e8f0;font-size:15px;line-height:2;">
-                        Mobil dünyada etkin olmanın önemini biliyoruz. Sizin için en uygun mobil çözümleri geliştirmek amacıyla,
-                        kullanıcılara mükemmel deneyimler sunan mobil uygulamalar yaratıyoruz. İhtiyaçlarınıza özel olarak
-                        tasarlanmış uygulamalarla, mobil teknolojilerin sunduğu tüm avantajları işinize entegre ediyoruz.
-                    </p>
-                </div>
-            </div>
-
-            <!-- Mobil Uygulama Nedir? -->
-            <div style="margin-bottom:40px;" data-aos="fade-up">
-                <h2 style="font-size:28px;font-weight:700;margin-bottom:20px;color:#ffd93d;">Mobil Uygulama Nedir?</h2>
-
-                <div class="glass" style="padding:35px;border-color:rgba(255,107,107,0.05);margin-bottom:20px;">
-                    <h3 style="font-size:20px;font-weight:700;margin-bottom:12px;color:#ff6b6b;">Mobil Tasarım (UX/UI Tasarımı)</h3>
-                    <p style="color:#e2e8f0;font-size:15px;line-height:2;">
-                        Mobil tasarım, bir mobil cihazda kullanıcıların etkileşimde bulunduğu her şeyin görsel ve fonksiyonel yönlerini kapsar.
-                        İyi bir mobil tasarım, kullanıcıların uygulama veya web sitesini kolayca kullanabilmesini ve keyif almasını sağlar.
-                        İki ana bileşeni vardır:
-                    </p>
-                </div>
-
-                <div class="glass" style="padding:30px;border-color:rgba(255,217,61,0.05);margin-bottom:15px;">
-                    <h4 style="font-size:18px;font-weight:700;margin-bottom:8px;color:#ffd93d;">UX (User Experience – Kullanıcı Deneyimi)</h4>
-                    <p style="color:#e2e8f0;font-size:15px;line-height:2;">
-                        Kullanıcı deneyimi, bir mobil uygulama veya web sitesinin kullanıcı tarafından nasıl algılandığı ve nasıl kullanıldığına odaklanır.
-                        Amaç, kullanıcıların ihtiyaçlarını anlamak ve bu ihtiyaçlara en iyi şekilde karşılık verecek, sezgisel bir deneyim sunmaktır.
-                        UX tasarımında, uygulamanın hızı, erişilebilirliği, etkileşimli elemanların yerleşimi ve kullanıcı akışı gibi unsurlar önemlidir.
-                    </p>
-                </div>
-
-                <div class="glass" style="padding:30px;border-color:rgba(107,203,119,0.05);">
-                    <h4 style="font-size:18px;font-weight:700;margin-bottom:8px;color:#6bcb77;">UI (User Interface – Kullanıcı Arayüzü)</h4>
-                    <p style="color:#e2e8f0;font-size:15px;line-height:2;">
-                        Kullanıcı arayüzü, kullanıcıların uygulama ile etkileşime geçtiği görsel öğeleri kapsar. Bu, düğmeler, renkler, yazı tipleri,
-                        simgeler ve uygulamanın genel görünümünü içerir. UI tasarımı, uygulamanın estetik açıdan çekici olmasını ve kullanıcıların
-                        kolayca etkileşimde bulunmalarını sağlamayı hedefler.
-                    </p>
-                </div>
-            </div>
-
-            <!-- Mobil Çözümler Listesi -->
-            <div style="margin-bottom:40px;" data-aos="fade-up">
-                <h2 style="font-size:28px;font-weight:700;margin-bottom:20px;color:#ffd93d;">Mobil Çözümler</h2>
-
-                <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;">
-                    <div class="glass" style="padding:25px;border-color:rgba(255,217,61,0.05);">
-                        <div style="display:flex;gap:15px;align-items:flex-start;">
-                            <div style="width:40px;height:40px;border-radius:50%;background:rgba(255,217,61,0.1);display:flex;align-items:center;justify-content:center;font-size:18px;color:#ffd93d;flex-shrink:0;margin-top:2px;">
-                                <span style="font-weight:700;">1</span>
-                            </div>
-                            <div>
-                                <h4 style="font-size:16px;font-weight:700;margin-bottom:5px;color:#ffd93d;">Mobil Uygulama Geliştirme</h4>
-                                <p style="color:#94a3b8;font-size:14px;line-height:1.7;">iOS ve Android platformlarında yüksek kaliteli, kullanıcı dostu uygulamalar geliştirme.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="glass" style="padding:25px;border-color:rgba(255,107,107,0.05);">
-                        <div style="display:flex;gap:15px;align-items:flex-start;">
-                            <div style="width:40px;height:40px;border-radius:50%;background:rgba(255,107,107,0.1);display:flex;align-items:center;justify-content:center;font-size:18px;color:#ff6b6b;flex-shrink:0;margin-top:2px;">
-                                <span style="font-weight:700;">2</span>
-                            </div>
-                            <div>
-                                <h4 style="font-size:16px;font-weight:700;margin-bottom:5px;color:#ff6b6b;">Web Mobil Uyumluluğu</h4>
-                                <p style="color:#94a3b8;font-size:14px;line-height:1.7;">Web sitenizi mobil cihazlara uyumlu hale getirme.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="glass" style="padding:25px;border-color:rgba(107,203,119,0.05);">
-                        <div style="display:flex;gap:15px;align-items:flex-start;">
-                            <div style="width:40px;height:40px;border-radius:50%;background:rgba(107,203,119,0.1);display:flex;align-items:center;justify-content:center;font-size:18px;color:#6bcb77;flex-shrink:0;margin-top:2px;">
-                                <span style="font-weight:700;">3</span>
-                            </div>
-                            <div>
-                                <h4 style="font-size:16px;font-weight:700;margin-bottom:5px;color:#6bcb77;">E-ticaret Çözümleri</h4>
-                                <p style="color:#94a3b8;font-size:14px;line-height:1.7;">Mobil üzerinden kolayca alışveriş yapabilen kullanıcılar için mobil uyumlu e-ticaret uygulamaları geliştirme.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="glass" style="padding:25px;border-color:rgba(77,150,255,0.05);">
-                        <div style="display:flex;gap:15px;align-items:flex-start;">
-                            <div style="width:40px;height:40px;border-radius:50%;background:rgba(77,150,255,0.1);display:flex;align-items:center;justify-content:center;font-size:18px;color:#4d96ff;flex-shrink:0;margin-top:2px;">
-                                <span style="font-weight:700;">4</span>
-                            </div>
-                            <div>
-                                <h4 style="font-size:16px;font-weight:700;margin-bottom:5px;color:#4d96ff;">Performans İyileştirmeleri</h4>
-                                <p style="color:#94a3b8;font-size:14px;line-height:1.7;">Mevcut uygulamalarınızın hızını ve kullanıcı deneyimini optimize etme.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="glass" style="padding:25px;border-color:rgba(255,217,61,0.05);grid-column:span 2;">
-                        <div style="display:flex;gap:15px;align-items:flex-start;">
-                            <div style="width:40px;height:40px;border-radius:50%;background:rgba(255,217,61,0.1);display:flex;align-items:center;justify-content:center;font-size:18px;color:#ffd93d;flex-shrink:0;margin-top:2px;">
-                                <span style="font-weight:700;">5</span>
-                            </div>
-                            <div>
-                                <h4 style="font-size:16px;font-weight:700;margin-bottom:5px;color:#ffd93d;">UX/UI Tasarımı</h4>
-                                <p style="color:#94a3b8;font-size:14px;line-height:1.7;">Uygulamalarınızın estetik ve kullanışlı olmasını sağlayacak tasarımlar.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Mobil Uygulamaların Avantajları -->
-            <div style="margin-bottom:40px;" data-aos="fade-up">
-                <div class="glass" style="padding:35px;border-color:rgba(255,217,61,0.05);">
-                    <p style="color:#e2e8f0;font-size:15px;line-height:2;margin-bottom:15px;">
-                        Mobil uygulamalar, web sitelerinin sunduğu temel işlevleri daha hızlı, kişiselleştirilmiş ve etkileşimli bir şekilde sunar.
-                        Kullanıcı deneyimi, güvenlik, çevrimdışı erişim, hızlı bildirimler ve kişisel hizmetler gibi avantajlarla,
-                        mobil uygulamalar, bir işletmenin çevrimiçi varlığını güçlendirebilir. Web sitesine ek olarak bir mobil uygulama sunmak,
-                        markanızı farklılaştırabilir ve kullanıcı bağlılığını artırabilir. Bu sebeplerle, mobil uygulama geliştirmek,
-                        özellikle mobil cihaz kullanımının hızla arttığı günümüzde, işletmeniz için önemli bir adım olabilir.
-                    </p>
-                </div>
-            </div>
-
-            <!-- Mobil Uygulama Neden Tercih Edilmeli? -->
-            <div style="margin-bottom:40px;" data-aos="fade-up">
-                <h2 style="font-size:28px;font-weight:700;margin-bottom:20px;color:#ffd93d;">Mobil Uygulama?</h2>
+                <h2 style="font-size:28px;font-weight:700;margin-bottom:20px;color:#ffd93d;">Mobil Uygulama Geliştirme</h2>
 
                 <div class="glass" style="padding:35px;border-color:rgba(255,217,61,0.05);margin-bottom:20px;">
-                    <p style="color:#e2e8f0;font-size:15px;line-height:2;margin-bottom:15px;">
-                        Bugün, internetin büyük bir kısmı mobil cihazlar üzerinden erişilmektedir. Akıllı telefonlar ve tabletler,
-                        internet kullanıcılarının çoğunluğunun tercihi haline gelmiştir. Bu da web sitesi sahiplerini,
-                        mobil kullanıcı deneyimini daha iyi sunabilecek çözümler aramaya zorlamaktadır.
-                        Birçok işletme, web sitesine ek olarak mobil uygulama geliştirmeyi tercih etmektedir.
-                        Peki, bir mobil uygulama neden web sitesine tercih edilmelidir? İşte bu sorunun cevabı:
+                    <h3 style="font-size:20px;font-weight:700;margin-bottom:12px;color:#ffd93d;">Native Mobil Uygulama Geliştirme</h3>
+                    <p style="color:#e2e8f0;font-size:15px;line-height:2;">
+                        iOS ve Android platformlarına özel, yüksek performanslı ve kullanıcı dostu native mobil uygulamalar
+                        geliştiriyoruz. Swift ve Kotlin gibi platforma özel diller kullanarak, cihazın tüm özelliklerinden
+                        en iyi şekilde faydalanan uygulamalar tasarlıyoruz.
                     </p>
                 </div>
 
-                <div class="glass" style="padding:30px;border-color:rgba(255,107,107,0.05);margin-bottom:15px;">
-                    <h4 style="font-size:18px;font-weight:700;margin-bottom:8px;color:#ff6b6b;">1. Kullanıcı Deneyimini İyileştirme</h4>
+                <div class="glass" style="padding:35px;border-color:rgba(255,107,107,0.05);margin-bottom:20px;">
+                    <h3 style="font-size:20px;font-weight:700;margin-bottom:12px;color:#ff6b6b;">Cross-Platform Mobil Uygulama Geliştirme</h3>
                     <p style="color:#e2e8f0;font-size:15px;line-height:2;">
-                        Mobil uygulamalar, kullanıcıların web sitelerine kıyasla daha hızlı, sorunsuz ve etkileşimli bir deneyim yaşamasını sağlar.
-                        Mobil uygulamalar, uygulama içindeki tüm içerik ve fonksiyonları optimize ederek kullanıcılara akıcı bir deneyim sunar.
-                        Ayrıca, mobil uygulamalar internet bağlantısına bağımlı olmadan, yerel veritabanı veya önbellekler sayesinde
-                        içeriklere hızlı erişim imkânı sağlar.
+                        Flutter ve React Native gibi cross-platform teknolojileri kullanarak, tek bir kod tabanı ile
+                        hem iOS hem Android platformlarına uygun mobil uygulamalar geliştiriyoruz. Bu sayede maliyetleri
+                        düşürürken, zaman avantajı sağlıyoruz.
+                    </p>
+                </div>
+
+                <div class="glass" style="padding:35px;border-color:rgba(107,203,119,0.05);">
+                    <h3 style="font-size:20px;font-weight:700;margin-bottom:12px;color:#6bcb77;">Hibrit Mobil Uygulama Geliştirme</h3>
+                    <p style="color:#e2e8f0;font-size:15px;line-height:2;">
+                        HTML5, CSS ve JavaScript teknolojileri kullanarak, web tabanlı hibrit mobil uygulamalar
+                        geliştiriyoruz. Mevcut web projelerinizi mobil uygulamaya dönüştürerek, mevcut yatırımlarınızı
+                        değerlendiriyoruz.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Mobil Çözümlerimiz -->
+            <div style="margin-bottom:30px;" data-aos="fade-up">
+                <h2 style="font-size:28px;font-weight:700;margin-bottom:20px;color:#ffd93d;">Mobil Çözümlerimiz</h2>
+
+                <div class="glass" style="padding:30px;border-color:rgba(255,107,107,0.05);margin-bottom:15px;">
+                    <h4 style="font-size:18px;font-weight:700;margin-bottom:8px;color:#ff6b6b;">Kurumsal Mobil Uygulamalar</h4>
+                    <p style="color:#e2e8f0;font-size:15px;line-height:2;">
+                        İşletmenizin iç süreçlerini kolaylaştıran, çalışanlarınızın verimliliğini artıran kurumsal mobil
+                        uygulamalar geliştiriyoruz. CRM, ERP, İK gibi kurumsal sistemlerinizin mobil entegrasyonlarını sağlıyoruz.
                     </p>
                 </div>
 
                 <div class="glass" style="padding:30px;border-color:rgba(255,217,61,0.05);margin-bottom:15px;">
-                    <h4 style="font-size:18px;font-weight:700;margin-bottom:8px;color:#ffd93d;">3. Daha Hızlı Erişim</h4>
+                    <h4 style="font-size:18px;font-weight:700;margin-bottom:8px;color:#ffd93d;">Müşteri Odaklı Uygulamalar</h4>
                     <p style="color:#e2e8f0;font-size:15px;line-height:2;">
-                        Web siteleri, internet tarayıcıları üzerinden erişildiği için bağlantı hızına ve tarayıcı performansına bağlıdır.
-                        Oysa mobil uygulamalar, cihazın yerel kaynaklarını kullanarak çok daha hızlı açılır ve daha hızlı işlem yapar.
-                        Bu, özellikle internet bağlantısının zayıf olduğu durumlarda kullanıcıların olumlu bir deneyim yaşamasını sağlar.
+                        Müşterilerinizin ihtiyaçlarına yönelik, kullanımı kolay ve etkileşimli mobil uygulamalar
+                        tasarlıyoruz. E-ticaret, bankacılık, sağlık, eğitim gibi farklı sektörlere özel çözümler sunuyoruz.
                     </p>
                 </div>
 
                 <div class="glass" style="padding:30px;border-color:rgba(107,203,119,0.05);margin-bottom:15px;">
-                    <h4 style="font-size:18px;font-weight:700;margin-bottom:8px;color:#6bcb77;">4. Kişisel ve Yerel Hizmetler</h4>
+                    <h4 style="font-size:18px;font-weight:700;margin-bottom:8px;color:#6bcb77;">Mobil Oyun Geliştirme</h4>
                     <p style="color:#e2e8f0;font-size:15px;line-height:2;">
-                        Mobil uygulamalar, cihazın GPS ve kamera gibi yerel özelliklerine erişim sağlayarak daha kişiselleştirilmiş hizmetler sunabilir.
-                        Örneğin, bir kullanıcı mağazanıza yaklaşıyorsa, indirimler hakkında bildirim alabilir veya bir kullanıcı alışveriş yaparken
-                        ürünün QR kodunu tarayabilir. Bu tür özellikler, web sitelerinde sınırlı olsa da mobil uygulamalarda daha geniş imkanlar sunar.
+                        Eğlence sektörüne yönelik, etkileyici grafiklere sahip ve sürükleyici oyun deneyimleri sunan
+                        mobil oyunlar geliştiriyoruz. Unity ve Unreal Engine gibi oyun motorları ile 2D ve 3D oyun
+                        projeleri tasarlıyoruz.
                     </p>
                 </div>
 
-                <div class="glass" style="padding:30px;border-color:rgba(77,150,255,0.05);margin-bottom:15px;">
-                    <h4 style="font-size:18px;font-weight:700;margin-bottom:8px;color:#4d96ff;">6. Çevrimdışı Erişim</h4>
+                <div class="glass" style="padding:30px;border-color:rgba(77,150,255,0.05);">
+                    <h4 style="font-size:18px;font-weight:700;margin-bottom:8px;color:#4d96ff;">Mobil UI/UX Tasarım</h4>
                     <p style="color:#e2e8f0;font-size:15px;line-height:2;">
-                        Mobil uygulamalar, internet bağlantısı olmadan da çalışabilme özelliğine sahiptir. Kullanıcılar, uygulamayı bir kez açıp
-                        içeriğini indirdikten sonra, internet olmadan da uygulamanın bazı özelliklerine erişebilirler.
-                        Web siteleri ise genellikle çevrimdışı erişimi mümkün kılmaz.
+                        Kullanıcı deneyimini ön planda tutan, sezgisel ve estetik mobil arayüzler tasarlıyoruz.
+                        Kullanıcı araştırmaları, prototipleme ve kullanılabilirlik testleri ile uygulamalarınızın
+                        başarısını artırıyoruz.
                     </p>
                 </div>
+            </div>
 
-                <div class="glass" style="padding:30px;border-color:rgba(255,107,107,0.05);">
-                    <h4 style="font-size:18px;font-weight:700;margin-bottom:8px;color:#ff6b6b;">7. Daha Etkili Veri Toplama ve Analiz</h4>
-                    <p style="color:#e2e8f0;font-size:15px;line-height:2;">
-                        Mobil uygulamalar, kullanıcıların davranışlarını ve tercihlerini daha doğru bir şekilde izleyebilir.
-                        Uygulama içi analiz araçları, kullanıcıların ne tür içerikleri tercih ettiğini, hangi özellikleri kullandığını
-                        ve uygulamaya nasıl etkileşimde bulunduklarını takip etmenize olanak tanır. Bu veriler, işletmenizin daha etkili
-                        stratejiler oluşturmasına yardımcı olur.
+            <!-- Mobil Uygulama Avantajları -->
+            <div style="margin-bottom:30px;" data-aos="fade-up">
+                <h2 style="font-size:24px;font-weight:700;margin-bottom:25px;color:#ffd93d;">Mobil Uygulama Avantajları</h2>
+
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:15px;">
+                    <div class="glass" style="padding:20px 25px;border-color:rgba(255,107,107,0.05);display:flex;align-items:center;gap:15px;">
+                        <div style="width:30px;height:30px;border-radius:50%;background:rgba(255,107,107,0.1);display:flex;align-items:center;justify-content:center;font-size:14px;color:#ff6b6b;flex-shrink:0;font-weight:700;">1</div>
+                        <span style="color:#e2e8f0;font-size:15px;">Her Yerde Erişim</span>
+                    </div>
+                    <div class="glass" style="padding:20px 25px;border-color:rgba(255,217,61,0.05);display:flex;align-items:center;gap:15px;">
+                        <div style="width:30px;height:30px;border-radius:50%;background:rgba(255,217,61,0.1);display:flex;align-items:center;justify-content:center;font-size:14px;color:#ffd93d;flex-shrink:0;font-weight:700;">2</div>
+                        <span style="color:#e2e8f0;font-size:15px;">Yüksek Performans</span>
+                    </div>
+                    <div class="glass" style="padding:20px 25px;border-color:rgba(107,203,119,0.05);display:flex;align-items:center;gap:15px;">
+                        <div style="width:30px;height:30px;border-radius:50%;background:rgba(107,203,119,0.1);display:flex;align-items:center;justify-content:center;font-size:14px;color:#6bcb77;flex-shrink:0;font-weight:700;">3</div>
+                        <span style="color:#e2e8f0;font-size:15px;">Müşteri Bağlılığı</span>
+                    </div>
+                    <div class="glass" style="padding:20px 25px;border-color:rgba(77,150,255,0.05);display:flex;align-items:center;gap:15px;">
+                        <div style="width:30px;height:30px;border-radius:50%;background:rgba(77,150,255,0.1);display:flex;align-items:center;justify-content:center;font-size:14px;color:#4d96ff;flex-shrink:0;font-weight:700;">4</div>
+                        <span style="color:#e2e8f0;font-size:15px;">Marka Bilinirliği</span>
+                    </div>
+                    <div class="glass" style="padding:20px 25px;border-color:rgba(255,107,107,0.05);display:flex;align-items:center;gap:15px;">
+                        <div style="width:30px;height:30px;border-radius:50%;background:rgba(255,107,107,0.1);display:flex;align-items:center;justify-content:center;font-size:14px;color:#ff6b6b;flex-shrink:0;font-weight:700;">5</div>
+                        <span style="color:#e2e8f0;font-size:15px;">Rekabet Avantajı</span>
+                    </div>
+                    <div class="glass" style="padding:20px 25px;border-color:rgba(255,217,61,0.05);display:flex;align-items:center;gap:15px;">
+                        <div style="width:30px;height:30px;border-radius:50%;background:rgba(255,217,61,0.1);display:flex;align-items:center;justify-content:center;font-size:14px;color:#ffd93d;flex-shrink:0;font-weight:700;">6</div>
+                        <span style="color:#e2e8f0;font-size:15px;">Güvenli Veri Yönetimi</span>
+                    </div>
+                    <div class="glass" style="padding:20px 25px;border-color:rgba(107,203,119,0.05);display:flex;align-items:center;gap:15px;">
+                        <div style="width:30px;height:30px;border-radius:50%;background:rgba(107,203,119,0.1);display:flex;align-items:center;justify-content:center;font-size:14px;color:#6bcb77;flex-shrink:0;font-weight:700;">7</div>
+                        <span style="color:#e2e8f0;font-size:15px;">Push Bildirimleri</span>
+                    </div>
+                    <div class="glass" style="padding:20px 25px;border-color:rgba(77,150,255,0.05);display:flex;align-items:center;gap:15px;">
+                        <div style="width:30px;height:30px;border-radius:50%;background:rgba(77,150,255,0.1);display:flex;align-items:center;justify-content:center;font-size:14px;color:#4d96ff;flex-shrink:0;font-weight:700;">8</div>
+                        <span style="color:#e2e8f0;font-size:15px;">Offline Kullanım</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sonuç -->
+            <div data-aos="fade-up">
+                <div class="glass" style="padding:35px;border-color:rgba(255,217,61,0.05);text-align:center;background:linear-gradient(135deg,rgba(255,217,61,0.05),rgba(255,158,0,0.05));">
+                    <h3 style="font-size:22px;font-weight:700;margin-bottom:15px;color:#ffd93d;">Mobil Dünyada Fark Yaratın</h3>
+                    <p style="color:#e2e8f0;font-size:16px;line-height:2;max-width:800px;margin:0 auto;">
+                        Mobil uygulamalar günümüz dijital dünyasında işletmelerin vazgeçilmez bir parçası haline gelmiştir.
+                        Uzman mobil geliştirme ekibimizle, işletmenizin ihtiyaçlarına en uygun mobil çözümleri sunuyoruz.
+                        Müşterilerinize benzersiz bir deneyim yaşatacak mobil uygulamalar tasarlıyoruz.
                     </p>
                 </div>
             </div>
@@ -265,16 +206,21 @@
 </section>
 
 <!-- ===== İLETİŞİME GEÇİN ===== -->
-<section class="section-padding" id="cta">
+<section class="section-padding" id="cta" style="background:linear-gradient(135deg, #ff6b6b, #ee5a24, #ff6b6b);background-size:200% 200%;animation:btnGradient 4s ease infinite;border-top:none;border-bottom:none;position:relative;overflow:hidden;">
+    <div style="position:absolute;top:-50%;right:-20%;width:600px;height:600px;background:radial-gradient(circle,rgba(255,255,255,0.05),transparent 70%);border-radius:50%;pointer-events:none;"></div>
+    <div style="position:absolute;bottom:-50%;left:-20%;width:500px;height:500px;background:radial-gradient(circle,rgba(255,255,255,0.05),transparent 70%);border-radius:50%;pointer-events:none;"></div>
+
     <div class="container">
-        <div class="cta-content" data-aos="fade-up">
-            <h2>Bizimle <span>İletişime Geçin</span></h2>
-            <p>Projenizi konuşmak, teklif almak veya sorularınız için hemen bize ulaşın.</p>
-            <div style="display:flex;gap:15px;justify-content:center;flex-wrap:wrap;">
-                <a href="{{ route('contact') }}" class="btn-white">
+        <div class="cta-content" data-aos="fade-up" style="position:relative;z-index:1;text-align:center;">
+            <h2 style="font-size:42px;font-weight:800;margin-bottom:20px;color:#fff;">Özel Çözümler <span style="color:#fff;">İçin Bize Ulaşın</span></h2>
+            <p style="font-size:18px;margin-bottom:30px;opacity:0.9;max-width:600px;margin-left:auto;margin-right:auto;color:rgba(255,255,255,0.9);">
+                İhtiyaçlarınıza özel yazılım çözümleri için hemen bizimle iletişime geçin.
+            </p>
+            <div style="display:flex;gap:20px;justify-content:center;flex-wrap:wrap;">
+                <a href="{{ route('contact') }}" style="background:#fff;color:#0a0e1a !important;padding:16px 45px;border-radius:60px;text-decoration:none;font-weight:600;transition:all 0.4s cubic-bezier(0.175,0.885,0.32,1.275);display:inline-flex;align-items:center;gap:12px;font-size:17px;border:none;cursor:pointer;box-shadow:0 15px 50px rgba(255,255,255,0.2);" onmouseover="this.style.transform='translateY(-5px) scale(1.05)';this.style.boxShadow='0 25px 70px rgba(255,255,255,0.3)'" onmouseout="this.style.transform='translateY(0) scale(1)';this.style.boxShadow='0 15px 50px rgba(255,255,255,0.2)'">
                     <i class="fas fa-paper-plane"></i> Hemen İletişim
                 </a>
-                <a href="tel:+905551234567" class="btn-secondary">
+                <a href="tel:+905551234567" style="background:rgba(255,255,255,0.12);color:#fff !important;padding:16px 45px;border-radius:60px;text-decoration:none;font-weight:600;transition:all 0.4s cubic-bezier(0.175,0.885,0.32,1.275);display:inline-flex;align-items:center;gap:12px;font-size:17px;backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,0.15);" onmouseover="this.style.background='rgba(255,255,255,0.2)';this.style.transform='translateY(-5px) scale(1.05)';this.style.borderColor='rgba(255,255,255,0.3)'" onmouseout="this.style.background='rgba(255,255,255,0.12)';this.style.transform='translateY(0) scale(1)';this.style.borderColor='rgba(255,255,255,0.15)'">
                     <i class="fas fa-phone"></i> +90 (555) 123 45 67
                 </a>
             </div>
@@ -283,13 +229,51 @@
 </section>
 
 <style>
-@keyframes floatY {
-    0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-10px); }
-}
-@keyframes rotateIn {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-}
+    @keyframes btnGradient {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+    }
+    @keyframes floatY {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-10px); }
+    }
+    @keyframes rotateIn {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+    }
+    @media (max-width: 768px) {
+        #cta {
+            padding: 50px 0 !important;
+        }
+        #cta .cta-content h2 {
+            font-size: 28px !important;
+        }
+        #cta .cta-content p {
+            font-size: 15px !important;
+            padding: 0 15px;
+        }
+        #cta .cta-content div {
+            flex-direction: column !important;
+            align-items: center !important;
+        }
+        #cta .cta-content a {
+            width: 100% !important;
+            max-width: 320px !important;
+            justify-content: center !important;
+            padding: 14px 30px !important;
+            font-size: 15px !important;
+        }
+    }
+    @media (max-width: 480px) {
+        #cta .cta-content h2 {
+            font-size: 22px !important;
+        }
+        #cta .cta-content a {
+            padding: 12px 20px !important;
+            font-size: 13px !important;
+            max-width: 280px !important;
+        }
+    }
 </style>
 @endsection

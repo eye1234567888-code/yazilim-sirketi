@@ -156,16 +156,21 @@
 </section>
 
 <!-- ===== İLETİŞİME GEÇİN ===== -->
-<section class="section-padding" id="cta">
+<section class="section-padding" id="cta" style="background:linear-gradient(135deg, #ff6b6b, #ee5a24, #ff6b6b);background-size:200% 200%;animation:btnGradient 4s ease infinite;border-top:none;border-bottom:none;position:relative;overflow:hidden;">
+    <div style="position:absolute;top:-50%;right:-20%;width:600px;height:600px;background:radial-gradient(circle,rgba(255,255,255,0.05),transparent 70%);border-radius:50%;pointer-events:none;"></div>
+    <div style="position:absolute;bottom:-50%;left:-20%;width:500px;height:500px;background:radial-gradient(circle,rgba(255,255,255,0.05),transparent 70%);border-radius:50%;pointer-events:none;"></div>
+
     <div class="container">
-        <div class="cta-content" data-aos="fade-up">
-            <h2>Bizimle <span>İletişime Geçin</span></h2>
-            <p>Projenizi konuşmak, teklif almak veya sorularınız için hemen bize ulaşın.</p>
-            <div style="display:flex;gap:15px;justify-content:center;flex-wrap:wrap;">
-                <a href="{{ route('contact') }}" class="btn-white">
+        <div class="cta-content" data-aos="fade-up" style="position:relative;z-index:1;text-align:center;">
+            <h2 style="font-size:42px;font-weight:800;margin-bottom:20px;color:#fff;">Özel Çözümler <span style="color:#fff;">İçin Bize Ulaşın</span></h2>
+            <p style="font-size:18px;margin-bottom:30px;opacity:0.9;max-width:600px;margin-left:auto;margin-right:auto;color:rgba(255,255,255,0.9);">
+                İhtiyaçlarınıza özel yazılım çözümleri için hemen bizimle iletişime geçin.
+            </p>
+            <div style="display:flex;gap:20px;justify-content:center;flex-wrap:wrap;">
+                <a href="{{ route('contact') }}" style="background:#fff;color:#0a0e1a !important;padding:16px 45px;border-radius:60px;text-decoration:none;font-weight:600;transition:all 0.4s cubic-bezier(0.175,0.885,0.32,1.275);display:inline-flex;align-items:center;gap:12px;font-size:17px;border:none;cursor:pointer;box-shadow:0 15px 50px rgba(255,255,255,0.2);" onmouseover="this.style.transform='translateY(-5px) scale(1.05)';this.style.boxShadow='0 25px 70px rgba(255,255,255,0.3)'" onmouseout="this.style.transform='translateY(0) scale(1)';this.style.boxShadow='0 15px 50px rgba(255,255,255,0.2)'">
                     <i class="fas fa-paper-plane"></i> Hemen İletişim
                 </a>
-                <a href="tel:+905551234567" class="btn-secondary">
+                <a href="tel:+905551234567" style="background:rgba(255,255,255,0.12);color:#fff !important;padding:16px 45px;border-radius:60px;text-decoration:none;font-weight:600;transition:all 0.4s cubic-bezier(0.175,0.885,0.32,1.275);display:inline-flex;align-items:center;gap:12px;font-size:17px;backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,0.15);" onmouseover="this.style.background='rgba(255,255,255,0.2)';this.style.transform='translateY(-5px) scale(1.05)';this.style.borderColor='rgba(255,255,255,0.3)'" onmouseout="this.style.background='rgba(255,255,255,0.12)';this.style.transform='translateY(0) scale(1)';this.style.borderColor='rgba(255,255,255,0.15)'">
                     <i class="fas fa-phone"></i> +90 (555) 123 45 67
                 </a>
             </div>
@@ -174,13 +179,51 @@
 </section>
 
 <style>
-@keyframes floatY {
-    0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-10px); }
-}
-@keyframes rotateIn {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-}
+    @keyframes btnGradient {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+    }
+    @keyframes floatY {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-10px); }
+    }
+    @keyframes rotateIn {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+    }
+    @media (max-width: 768px) {
+        #cta {
+            padding: 50px 0 !important;
+        }
+        #cta .cta-content h2 {
+            font-size: 28px !important;
+        }
+        #cta .cta-content p {
+            font-size: 15px !important;
+            padding: 0 15px;
+        }
+        #cta .cta-content div {
+            flex-direction: column !important;
+            align-items: center !important;
+        }
+        #cta .cta-content a {
+            width: 100% !important;
+            max-width: 320px !important;
+            justify-content: center !important;
+            padding: 14px 30px !important;
+            font-size: 15px !important;
+        }
+    }
+    @media (max-width: 480px) {
+        #cta .cta-content h2 {
+            font-size: 22px !important;
+        }
+        #cta .cta-content a {
+            padding: 12px 20px !important;
+            font-size: 13px !important;
+            max-width: 280px !important;
+        }
+    }
 </style>
 @endsection

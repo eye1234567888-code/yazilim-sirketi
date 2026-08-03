@@ -53,7 +53,6 @@
         touch-action: manipulation;
     }
 
-    /* ===== RENKLER (NORMAL) ===== */
     .service-card:nth-child(1) { background: rgba(255,107,107,0.04); border-color: rgba(255,107,107,0.08); }
     .service-card:nth-child(2) { background: rgba(255,217,61,0.04); border-color: rgba(255,217,61,0.08); }
     .service-card:nth-child(3) { background: rgba(107,203,119,0.04); border-color: rgba(107,203,119,0.08); }
@@ -61,7 +60,6 @@
     .service-card:nth-child(5) { background: rgba(166,108,255,0.04); border-color: rgba(166,108,255,0.08); }
     .service-card:nth-child(6) { background: rgba(255,107,107,0.04); border-color: rgba(255,107,107,0.08); }
 
-    /* ===== RENKLER (HOVER) ===== */
     .service-card:nth-child(1):hover,
     .service-card:nth-child(1).touch-hover { background: #ff6b6b !important; border-color: #ff6b6b !important; transform: translateY(-10px); box-shadow: 0 20px 60px rgba(255,107,107,0.4); }
     .service-card:nth-child(2):hover,
@@ -168,6 +166,7 @@
         text-decoration: none;
         background: transparent;
     }
+
     .service-card:nth-child(1) .btn-service { color: #ff6b6b; border-color: rgba(255,107,107,0.2); }
     .service-card:nth-child(2) .btn-service { color: #ffd93d; border-color: rgba(255,217,61,0.2); }
     .service-card:nth-child(3) .btn-service { color: #6bcb77; border-color: rgba(107,203,119,0.2); }
@@ -406,7 +405,7 @@
     </div>
 </section>
 
-<!-- ===== CTA ===== -->
+<!-- ===== CTA - DÜZELTİLDİ ===== -->
 <section id="cta" style="padding:80px 0;position:relative;z-index:1;background:linear-gradient(135deg,#ff6b6b,#ee5a24,#ff6b6b) !important;background-size:200% 200% !important;animation:btnGradient 4s ease infinite !important;border-top:none !important;border-bottom:none !important;">
     <div class="container">
         <div class="cta-content" style="text-align:center;padding:0;position:relative;z-index:1;">
@@ -414,9 +413,47 @@
             <p style="font-size:18px;margin-bottom:30px;opacity:0.9;max-width:600px;margin-left:auto;margin-right:auto;color:rgba(255,255,255,0.9);">
                 İhtiyaçlarınıza özel yazılım çözümleri için hemen bizimle iletişime geçin.
             </p>
-            <a href="{{ route('contact') }}" class="btn-white" style="background:#fff;color:#0a0e1a !important;padding:14px 40px;border-radius:50px;text-decoration:none;font-weight:600;transition:all 0.3s ease;display:inline-block;font-size:16px;">
-                <i class="fas fa-phone"></i> Hemen Ara
-            </a>
+            <div style="display:flex;gap:20px;justify-content:center;flex-wrap:wrap;">
+                <a href="{{ route('contact') }}" style="
+                    background:linear-gradient(135deg, #ff6b6b, #ee5a24);
+                    color:#fff !important;
+                    padding:16px 45px;
+                    border-radius:60px;
+                    text-decoration:none;
+                    font-weight:600;
+                    transition:all 0.4s cubic-bezier(0.175,0.885,0.32,1.275);
+                    display:inline-flex;
+                    align-items:center;
+                    gap:12px;
+                    font-size:17px;
+                    border:none;
+                    cursor:pointer;
+                    box-shadow:0 15px 50px rgba(255,107,107,0.35);
+                "
+                onmouseover="this.style.transform='translateY(-5px) scale(1.05)';this.style.boxShadow='0 25px 70px rgba(255,107,107,0.5)'"
+                onmouseout="this.style.transform='translateY(0) scale(1)';this.style.boxShadow='0 15px 50px rgba(255,107,107,0.35)'">
+                    <i class="fas fa-paper-plane"></i> Hemen İletişim
+                </a>
+                <a href="tel:+905551234567" style="
+                    background:rgba(255,255,255,0.05);
+                    color:#fff !important;
+                    padding:16px 45px;
+                    border-radius:60px;
+                    text-decoration:none;
+                    font-weight:600;
+                    transition:all 0.4s cubic-bezier(0.175,0.885,0.32,1.275);
+                    display:inline-flex;
+                    align-items:center;
+                    gap:12px;
+                    font-size:17px;
+                    backdrop-filter:blur(10px);
+                    border:1px solid rgba(255,255,255,0.12);
+                "
+                onmouseover="this.style.background='rgba(255,255,255,0.1)';this.style.transform='translateY(-5px) scale(1.05)';this.style.borderColor='rgba(255,255,255,0.25)'"
+                onmouseout="this.style.background='rgba(255,255,255,0.05)';this.style.transform='translateY(0) scale(1)';this.style.borderColor='rgba(255,255,255,0.12)'">
+                    <i class="fas fa-phone"></i> +90 (555) 123 45 67
+                </a>
+            </div>
         </div>
     </div>
 </section>
@@ -439,14 +476,26 @@
             font-size: 15px !important;
             padding: 0 15px;
         }
-        #cta .btn-white {
-            padding: 12px 30px !important;
-            font-size: 14px !important;
+        #cta .cta-content div {
+            flex-direction: column !important;
+            align-items: center !important;
+        }
+        #cta .cta-content a {
+            width: 100% !important;
+            max-width: 320px !important;
+            justify-content: center !important;
+            padding: 14px 30px !important;
+            font-size: 15px !important;
         }
     }
     @media (max-width: 480px) {
         #cta .cta-content h2 {
             font-size: 22px !important;
+        }
+        #cta .cta-content a {
+            padding: 12px 20px !important;
+            font-size: 13px !important;
+            max-width: 280px !important;
         }
     }
 </style>
@@ -463,21 +512,18 @@
             this.style.setProperty('--mouse-y', y + '%');
         });
 
-        // ===== MOBİL TOUCH HOVER (parmak üstüne gelince) =====
+        // Mobil touch efekti
         card.addEventListener('touchstart', function(e) {
-            // Sadece dokunma anında aktif et
             this.classList.add('touch-hover');
         });
 
         card.addEventListener('touchend', function(e) {
-            // Dokunma bitince aktifliği kaldır (butona tıklamak için)
             setTimeout(() => {
                 this.classList.remove('touch-hover');
             }, 300);
         });
 
         card.addEventListener('touchcancel', function(e) {
-            // Dokunma iptal olursa aktifliği kaldır
             this.classList.remove('touch-hover');
         });
 

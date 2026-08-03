@@ -225,16 +225,20 @@
         .nav-item:hover .nav-link .arrow {
             transform: rotate(180deg);
         }
-        .mega-menu-content.active-mobile {
-            opacity: 1 !important;
-            visibility: visible !important;
-            transform: translateX(-50%) translateY(0) !important;
+        .nav-item-mega .mega-menu-content {
+            display: block;
         }
         .mega-menu-col ul {
             list-style: none;
             display: flex;
             flex-direction: column;
             gap: 4px;
+            margin: 0;
+            padding: 0;
+        }
+        .mega-menu-col ul li {
+            display: block;
+            width: 100%;
         }
         .mega-menu-col ul li a {
             color: #94a3b8;
@@ -244,9 +248,10 @@
             gap: 10px;
             transition: all 0.3s ease;
             font-size: 13px;
-            padding: 6px 12px;
+            padding: 8px 12px;
             border-radius: 8px;
             font-weight: 500;
+            white-space: nowrap;
         }
         .mega-menu-col ul li a:hover {
             color: #fff;
@@ -258,6 +263,7 @@
             color: #ff6b6b;
             font-size: 14px;
             transition: 0.3s;
+            flex-shrink: 0;
         }
         .mega-menu-col ul li a:hover i {
             color: #ffd93d;
@@ -737,28 +743,64 @@
             .nav-logo i {
                 font-size: 24px;
             }
+
+            /* MOBİL MEGA MENÜ DÜZELTİLDİ */
             .mega-menu-content {
                 position: static;
-                transform: none;
-                opacity: 1;
-                visibility: visible;
+                transform: none !important;
+                opacity: 1 !important;
+                visibility: visible !important;
                 min-width: auto;
-                padding: 12px 15px;
+                padding: 10px 15px;
                 margin-top: 5px;
                 background: rgba(255,255,255,0.03);
                 border-radius: 12px;
                 border: 1px solid rgba(255,255,255,0.03);
-                display: none;
+                display: none !important;
                 box-shadow: none;
+                width: 100%;
+                max-height: 300px;
+                overflow-y: auto;
             }
             .mega-menu-content.active-mobile {
-                display: block;
+                display: block !important;
             }
             .nav-item:hover .mega-menu-content {
                 opacity: 1;
                 visibility: visible;
                 transform: none;
             }
+            .nav-item-mega .mega-menu-content {
+                display: none !important;
+            }
+            .nav-item-mega .mega-menu-content.active-mobile {
+                display: block !important;
+            }
+            .mega-menu-col ul li a {
+                padding: 10px 12px;
+                font-size: 14px;
+                white-space: normal;
+                word-wrap: break-word;
+            }
+            .mega-menu-col ul li a i {
+                width: 24px;
+                font-size: 16px;
+                flex-shrink: 0;
+            }
+            .nav-link.nav-toggle-mega {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                width: 100%;
+            }
+            .nav-link.nav-toggle-mega .arrow {
+                transition: transform 0.3s ease;
+                font-size: 12px;
+            }
+            .nav-link.nav-toggle-mega .arrow.rotated {
+                transform: rotate(180deg);
+            }
+
             .section-padding { padding: 70px 0; }
             .section-header h2 { font-size: 36px; }
             .footer-grid { grid-template-columns: 1fr 1fr; }
@@ -866,7 +908,7 @@
                             <a href="{{ route('about') }}" class="nav-link {{ request()->routeIs('about') ? 'active' : '' }}">Hakkımızda</a>
                         </li>
                         <li class="nav-item nav-item-mega">
-                            <a href="{{ route('services') }}" class="nav-link {{ request()->routeIs('services*') ? 'active' : '' }} nav-toggle-mega" onclick="toggleMega(event)">
+                            <a href="{{ route('services') }}" class="nav-link {{ request()->routeIs('services*') ? 'active' : '' }} nav-toggle-mega" onclick="return handleMegaLink(event)">
                                 Hizmetlerimiz <i class="fas fa-chevron-down arrow"></i>
                             </a>
                             <div class="mega-menu-content" id="megaMenu">
@@ -994,7 +1036,7 @@
             document.body.style.overflow = menu.classList.contains('active') ? 'hidden' : '';
         });
 
-        document.querySelectorAll('.nav-link:not(.nav-toggle-mega)').forEach(l => {
+        document.querySelectorAll('.nav-link:not(.nav-toggle-mega)').forEach(function(l) {
             l.addEventListener('click', function() {
                 if (window.innerWidth <= 992) {
                     toggle.classList.remove('active');
@@ -1005,7 +1047,7 @@
         });
 
         // ========================================
-        // MOBİL MEGA MENÜ TOGGLE
+        // MOBİL MEGA MENÜ TOGGLE (DÜZELTİLDİ)
         // ========================================
         let isMobile = window.innerWidth <= 992;
 
@@ -1013,47 +1055,46 @@
             isMobile = window.innerWidth <= 992;
             if (!isMobile) {
                 const megaMenu = document.getElementById('megaMenu');
-                const arrowIcon = document.querySelector('.nav-toggle-mega .arrow');
                 if (megaMenu) {
                     megaMenu.classList.remove('active-mobile');
-                    if (arrowIcon) arrowIcon.style.transform = 'rotate(0deg)';
+                }
+                const arrowIcon = document.querySelector('.nav-toggle-mega .arrow');
+                if (arrowIcon) {
+                    arrowIcon.classList.remove('rotated');
                 }
             }
         });
 
-        function toggleMega(event) {
-            if (!isMobile) {
-                return true;
-            }
-
-            if (event) {
+        function handleMegaLink(event) {
+            if (isMobile) {
                 event.preventDefault();
                 event.stopPropagation();
-            }
 
-            const megaMenu = document.getElementById('megaMenu');
-            const arrowIcon = document.querySelector('.nav-toggle-mega .arrow');
+                const megaMenu = document.getElementById('megaMenu');
+                const arrowIcon = document.querySelector('.nav-toggle-mega .arrow');
 
-            if (!megaMenu) return;
+                if (!megaMenu) return false;
 
-            const isOpen = megaMenu.classList.contains('active-mobile');
+                const isOpen = megaMenu.classList.contains('active-mobile');
 
-            document.querySelectorAll('.mega-menu-content.active-mobile').forEach(function(menu) {
-                if (menu !== megaMenu) {
-                    menu.classList.remove('active-mobile');
+                document.querySelectorAll('.mega-menu-content.active-mobile').forEach(function(menu) {
+                    if (menu !== megaMenu) {
+                        menu.classList.remove('active-mobile');
+                    }
+                });
+
+                if (isOpen) {
+                    megaMenu.classList.remove('active-mobile');
+                    if (arrowIcon) arrowIcon.classList.remove('rotated');
+                } else {
+                    megaMenu.classList.add('active-mobile');
+                    if (arrowIcon) arrowIcon.classList.add('rotated');
                 }
-            });
-
-            if (isOpen) {
-                megaMenu.classList.remove('active-mobile');
-                if (arrowIcon) arrowIcon.style.transform = 'rotate(0deg)';
-            } else {
-                megaMenu.classList.add('active-mobile');
-                if (arrowIcon) arrowIcon.style.transform = 'rotate(180deg)';
+                return false;
             }
+            return true;
         }
 
-        // Mega menü dışına tıklayınca kapat
         document.addEventListener('click', function(e) {
             if (!isMobile) return;
 
@@ -1064,12 +1105,11 @@
                 if (!megaMenu.contains(e.target) && !toggleLink.contains(e.target)) {
                     megaMenu.classList.remove('active-mobile');
                     const arrowIcon = document.querySelector('.nav-toggle-mega .arrow');
-                    if (arrowIcon) arrowIcon.style.transform = 'rotate(0deg)';
+                    if (arrowIcon) arrowIcon.classList.remove('rotated');
                 }
             }
         });
 
-        // Mega menü linklerine tıklayınca kapat
         document.querySelectorAll('.mega-menu-content a').forEach(function(link) {
             link.addEventListener('click', function() {
                 if (window.innerWidth <= 992) {
@@ -1077,7 +1117,7 @@
                     const arrowIcon = document.querySelector('.nav-toggle-mega .arrow');
                     if (megaMenu) {
                         megaMenu.classList.remove('active-mobile');
-                        if (arrowIcon) arrowIcon.style.transform = 'rotate(0deg)';
+                        if (arrowIcon) arrowIcon.classList.remove('rotated');
                     }
                     toggle.classList.remove('active');
                     menu.classList.remove('active');

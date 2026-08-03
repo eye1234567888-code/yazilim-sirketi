@@ -35,7 +35,7 @@
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 40px;
-        padding: 20px 0 40px;
+        padding: 20px 0 80px;
         position: relative;
         z-index: 1;
     }
@@ -316,7 +316,7 @@
             padding: 0 15px;
         }
         .contact-wrapper {
-            padding: 10px 0 30px;
+            padding: 10px 0 40px;
             gap: 20px;
         }
         .contact-info,
@@ -427,6 +427,9 @@
             height: 36px;
             font-size: 14px;
         }
+        section[style*="padding:0 0 60px"] iframe {
+            height: 150px !important;
+        }
     }
 
     @keyframes rainbowText {
@@ -451,7 +454,7 @@
 <section class="contact-section">
     <div class="container">
         <div class="contact-wrapper">
-            <!-- ===== İLETİŞİM FORMU (ÜSTTE) ===== -->
+            <!-- ===== İLETİŞİM FORMU ===== -->
             <div class="contact-form-wrapper" data-aos="fade-right" data-aos-delay="0">
                 <h2>Bize Yazın</h2>
                 <p class="subtitle">Size en kısa sürede dönüş yapalım.</p>
@@ -493,7 +496,7 @@
                 </form>
             </div>
 
-            <!-- ===== İLETİŞİM BİLGİLERİ (ALTT A) ===== -->
+            <!-- ===== İLETİŞİM BİLGİLERİ ===== -->
             <div class="contact-info" data-aos="fade-left" data-aos-delay="100">
                 <h2>İletişim Bilgileri</h2>
                 <p class="subtitle">Size en hızlı şekilde dönüş yapabilmemiz için aşağıdaki kanallardan bize ulaşabilirsiniz.</p>
@@ -545,8 +548,8 @@
     </div>
 </section>
 
-<!-- ===== HARİTA (OPSİYONEL) ===== -->
-<section style="padding:0 0 60px;position:relative;z-index:1;">
+<!-- ===== HARİTA ===== -->
+<section style="padding:0 0 80px;position:relative;z-index:1;">
     <div class="container">
         <div style="border-radius:20px;overflow:hidden;border:1px solid rgba(255,255,255,0.04);">
             <iframe
@@ -562,52 +565,14 @@
     </div>
 </section>
 
-<!-- ===== CTA ===== -->
-<section id="cta" style="padding:60px 0;position:relative;z-index:1;background:linear-gradient(135deg,#ff6b6b,#ee5a24,#ff6b6b) !important;background-size:200% 200% !important;animation:btnGradient 4s ease infinite !important;border-top:none !important;border-bottom:none !important;">
-    <div class="container">
-        <div class="cta-content" style="text-align:center;padding:0;position:relative;z-index:1;">
-            <h2 style="font-size:34px;font-weight:800;margin-bottom:15px;color:#fff;">Hemen <span style="color:#fff;">Teklif Alın</span></h2>
-            <p style="font-size:16px;margin-bottom:25px;opacity:0.9;max-width:500px;margin-left:auto;margin-right:auto;color:rgba(255,255,255,0.9);">
-                Projenizi hayata geçirmek için hemen bizimle iletişime geçin.
-            </p>
-            <a href="tel:+905551234567" class="btn-white" style="background:#fff;color:#0a0e1a !important;padding:12px 35px;border-radius:50px;text-decoration:none;font-weight:600;transition:all 0.3s ease;display:inline-block;font-size:15px;">
-                <i class="fas fa-phone"></i> Hemen Ara
-            </a>
-        </div>
-    </div>
-</section>
-
 <style>
-    @keyframes btnGradient {
-        0% { background-position: 0% 50%; }
-        50% { background-position: 100% 50%; }
-        100% { background-position: 0% 50%; }
-    }
-
     @media (max-width: 768px) {
-        #cta {
-            padding: 40px 0 !important;
-        }
-        #cta .cta-content h2 {
-            font-size: 24px !important;
-        }
-        #cta .cta-content p {
-            font-size: 14px !important;
-            padding: 0 15px;
-        }
-        #cta .btn-white {
-            padding: 10px 25px !important;
-            font-size: 13px !important;
-        }
-        section[style*="padding:0 0 60px"] iframe {
+        section[style*="padding:0 0 80px"] iframe {
             height: 200px !important;
         }
     }
     @media (max-width: 480px) {
-        #cta .cta-content h2 {
-            font-size: 20px !important;
-        }
-        section[style*="padding:0 0 60px"] iframe {
+        section[style*="padding:0 0 80px"] iframe {
             height: 150px !important;
         }
     }
