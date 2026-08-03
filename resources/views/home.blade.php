@@ -394,25 +394,24 @@
     </div>
 </section>
 
-<!-- ===== REFERANSLAR ===== -->
+<!-- ===== REFERANSLAR (DÜZELTİLDİ) ===== -->
 <section class="brand-logos" style="padding:60px 0;background:rgba(10,14,26,0.2);border-top:1px solid rgba(255,255,255,0.02);border-bottom:1px solid rgba(255,255,255,0.02);">
     <div class="container">
         <div style="text-align:center;margin-bottom:35px;" data-aos="fade-up">
             <span class="section-tag"><i class="fas fa-handshake" style="color:#ff6b6b;"></i> Referanslar</span>
             <h2 style="font-size:36px;font-weight:800;margin-top:10px;">Güvenen <span style="background:linear-gradient(135deg,#ff6b6b,#ffd93d,#6bcb77,#4d96ff);background-size:300% 300%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;animation:rainbowText 4s ease infinite;">Markalar</span></h2>
         </div>
-        <div style="position:relative;display:flex;justify-content:space-around;align-items:center;flex-wrap:nowrap;gap:20px;padding:20px 0;" data-aos="fade-up">
-            @for($i=1; $i<=6; $i++)
+        <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:20px;padding:20px 0;" data-aos="fade-up">
+            @for($i=1; $i<=8; $i++)
                 @php
-                    $colors = ['#ff6b6b', '#ffd93d', '#6bcb77', '#4d96ff', '#ff6b6b', '#ffd93d'];
+                    $colors = ['#ff6b6b', '#ffd93d', '#6bcb77', '#4d96ff', '#ff6b6b', '#ffd93d', '#6bcb77', '#4d96ff'];
                     $delay = $i * 0.5;
                 @endphp
-                <div style="display:flex;flex-direction:column;align-items:center;gap:10px;padding:20px 30px;border-radius:16px;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.03);transition:all 0.5s cubic-bezier(0.175,0.885,0.32,1.275);cursor:pointer;animation: orbitFloat {{ 4 + $i }}s ease-in-out infinite;animation-delay: {{ $delay }}s;min-width:120px;"
-                onmouseover="this.style.transform='scale(1.2) translateY(-12px) rotate(5deg)';this.style.background='{{ $colors[$i-1] }}15';this.style.borderColor='{{ $colors[$i-1] }}44';this.style.boxShadow='0 20px 60px {{ $colors[$i-1] }}33'"
-                onmouseout="this.style.transform='scale(1) translateY(0) rotate(0deg)';this.style.background='rgba(255,255,255,0.02)';this.style.borderColor='rgba(255,255,255,0.03)';this.style.boxShadow='none'">
-                    <i class="fas fa-building" style="font-size:48px;color:{{ $colors[$i-1] }};display:block;transition:0.6s;" onmouseover="this.style.transform='rotate(30deg) scale(1.3)';this.style.color='#fff'" onmouseout="this.style.transform='rotate(0deg) scale(1)';this.style.color='{{ $colors[$i-1] }}'"></i>
-                    <p style="font-size:13px;color:#94a3b8;font-weight:600;letter-spacing:1px;transition:0.3s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#94a3b8'">Marka {{ $i }}</p>
-                    <div style="width:40px;height:2px;background:linear-gradient(90deg,{{ $colors[$i-1] }},transparent);border-radius:2px;transition:0.5s;" onmouseover="this.style.width='60px';this.style.background='{{ $colors[$i-1] }}'" onmouseout="this.style.width='40px';this.style.background='linear-gradient(90deg,{{ $colors[$i-1] }},transparent)'"></div>
+                <div style="display:flex;flex-direction:column;align-items:center;gap:8px;padding:15px 10px;border-radius:12px;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.04);transition:all 0.4s cubic-bezier(0.175,0.885,0.32,1.275);cursor:pointer;"
+                onmouseover="this.style.transform='scale(1.05) translateY(-5px)';this.style.background='{{ $colors[$i-1] }}10';this.style.borderColor='{{ $colors[$i-1] }}30';this.style.boxShadow='0 15px 40px {{ $colors[$i-1] }}20'"
+                onmouseout="this.style.transform='scale(1) translateY(0)';this.style.background='rgba(255,255,255,0.02)';this.style.borderColor='rgba(255,255,255,0.04)';this.style.boxShadow='none'">
+                    <i class="fas fa-building" style="font-size:32px;color:{{ $colors[$i-1] }};display:block;transition:0.4s;" onmouseover="this.style.transform='rotate(10deg) scale(1.15)';this.style.color='{{ $colors[$i-1] }}'" onmouseout="this.style.transform='rotate(0deg) scale(1)';this.style.color='{{ $colors[$i-1] }}'"></i>
+                    <p style="font-size:12px;color:#94a3b8;font-weight:500;letter-spacing:0.5px;transition:0.3s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#94a3b8'">Marka {{ $i }}</p>
                 </div>
             @endfor
         </div>
@@ -873,7 +872,13 @@
     .blog-grid { grid-template-columns: repeat(2, 1fr); gap: 25px; }
     .news-grid { grid-template-columns: repeat(2, 1fr); gap: 25px; }
     #cta .cta-content h2 { font-size: 34px !important; }
+    /* Referanslar mobil */
+    div[style*="grid-template-columns:repeat(4,1fr)"] {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 15px !important;
+    }
 }
+
 @media (max-width: 768px) {
     .services-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
     .projects-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
@@ -983,6 +988,21 @@
     #cta .cta-content p { font-size: 15px !important; padding: 0 15px; }
     #cta .cta-content div { flex-direction: column !important; align-items: center !important; }
     #cta .cta-content a { width: 100% !important; max-width: 320px !important; justify-content: center !important; padding: 14px 30px !important; font-size: 15px !important; }
+
+    /* Referanslar mobil */
+    div[style*="grid-template-columns:repeat(4,1fr)"] {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 12px !important;
+    }
+    div[style*="padding:15px 10px"] {
+        padding: 12px 8px !important;
+    }
+    div[style*="font-size:32px"] {
+        font-size: 24px !important;
+    }
+    div[style*="font-size:12px"] {
+        font-size: 11px !important;
+    }
 }
 
 @media (max-width: 480px) {
@@ -1070,6 +1090,21 @@
 
     #cta .cta-content h2 { font-size: 22px !important; }
     #cta .cta-content a { padding: 12px 20px !important; font-size: 13px !important; max-width: 280px !important; }
+
+    /* Referanslar mobil */
+    div[style*="grid-template-columns:repeat(4,1fr)"] {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 10px !important;
+    }
+    div[style*="padding:15px 10px"] {
+        padding: 10px 6px !important;
+    }
+    div[style*="font-size:32px"] {
+        font-size: 20px !important;
+    }
+    div[style*="font-size:12px"] {
+        font-size: 10px !important;
+    }
 }
 </style>
 @endsection
