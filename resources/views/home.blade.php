@@ -394,7 +394,7 @@
     </div>
 </section>
 
-<!-- ===== REFERANSLAR (DÜZELTİLDİ) ===== -->
+<!-- ===== REFERANSLAR ===== -->
 <section class="brand-logos" style="padding:60px 0;background:rgba(10,14,26,0.2);border-top:1px solid rgba(255,255,255,0.02);border-bottom:1px solid rgba(255,255,255,0.02);">
     <div class="container">
         <div style="text-align:center;margin-bottom:35px;" data-aos="fade-up">
@@ -767,54 +767,21 @@
 </section>
 
 <!-- ===== İLETİŞİME GEÇİN ===== -->
-<section class="section-padding" id="cta" style="background:linear-gradient(135deg, #1a1a2e, #2d2d44);border-top:1px solid rgba(255,255,255,0.05);border-bottom:1px solid rgba(255,255,255,0.05);position:relative;overflow:hidden;">
-    <div style="position:absolute;top:-50%;right:-20%;width:600px;height:600px;background:radial-gradient(circle,rgba(255,107,107,0.05),transparent 70%);border-radius:50%;pointer-events:none;"></div>
-    <div style="position:absolute;bottom:-50%;left:-20%;width:500px;height:500px;background:radial-gradient(circle,rgba(77,150,255,0.05),transparent 70%);border-radius:50%;pointer-events:none;"></div>
+<section class="section-padding" id="cta" style="background:linear-gradient(135deg, #ff6b6b, #ee5a24, #ff6b6b);background-size:200% 200%;animation:btnGradient 4s ease infinite;border-top:none;border-bottom:none;position:relative;overflow:hidden;">
+    <div style="position:absolute;top:-50%;right:-20%;width:600px;height:600px;background:radial-gradient(circle,rgba(255,255,255,0.05),transparent 70%);border-radius:50%;pointer-events:none;"></div>
+    <div style="position:absolute;bottom:-50%;left:-20%;width:500px;height:500px;background:radial-gradient(circle,rgba(255,255,255,0.05),transparent 70%);border-radius:50%;pointer-events:none;"></div>
 
     <div class="container">
         <div class="cta-content" data-aos="fade-up" style="position:relative;z-index:1;text-align:center;">
-            <h2 style="font-size:42px;font-weight:800;margin-bottom:15px;color:#fff;">Bizimle <span style="background:linear-gradient(135deg,#ff6b6b,#ffd93d,#6bcb77,#4d96ff);background-size:300% 300%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;animation:rainbowText 4s ease infinite;">İletişime Geçin</span></h2>
-            <p style="font-size:18px;margin-bottom:30px;color:#94a3b8;max-width:600px;margin-left:auto;margin-right:auto;line-height:1.8;">
-                Projenizi konuşmak, teklif almak veya sorularınız için hemen bize ulaşın.
+            <h2 style="font-size:42px;font-weight:800;margin-bottom:20px;color:#fff;">Özel Çözümler <span style="color:#fff;">İçin Bize Ulaşın</span></h2>
+            <p style="font-size:18px;margin-bottom:30px;opacity:0.9;max-width:600px;margin-left:auto;margin-right:auto;color:rgba(255,255,255,0.9);">
+                İhtiyaçlarınıza özel yazılım çözümleri için hemen bizimle iletişime geçin.
             </p>
             <div style="display:flex;gap:20px;justify-content:center;flex-wrap:wrap;">
-                <a href="{{ route('contact') }}" style="
-                    background:linear-gradient(135deg, #ff6b6b, #ee5a24);
-                    color:#fff !important;
-                    padding:16px 45px;
-                    border-radius:60px;
-                    text-decoration:none;
-                    font-weight:600;
-                    transition:all 0.4s cubic-bezier(0.175,0.885,0.32,1.275);
-                    display:inline-flex;
-                    align-items:center;
-                    gap:12px;
-                    font-size:17px;
-                    border:none;
-                    cursor:pointer;
-                    box-shadow:0 15px 50px rgba(255,107,107,0.35);
-                "
-                onmouseover="this.style.transform='translateY(-5px) scale(1.05)';this.style.boxShadow='0 25px 70px rgba(255,107,107,0.5)'"
-                onmouseout="this.style.transform='translateY(0) scale(1)';this.style.boxShadow='0 15px 50px rgba(255,107,107,0.35)'">
+                <a href="{{ route('contact') }}" style="background:#fff;color:#0a0e1a !important;padding:16px 45px;border-radius:60px;text-decoration:none;font-weight:600;transition:all 0.4s cubic-bezier(0.175,0.885,0.32,1.275);display:inline-flex;align-items:center;gap:12px;font-size:17px;border:none;cursor:pointer;box-shadow:0 15px 50px rgba(255,255,255,0.2);" onmouseover="this.style.transform='translateY(-5px) scale(1.05)';this.style.boxShadow='0 25px 70px rgba(255,255,255,0.3)'" onmouseout="this.style.transform='translateY(0) scale(1)';this.style.boxShadow='0 15px 50px rgba(255,255,255,0.2)'">
                     <i class="fas fa-paper-plane"></i> Hemen İletişim
                 </a>
-                <a href="tel:+905551234567" style="
-                    background:rgba(255,255,255,0.05);
-                    color:#fff !important;
-                    padding:16px 45px;
-                    border-radius:60px;
-                    text-decoration:none;
-                    font-weight:600;
-                    transition:all 0.4s cubic-bezier(0.175,0.885,0.32,1.275);
-                    display:inline-flex;
-                    align-items:center;
-                    gap:12px;
-                    font-size:17px;
-                    backdrop-filter:blur(10px);
-                    border:1px solid rgba(255,255,255,0.12);
-                "
-                onmouseover="this.style.background='rgba(255,255,255,0.1)';this.style.transform='translateY(-5px) scale(1.05)';this.style.borderColor='rgba(255,255,255,0.25)'"
-                onmouseout="this.style.background='rgba(255,255,255,0.05)';this.style.transform='translateY(0) scale(1)';this.style.borderColor='rgba(255,255,255,0.12)'">
+                <a href="tel:+905551234567" style="background:rgba(255,255,255,0.12);color:#fff !important;padding:16px 45px;border-radius:60px;text-decoration:none;font-weight:600;transition:all 0.4s cubic-bezier(0.175,0.885,0.32,1.275);display:inline-flex;align-items:center;gap:12px;font-size:17px;backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,0.15);" onmouseover="this.style.background='rgba(255,255,255,0.2)';this.style.transform='translateY(-5px) scale(1.05)';this.style.borderColor='rgba(255,255,255,0.3)'" onmouseout="this.style.background='rgba(255,255,255,0.12)';this.style.transform='translateY(0) scale(1)';this.style.borderColor='rgba(255,255,255,0.15)'">
                     <i class="fas fa-phone"></i> +90 (555) 123 45 67
                 </a>
             </div>
@@ -861,6 +828,11 @@
     100% { transform: translateY(0px) rotate(0deg); }
 }
 @keyframes rainbowText {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+@keyframes btnGradient {
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
@@ -1107,4 +1079,39 @@
     }
 }
 </style>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Counter animasyonları
+        function animateCounters() {
+            document.querySelectorAll('.counter-number').forEach(function(c) {
+                var target = parseInt(c.dataset.target);
+                var current = 0;
+                var increment = target / 60;
+                var timer = setInterval(function() {
+                    current += increment;
+                    if (current >= target) {
+                        c.textContent = target + '+';
+                        clearInterval(timer);
+                    } else {
+                        c.textContent = Math.floor(current) + '+';
+                    }
+                }, 25);
+            });
+        }
+
+        var counterObserver = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    animateCounters();
+                    counterObserver.disconnect();
+                }
+            });
+        });
+
+        document.querySelectorAll('.counter-number').forEach(function(el) {
+            counterObserver.observe(el);
+        });
+    });
+</script>
 @endsection
