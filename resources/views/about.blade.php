@@ -29,88 +29,282 @@
     <div style="position:absolute;bottom:-30%;left:-10%;width:400px;height:400px;background:radial-gradient(circle,rgba(77,150,255,0.03),transparent 70%);border-radius:50%;pointer-events:none;"></div>
 
     <div class="container">
-        <!-- === İKON (ÜSTTE - MOBİL İÇİN) === -->
-        <div data-aos="fade-up" style="display:flex;justify-content:center;align-items:center;margin-bottom:40px;">
-            <div style="
-                width:200px;
-                height:200px;
-                border-radius:50%;
-                background:linear-gradient(135deg, rgba(255,107,107,0.05), rgba(77,150,255,0.05));
-                border:2px solid rgba(255,255,255,0.02);
-                display:flex;
-                align-items:center;
-                justify-content:center;
-                animation: rotateIn 20s linear infinite;
-                position:relative;
-                max-width:100%;
-            ">
-                <div style="
-                    position:absolute;
-                    width:85%;
-                    height:85%;
+        <!-- ===== BİLGİSAYAR: İKON SOLD, YAZI SAĞDA ===== -->
+        <div class="about-desktop" style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;max-width:1100px;margin:0 auto;">
+            <!-- SOL - DÖNEN İKON (CANLI) -->
+            <div data-aos="fade-right" style="display:flex;justify-content:center;align-items:center;">
+                <div class="icon-wrapper" style="
+                    width:350px;
+                    height:350px;
                     border-radius:50%;
-                    border:2px dashed rgba(255,107,107,0.08);
-                    animation: rotateIn 30s linear infinite reverse;
-                "></div>
-                <div style="
-                    position:absolute;
-                    width:70%;
-                    height:70%;
-                    border-radius:50%;
-                    border:2px dashed rgba(77,150,255,0.05);
-                    animation: rotateIn 40s linear infinite;
-                "></div>
-                <div style="
-                    font-size:60px;
-                    color:#ff6b6b;
-                    animation:pulse 2s ease-in-out infinite;
-                    z-index:1;
+                    background:linear-gradient(135deg, rgba(255,107,107,0.08), rgba(77,150,255,0.08));
+                    border:2px solid rgba(255,255,255,0.03);
+                    display:flex;
+                    align-items:center;
+                    justify-content:center;
+                    animation: rotateIn 20s linear infinite;
+                    position:relative;
+                    box-shadow: 0 0 80px rgba(255,107,107,0.05), inset 0 0 80px rgba(255,107,107,0.02);
                 ">
-                    <i class="fas fa-cubes"></i>
+                    <!-- Dönen halkalar -->
+                    <div style="
+                        position:absolute;
+                        width:92%;
+                        height:92%;
+                        border-radius:50%;
+                        border:2px solid rgba(255,107,107,0.06);
+                        animation: rotateIn 25s linear infinite reverse;
+                    "></div>
+                    <div style="
+                        position:absolute;
+                        width:78%;
+                        height:78%;
+                        border-radius:50%;
+                        border:2px dashed rgba(255,217,61,0.06);
+                        animation: rotateIn 35s linear infinite;
+                    "></div>
+                    <div style="
+                        position:absolute;
+                        width:64%;
+                        height:64%;
+                        border-radius:50%;
+                        border:2px solid rgba(77,150,255,0.04);
+                        animation: rotateIn 45s linear infinite reverse;
+                    "></div>
+                    <div style="
+                        position:absolute;
+                        width:50%;
+                        height:50%;
+                        border-radius:50%;
+                        border:2px dashed rgba(107,203,119,0.04);
+                        animation: rotateIn 55s linear infinite;
+                    "></div>
+
+                    <!-- Işıltı efektleri -->
+                    <div style="
+                        position:absolute;
+                        top:-10%;
+                        right:-10%;
+                        width:60%;
+                        height:60%;
+                        background:radial-gradient(circle, rgba(255,107,107,0.08), transparent 70%);
+                        border-radius:50%;
+                        animation: glowMove 6s ease-in-out infinite;
+                    "></div>
+                    <div style="
+                        position:absolute;
+                        bottom:-10%;
+                        left:-10%;
+                        width:50%;
+                        height:50%;
+                        background:radial-gradient(circle, rgba(77,150,255,0.06), transparent 70%);
+                        border-radius:50%;
+                        animation: glowMove 8s ease-in-out infinite reverse;
+                    "></div>
+
+                    <!-- Ana ikon -->
+                    <div style="
+                        font-size:90px;
+                        color:#ff6b6b;
+                        animation: iconPulse 3s ease-in-out infinite;
+                        z-index:1;
+                        text-shadow: 0 0 40px rgba(255,107,107,0.15);
+                        transition: all 0.5s ease;
+                    " class="icon-main">
+                        <i class="fas fa-cubes"></i>
+                    </div>
+
+                    <!-- Yörüngede dönen küçük ikonlar -->
+                    <div style="
+                        position:absolute;
+                        top:5%;
+                        right:15%;
+                        font-size:20px;
+                        color:#ffd93d;
+                        animation: orbitIcon1 12s linear infinite;
+                        opacity:0.6;
+                    ">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <div style="
+                        position:absolute;
+                        bottom:5%;
+                        left:15%;
+                        font-size:20px;
+                        color:#6bcb77;
+                        animation: orbitIcon2 14s linear infinite;
+                        opacity:0.6;
+                    ">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <div style="
+                        position:absolute;
+                        top:20%;
+                        left:2%;
+                        font-size:16px;
+                        color:#4d96ff;
+                        animation: orbitIcon3 10s linear infinite;
+                        opacity:0.5;
+                    ">
+                        <i class="fas fa-cloud"></i>
+                    </div>
+                    <div style="
+                        position:absolute;
+                        bottom:20%;
+                        right:2%;
+                        font-size:16px;
+                        color:#a66cff;
+                        animation: orbitIcon4 16s linear infinite;
+                        opacity:0.5;
+                    ">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SAĞ - YAZI -->
+            <div data-aos="fade-left">
+                <div class="glass" style="padding:40px;border-color:rgba(255,255,255,0.05);">
+                    <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:20px;">
+                        <span style="background:rgba(255,107,107,0.08);color:#ff6b6b;padding:6px 20px;border-radius:50px;font-size:13px;border:1px solid rgba(255,107,107,0.06);font-weight:600;">ERP</span>
+                        <span style="background:rgba(255,217,61,0.08);color:#ffd93d;padding:6px 20px;border-radius:50px;font-size:13px;border:1px solid rgba(255,217,61,0.06);font-weight:600;">CRM</span>
+                        <span style="background:rgba(107,203,119,0.08);color:#6bcb77;padding:6px 20px;border-radius:50px;font-size:13px;border:1px solid rgba(107,203,119,0.06);font-weight:600;">E-Ticaret</span>
+                        <span style="background:rgba(77,150,255,0.08);color:#4d96ff;padding:6px 20px;border-radius:50px;font-size:13px;border:1px solid rgba(77,150,255,0.06);font-weight:600;">Web Çözümleri</span>
+                    </div>
+
+                    <p style="color:#e2e8f0;font-size:15px;line-height:1.9;margin-bottom:12px;">
+                        İşletmelere dijital dönüşüm yolculuklarında <span style="color:#ff6b6b;font-weight:600;">yenilikçi</span> ve <span style="color:#ffd93d;font-weight:600;">özelleştirilmiş</span> yazılım çözümleri sunan bir teknoloji firmasıdır.
+                    </p>
+
+                    <p style="color:#e2e8f0;font-size:15px;line-height:1.9;margin-bottom:12px;">
+                        ERP, CRM, e-ticaret entegrasyonları ve kurumsal web çözümleri konularında uzmanlaşarak, farklı sektörlerdeki işletmelerin iş süreçlerini <span style="color:#6bcb77;font-weight:600;">dijitalleştirip</span> operasyonel verimliliklerini artırmayı hedefliyoruz.
+                    </p>
+
+                    <p style="color:#e2e8f0;font-size:15px;line-height:1.9;margin-bottom:0;">
+                        Geniş teknik bilgi birikimimizle, her işletmenin özgün ihtiyaçlarına uygun stratejiler geliştiriyor; esnek, ölçeklenebilir ve sürdürülebilir yazılım altyapıları kuruyoruz.
+                    </p>
                 </div>
             </div>
         </div>
 
-        <!-- === YAZI (ALTA - MOBİL İÇİN) === -->
-        <div data-aos="fade-up" style="max-width:900px;margin:0 auto;">
-            <div class="glass" style="padding:35px;border-color:rgba(255,255,255,0.05);">
-                <div style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-bottom:20px;">
-                    <span style="background:rgba(255,107,107,0.08);color:#ff6b6b;padding:6px 16px;border-radius:50px;font-size:12px;border:1px solid rgba(255,107,107,0.06);font-weight:600;">ERP</span>
-                    <span style="background:rgba(255,217,61,0.08);color:#ffd93d;padding:6px 16px;border-radius:50px;font-size:12px;border:1px solid rgba(255,217,61,0.06);font-weight:600;">CRM</span>
-                    <span style="background:rgba(107,203,119,0.08);color:#6bcb77;padding:6px 16px;border-radius:50px;font-size:12px;border:1px solid rgba(107,203,119,0.06);font-weight:600;">E-Ticaret</span>
-                    <span style="background:rgba(77,150,255,0.08);color:#4d96ff;padding:6px 16px;border-radius:50px;font-size:12px;border:1px solid rgba(77,150,255,0.06);font-weight:600;">Web Çözümleri</span>
+        <!-- ===== MOBİL: İKON ÜSTTE, YAZI ALTA ===== -->
+        <div class="about-mobile" style="display:none;max-width:900px;margin:0 auto;">
+            <!-- İKON (ÜSTTE - CANLI) -->
+            <div data-aos="fade-up" style="display:flex;justify-content:center;align-items:center;margin-bottom:30px;">
+                <div class="icon-wrapper-mobile" style="
+                    width:200px;
+                    height:200px;
+                    border-radius:50%;
+                    background:linear-gradient(135deg, rgba(255,107,107,0.08), rgba(77,150,255,0.08));
+                    border:2px solid rgba(255,255,255,0.03);
+                    display:flex;
+                    align-items:center;
+                    justify-content:center;
+                    animation: rotateIn 20s linear infinite;
+                    position:relative;
+                    box-shadow: 0 0 60px rgba(255,107,107,0.05);
+                ">
+                    <div style="
+                        position:absolute;
+                        width:92%;
+                        height:92%;
+                        border-radius:50%;
+                        border:2px solid rgba(255,107,107,0.06);
+                        animation: rotateIn 25s linear infinite reverse;
+                    "></div>
+                    <div style="
+                        position:absolute;
+                        width:78%;
+                        height:78%;
+                        border-radius:50%;
+                        border:2px dashed rgba(255,217,61,0.06);
+                        animation: rotateIn 35s linear infinite;
+                    "></div>
+                    <div style="
+                        position:absolute;
+                        width:64%;
+                        height:64%;
+                        border-radius:50%;
+                        border:2px solid rgba(77,150,255,0.04);
+                        animation: rotateIn 45s linear infinite reverse;
+                    "></div>
+
+                    <div style="
+                        font-size:55px;
+                        color:#ff6b6b;
+                        animation: iconPulse 3s ease-in-out infinite;
+                        z-index:1;
+                        text-shadow: 0 0 30px rgba(255,107,107,0.15);
+                    ">
+                        <i class="fas fa-cubes"></i>
+                    </div>
+
+                    <div style="
+                        position:absolute;
+                        top:5%;
+                        right:12%;
+                        font-size:14px;
+                        color:#ffd93d;
+                        animation: orbitIcon1 12s linear infinite;
+                        opacity:0.5;
+                    ">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <div style="
+                        position:absolute;
+                        bottom:5%;
+                        left:12%;
+                        font-size:14px;
+                        color:#6bcb77;
+                        animation: orbitIcon2 14s linear infinite;
+                        opacity:0.5;
+                    ">
+                        <i class="fas fa-database"></i>
+                    </div>
                 </div>
+            </div>
 
-                <p style="color:#e2e8f0;font-size:15px;line-height:1.9;text-align:center;margin-bottom:12px;">
-                    İşletmelere dijital dönüşüm yolculuklarında <span style="color:#ff6b6b;font-weight:600;">yenilikçi</span> ve <span style="color:#ffd93d;font-weight:600;">özelleştirilmiş</span> yazılım çözümleri sunan bir teknoloji firmasıdır.
-                </p>
+            <!-- YAZI (ALTA) -->
+            <div data-aos="fade-up">
+                <div class="glass" style="padding:35px 25px;border-color:rgba(255,255,255,0.05);">
+                    <div style="display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-bottom:18px;">
+                        <span style="background:rgba(255,107,107,0.08);color:#ff6b6b;padding:5px 14px;border-radius:50px;font-size:12px;border:1px solid rgba(255,107,107,0.06);font-weight:600;">ERP</span>
+                        <span style="background:rgba(255,217,61,0.08);color:#ffd93d;padding:5px 14px;border-radius:50px;font-size:12px;border:1px solid rgba(255,217,61,0.06);font-weight:600;">CRM</span>
+                        <span style="background:rgba(107,203,119,0.08);color:#6bcb77;padding:5px 14px;border-radius:50px;font-size:12px;border:1px solid rgba(107,203,119,0.06);font-weight:600;">E-Ticaret</span>
+                        <span style="background:rgba(77,150,255,0.08);color:#4d96ff;padding:5px 14px;border-radius:50px;font-size:12px;border:1px solid rgba(77,150,255,0.06);font-weight:600;">Web Çözümleri</span>
+                    </div>
 
-                <p style="color:#e2e8f0;font-size:15px;line-height:1.9;text-align:center;margin-bottom:12px;">
-                    ERP, CRM, e-ticaret entegrasyonları ve kurumsal web çözümleri konularında uzmanlaşarak, farklı sektörlerdeki işletmelerin iş süreçlerini <span style="color:#6bcb77;font-weight:600;">dijitalleştirip</span> operasyonel verimliliklerini artırmayı hedefliyoruz.
-                </p>
+                    <p style="color:#e2e8f0;font-size:14px;line-height:1.8;text-align:center;margin-bottom:10px;">
+                        İşletmelere dijital dönüşüm yolculuklarında <span style="color:#ff6b6b;font-weight:600;">yenilikçi</span> ve <span style="color:#ffd93d;font-weight:600;">özelleştirilmiş</span> yazılım çözümleri sunan bir teknoloji firmasıdır.
+                    </p>
 
-                <p style="color:#e2e8f0;font-size:15px;line-height:1.9;text-align:center;margin-bottom:0;">
-                    Geniş teknik bilgi birikimimizle, her işletmenin özgün ihtiyaçlarına uygun stratejiler geliştiriyor; esnek, ölçeklenebilir ve sürdürülebilir yazılım altyapıları kuruyoruz.
-                </p>
+                    <p style="color:#e2e8f0;font-size:14px;line-height:1.8;text-align:center;margin-bottom:10px;">
+                        ERP, CRM, e-ticaret entegrasyonları ve kurumsal web çözümleri konularında uzmanlaşarak, farklı sektörlerdeki işletmelerin iş süreçlerini <span style="color:#6bcb77;font-weight:600;">dijitalleştirip</span> operasyonel verimliliklerini artırmayı hedefliyoruz.
+                    </p>
+
+                    <p style="color:#e2e8f0;font-size:14px;line-height:1.8;text-align:center;margin-bottom:0;">
+                        Geniş teknik bilgi birikimimizle, her işletmenin özgün ihtiyaçlarına uygun stratejiler geliştiriyor; esnek, ölçeklenebilir ve sürdürülebilir yazılım altyapıları kuruyoruz.
+                    </p>
+                </div>
             </div>
         </div>
 
         <!-- ===== VİZYON & MİSYON ===== -->
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:40px;max-width:900px;margin-left:auto;margin-right:auto;">
-            <div class="glass" data-aos="fade-up" style="padding:25px 20px;border-color:rgba(255,107,107,0.05);text-align:center;">
-                <div style="font-size:32px;color:#ff6b6b;margin-bottom:10px;">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:25px;margin-top:50px;max-width:900px;margin-left:auto;margin-right:auto;">
+            <div class="glass" data-aos="fade-up" style="padding:28px 20px;border-color:rgba(255,107,107,0.05);text-align:center;">
+                <div style="font-size:35px;color:#ff6b6b;margin-bottom:10px;">
                     <i class="fas fa-eye"></i>
                 </div>
-                <h3 style="font-size:17px;font-weight:700;color:#fff;margin-bottom:6px;">Vizyonumuz</h3>
-                <p style="color:#94a3b8;font-size:13px;line-height:1.7;">Türkiye'de ve dünyada dijital dönüşümün öncüsü olmak.</p>
+                <h3 style="font-size:18px;font-weight:700;color:#fff;margin-bottom:6px;">Vizyonumuz</h3>
+                <p style="color:#94a3b8;font-size:14px;line-height:1.7;">Türkiye'de ve dünyada dijital dönüşümün öncüsü olmak.</p>
             </div>
 
-            <div class="glass" data-aos="fade-up" data-aos-delay="100" style="padding:25px 20px;border-color:rgba(255,217,61,0.05);text-align:center;">
-                <div style="font-size:32px;color:#ffd93d;margin-bottom:10px;">
+            <div class="glass" data-aos="fade-up" data-aos-delay="100" style="padding:28px 20px;border-color:rgba(255,217,61,0.05);text-align:center;">
+                <div style="font-size:35px;color:#ffd93d;margin-bottom:10px;">
                     <i class="fas fa-rocket"></i>
                 </div>
-                <h3 style="font-size:17px;font-weight:700;color:#fff;margin-bottom:6px;">Misyonumuz</h3>
-                <p style="color:#94a3b8;font-size:13px;line-height:1.7;">İşletmelere özel, kaliteli ve sürdürülebilir yazılım çözümleri sunmak.</p>
+                <h3 style="font-size:18px;font-weight:700;color:#fff;margin-bottom:6px;">Misyonumuz</h3>
+                <p style="color:#94a3b8;font-size:14px;line-height:1.7;">İşletmelere özel, kaliteli ve sürdürülebilir yazılım çözümleri sunmak.</p>
             </div>
         </div>
     </div>
@@ -154,19 +348,38 @@
         0% { transform: rotate(0deg); }
         100% { transform: rotate(360deg); }
     }
-    @keyframes pulse {
-        0%, 100% { opacity: 1; transform: scale(1); }
-        50% { opacity: 0.5; transform: scale(0.95); }
+    @keyframes iconPulse {
+        0%, 100% { transform: scale(1); opacity: 1; }
+        50% { transform: scale(1.05); opacity: 0.85; }
+    }
+    @keyframes glowMove {
+        0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.6; }
+        50% { transform: translate(20px, -20px) scale(1.3); opacity: 0.9; }
+    }
+    @keyframes orbitIcon1 {
+        0% { transform: rotate(0deg) translateX(40px) rotate(0deg); }
+        100% { transform: rotate(360deg) translateX(40px) rotate(-360deg); }
+    }
+    @keyframes orbitIcon2 {
+        0% { transform: rotate(0deg) translateX(40px) rotate(0deg); }
+        100% { transform: rotate(360deg) translateX(40px) rotate(-360deg); }
+    }
+    @keyframes orbitIcon3 {
+        0% { transform: rotate(0deg) translateX(30px) rotate(0deg); }
+        100% { transform: rotate(360deg) translateX(30px) rotate(-360deg); }
+    }
+    @keyframes orbitIcon4 {
+        0% { transform: rotate(0deg) translateX(30px) rotate(0deg); }
+        100% { transform: rotate(360deg) translateX(30px) rotate(-360deg); }
     }
 
-    /* ===== MOBİL ===== */
+    /* ===== MOBİL: İKON ÜSTTE, YAZI ALTA ===== */
     @media (max-width: 992px) {
-        div[style*="width:200px;height:200px"] {
-            width: 160px !important;
-            height: 160px !important;
+        .about-desktop {
+            display: none !important;
         }
-        div[style*="font-size:60px"] {
-            font-size: 45px !important;
+        .about-mobile {
+            display: block !important;
         }
         section[style*="padding:120px 0 60px"] h1 {
             font-size: 40px !important;
@@ -174,7 +387,7 @@
         section[style*="padding:120px 0 60px"] p {
             font-size: 17px !important;
         }
-        div[style*="display:grid;grid-template-columns:1fr 1fr;gap:20px"] {
+        div[style*="display:grid;grid-template-columns:1fr 1fr;gap:25px"] {
             grid-template-columns: 1fr 1fr !important;
         }
     }
@@ -191,12 +404,12 @@
             padding: 0 10px;
         }
 
-        div[style*="width:200px;height:200px"] {
-            width: 140px !important;
-            height: 140px !important;
+        .icon-wrapper-mobile {
+            width: 160px !important;
+            height: 160px !important;
         }
-        div[style*="font-size:60px"] {
-            font-size: 38px !important;
+        .icon-wrapper-mobile div[style*="font-size:55px"] {
+            font-size: 40px !important;
         }
 
         .glass {
@@ -210,20 +423,19 @@
             padding: 4px 12px !important;
         }
 
-        div[style*="display:grid;grid-template-columns:1fr 1fr;gap:20px"] {
-            grid-template-columns: 1fr 1fr !important;
+        div[style*="display:grid;grid-template-columns:1fr 1fr;gap:25px"] {
             gap: 15px !important;
         }
-        div[style*="padding:25px 20px"] {
-            padding: 20px 15px !important;
+        div[style*="padding:28px 20px"] {
+            padding: 20px 14px !important;
         }
-        div[style*="font-size:32px"] {
+        div[style*="font-size:35px"] {
             font-size: 26px !important;
         }
-        div[style*="font-size:17px"] {
+        div[style*="font-size:18px"] {
             font-size: 15px !important;
         }
-        div[style*="font-size:13px"] {
+        div[style*="font-size:14px"] {
             font-size: 12px !important;
         }
 
@@ -261,12 +473,15 @@
             font-size: 13px !important;
         }
 
-        div[style*="width:200px;height:200px"] {
-            width: 110px !important;
-            height: 110px !important;
+        .icon-wrapper-mobile {
+            width: 130px !important;
+            height: 130px !important;
         }
-        div[style*="font-size:60px"] {
-            font-size: 30px !important;
+        .icon-wrapper-mobile div[style*="font-size:55px"] {
+            font-size: 32px !important;
+        }
+        .icon-wrapper-mobile div[style*="font-size:14px"] {
+            font-size: 11px !important;
         }
 
         .glass {
@@ -281,20 +496,19 @@
             padding: 3px 10px !important;
         }
 
-        div[style*="display:grid;grid-template-columns:1fr 1fr;gap:20px"] {
-            grid-template-columns: 1fr 1fr !important;
+        div[style*="display:grid;grid-template-columns:1fr 1fr;gap:25px"] {
             gap: 10px !important;
         }
-        div[style*="padding:25px 20px"] {
+        div[style*="padding:28px 20px"] {
             padding: 16px 12px !important;
         }
-        div[style*="font-size:32px"] {
+        div[style*="font-size:35px"] {
             font-size: 22px !important;
         }
-        div[style*="font-size:17px"] {
+        div[style*="font-size:18px"] {
             font-size: 14px !important;
         }
-        div[style*="font-size:13px"] {
+        div[style*="font-size:14px"] {
             font-size: 11px !important;
         }
 
